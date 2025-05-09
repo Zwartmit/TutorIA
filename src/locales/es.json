@@ -1,0 +1,71 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "whatIsAI": "¿Qué es IA?",
+    "tools": "Herramientas",
+    "forum": "Foro",
+    "guides": "Guías",
+    "assessment": "Evaluación",
+    "signIn": "Iniciar Sesión",
+    "signUp": "Registrarse",
+    "signOut": "Cerrar Sesión",
+    "editProfile": "Editar Perfil",
+    "viewStats": "Ver Estadísticas"
+  },
+  "home": {
+    "hero": {
+      "welcome": "Bienvenido a",
+      "subtitle": "Tu introducción a la inteligencia artificial",
+      "description": "Aprende los conceptos fundamentales de la IA y empieza a explorar el futuro de la tecnología con nuestra plataforma educativa.",
+      "startNow": "Empieza ahora",
+      "viewGuides": "Ver guías"
+    }
+  },
+  "guides": {
+    "title": "Guías paso a paso",
+    "subtitle": "Aprende a utilizar herramientas de IA con nuestros tutoriales detallados, diseñados para principiantes.",
+    "searchPlaceholder": "Buscar guías...",
+    "filters": {
+      "category": "Categoría",
+      "level": "Nivel",
+      "tool": "Herramienta"
+    },
+    "levels": {
+      "beginner": "Principiante",
+      "intermediate": "Intermedio",
+      "advanced": "Avanzado"
+    }
+  },
+  "assessment": {
+    "title": "Evaluación de conocimientos",
+    "subtitle": "Pon a prueba lo que has aprendido sobre inteligencia artificial con nuestra evaluación interactiva.",
+    "start": {
+      "title": "Evaluación de conceptos básicos de IA",
+      "description": "Esta evaluación contiene preguntas sobre los conceptos fundamentales de la inteligencia artificial que hemos cubierto en nuestras lecciones.",
+      "instructions": {
+        "title": "Antes de comenzar:",
+        "duration": "La evaluación dura aproximadamente 10-15 minutos",
+        "answers": "Cada pregunta tiene una única respuesta correcta",
+        "navigation": "No podrás volver a preguntas anteriores",
+        "passing": "Necesitas un 80% de respuestas correctas para aprobar"
+      },
+      "button": "Comenzar evaluación"
+    }
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Ha ocurrido un error",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "create": "Crear",
+    "submit": "Enviar",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "finish": "Finalizar",
+    "close": "Cerrar",
+    "language": "Idioma",
+    "scrollToTop": "Volver arriba"
+  }
+}
