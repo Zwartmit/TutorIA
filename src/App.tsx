@@ -3,10 +3,8 @@ import { Routes, Route } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import { useUser } from '@clerk/clerk-react';
 
-// Layouts
 import MainLayout from './layouts/MainLayout';
 
-// Pages
 import HomePage from './pages/HomePage';
 import AIExplanationPage from './pages/AIExplanationPage';
 import AIToolsPage from './pages/AIToolsPage';
@@ -21,14 +19,12 @@ import TermsPage from './pages/TermsPage';
 import PrivacyPage from './pages/PrivacyPage';
 import CookiesPage from './pages/CookiesPage';
 
-// Components
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import ProfileForm from './components/auth/ProfileForm';
 
 function App() {
   const { isSignedIn, user } = useUser();
 
-  // Check if the user needs to complete their profile
   const needsProfile = isSignedIn && (!user?.firstName || !user?.lastName);
 
   if (needsProfile) {

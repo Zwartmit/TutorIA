@@ -17,10 +17,10 @@ const HomePage: React.FC = () => {
               className="text-center lg:text-left"
             >
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
-                Bienvenido a{' '}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-secondary-600">
                   TutorIA
                 </span>
+                🤖🎓
                 <br />
                 <span className="text-3xl md:text-4xl lg:text-5xl">
                   Tu introducción a la inteligencia artificial
@@ -28,7 +28,7 @@ const HomePage: React.FC = () => {
               </h1>
               <p className="text-xl text-gray-700 mb-8 md:max-w-xl mx-auto lg:mx-0">
                 Aprende los conceptos fundamentales de la IA y empieza a explorar el futuro
-                de la tecnología con nuestra plataforma educativa.
+                de la tecnología
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Link to="/explanation" className="btn-primary">

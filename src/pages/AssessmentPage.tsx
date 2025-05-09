@@ -115,7 +115,7 @@ enum QuizState {
   COMPLETED
 }
 
-const PASSING_SCORE = 80; // 80% required to pass
+const PASSING_SCORE = 80; // Se requiere el 80% para aprobar
 
 const AssessmentPage: React.FC = () => {
   const [quizState, setQuizState] = useState<QuizState>(QuizState.NOT_STARTED);

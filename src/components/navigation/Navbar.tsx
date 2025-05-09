@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { useUser, useClerk } from '@clerk/clerk-react';
 import { motion } from 'framer-motion';
-import { BrainCircuit, Menu, X, LogIn, LogOut, UserCircle, BarChart2, Settings, MessageSquare } from 'lucide-react';
+import { Menu, X, LogIn, LogOut, UserCircle, BarChart2, Settings } from 'lucide-react';
 import UserStats from '../user/UserStats';
+import icon from '../../../public/icon.png';
 
 interface NavbarProps {
   isScrolled: boolean;
@@ -39,7 +40,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
         <div className="container-custom">
           <div className="flex items-center justify-between h-16 md:h-20">
             <Link to="/" className="flex items-center space-x-2">
-              <BrainCircuit size={28} className="text-primary-600" />
+              <img src={icon} alt="" style={{ width: '45px', height: 'auto' }}/>
               <span className="text-xl font-bold text-gray-900">TutorIA</span>
             </Link>
 

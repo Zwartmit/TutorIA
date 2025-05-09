@@ -44,7 +44,6 @@ const ProfileForm: React.FC = () => {
       return false;
     }
 
-    // Additional validation for special characters and invalid inputs
     const nameRegex = /^[a-zA-ZÀ-ÿ\s'-]+$/;
     if (!nameRegex.test(trimmedFirstName)) {
       setError('El nombre solo puede contener letras, espacios, guiones y apóstrofes');
@@ -73,7 +72,6 @@ const ProfileForm: React.FC = () => {
         return;
       }
 
-      // Validate file type
       const allowedTypes = ['image/jpeg', 'image/png', 'image/gif'];
       if (!allowedTypes.includes(file.type)) {
         setError('El archivo debe ser una imagen (JPEG, PNG o GIF)');
@@ -101,7 +99,6 @@ const ProfileForm: React.FC = () => {
     setError(null);
 
     try {
-      // Update profile information sequentially to handle potential errors better
       try {
         await user?.update({
           firstName: formData.firstName.trim(),
@@ -121,12 +118,10 @@ const ProfileForm: React.FC = () => {
         }
       }
 
-      // Redirect to home page after successful update
       window.location.href = '/';
     } catch (error: any) {
       console.error('Error updating profile:', error);
       
-      // Extract error message from Clerk API response
       let errorMessage = 'Hubo un error al actualizar el perfil.';
       
       if (error.errors && Array.isArray(error.errors)) {

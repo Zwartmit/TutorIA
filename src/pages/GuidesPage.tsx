@@ -233,7 +233,7 @@ const GuidesPage: React.FC = () => {
   return (
     <div className="pt-20">
       {selectedGuide ? (
-        // Guide Detail View
+        
         <div className="min-h-screen">
           {/* Guide Header */}
           <section className="py-16 bg-gradient-to-br from-primary-50 via-white to-primary-50">
@@ -381,7 +381,7 @@ const GuidesPage: React.FC = () => {
           </section>
         </div>
       ) : (
-        // Guides List View
+        
         <>
           {/* Hero Section */}
           <section className="py-16 md:py-24 bg-gradient-to-br from-secondary-50 via-white to-primary-50">

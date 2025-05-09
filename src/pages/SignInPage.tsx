@@ -7,7 +7,6 @@ import { BrainCircuit } from 'lucide-react';
 const SignInPage: React.FC = () => {
   const { isSignedIn } = useUser();
 
-  // Redirect if already signed in
   if (isSignedIn) {
     return <Navigate to="/" replace />;
   }
