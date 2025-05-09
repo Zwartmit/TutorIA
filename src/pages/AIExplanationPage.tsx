@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Cpu, BrainCircuit, Bot, Network, Brain, Zap } from 'lucide-react';
+import { BrainCircuit, Bot, Network, Brain, Zap } from 'lucide-react';
 
 const AIExplanationPage: React.FC = () => {
   return (
