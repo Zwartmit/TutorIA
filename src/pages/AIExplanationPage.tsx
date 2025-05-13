@@ -1,50 +1,25 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect } from 'react';
 import { BrainCircuit, Bot, Network, Brain, Zap } from 'lucide-react';
 
 const AIExplanationPage: React.FC = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
   return (
     <div className="pt-20">
-      {/* Hero Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-secondary-50 via-white to-primary-50">
-        <div className="container-custom">
-          <div className="max-w-3xl mx-auto text-center">
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
-            >
-              ¿Qué es la{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-secondary-600">
-                Inteligencia Artificial
-              </span>
-              ?
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-xl text-gray-700 mb-8"
-            >
-              Explora los conceptos fundamentales de la IA, sus tipos y cómo está transformando
-              nuestra sociedad.
-            </motion.p>
-          </div>
-        </div>
-      </section>
-
       {/* Introduction to AI */}
-      <section className="section bg-white">
+      <section className="section bg-gradient-to-b from-[#F9FAFB] via-gray to-gray-300">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
             <div className="mb-12 text-center">
               <div className="inline-block p-3 bg-primary-100 rounded-full mb-4">
-                <BrainCircuit size={32} className="text-primary-600" />
+                <BrainCircuit size={32} className="text-primary-600 transition animate-bounce" />
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-4">Introducción a la IA</h2>
               <p className="text-xl text-gray-600">
-                Entendiendo los conceptos básicos de la inteligencia artificial
+                Entendiende los conceptos básicos de la inteligencia artificial
               </p>
             </div>
 
@@ -53,13 +28,9 @@ const AIExplanationPage: React.FC = () => {
                 La <strong>Inteligencia Artificial (IA)</strong> es un campo de la informática que busca crear
                 sistemas capaces de realizar tareas que, tradicionalmente, requerirían inteligencia humana.
                 Estas tareas incluyen el reconocimiento de voz, toma de decisiones, traducción de idiomas,
-                y percepción visual, entre otras.
-              </p>
-
-              <p>
-                A diferencia de los programas informáticos tradicionales, que siguen instrucciones
-                específicas programadas por humanos, los sistemas de IA están diseñados para
-                <strong>aprender de los datos</strong> y mejorar con el tiempo.
+                y percepción visual, entre otras. A diferencia de los programas informáticos tradicionales,
+                que siguen instrucciones específicas programadas por humanos, los sistemas de IA están
+                diseñados para <strong>aprender de los datos</strong> y mejorar con el tiempo.
               </p>
 
               <h3 className="text-2xl font-semibold mt-8 mb-4">Ejemplos cotidianos de IA</h3>
@@ -106,7 +77,7 @@ const AIExplanationPage: React.FC = () => {
       </section>
 
       {/* Types of AI */}
-      <section className="section bg-gray-50">
+      <section className="section bg-gradient-to-b from-secondary-50 via-gray to-gray-300">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
             <div className="mb-12 text-center">
@@ -195,7 +166,7 @@ const AIExplanationPage: React.FC = () => {
       </section>
 
       {/* How AI Works */}
-      <section className="section bg-white">
+      <section className="sectio bg-gradient-to-t from-secondary-50 via-gray to-gray-300">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
             <div className="mb-12 text-center">
@@ -306,8 +277,9 @@ const AIExplanationPage: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-primary-600 to-secondary-700 text-white">
-        <div className="container-custom text-center">
+      <section className="py-20 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-primary-600 via-secondary-600 to-primary-600 animated-gradient"></div>
+        <div className="container-custom text-center relative z-10">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Continúa tu viaje en el mundo de la IA

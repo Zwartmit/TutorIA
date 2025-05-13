@@ -2,7 +2,7 @@ import React from 'react';
 import { Navigate } from 'react-router-dom';
 import { SignUp, useUser } from '@clerk/clerk-react';
 import { motion } from 'framer-motion';
-import { BrainCircuit } from 'lucide-react';
+import icon from '../../public/icon.png';
 
 const SignUpPage: React.FC = () => {
   const { isSignedIn } = useUser();
@@ -16,7 +16,7 @@ const SignUpPage: React.FC = () => {
       <div className="container-custom py-6">
         <div className="flex justify-center">
           <a href="/" className="flex items-center space-x-2">
-            <BrainCircuit size={28} className="text-primary-600" />
+            <img src={icon} alt="" style={{ width: '45px', height: 'auto' }}/>
             <span className="text-xl font-bold text-gray-900">TutorIA</span>
           </a>
         </div>

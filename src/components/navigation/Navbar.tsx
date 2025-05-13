@@ -69,7 +69,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                   }`
                 }
               >
-                ¿Qué es IA?
+                ¿Qué es la IA?
               </NavLink>
               <NavLink
                 to="/tools"

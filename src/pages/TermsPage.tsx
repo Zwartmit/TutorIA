@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Shield } from 'lucide-react';
 
 const TermsPage: React.FC = () => {
+
+  useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
+        
   return (
     <div className="pt-20">
       <section className="py-16 bg-gradient-to-br from-primary-50 via-white to-secondary-50">
