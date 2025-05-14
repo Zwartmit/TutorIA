@@ -20,7 +20,7 @@ const HomePage: React.FC = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative pt-24 pb-16 md:pt-32 md:pb-14 bg-gradient-to-t from-[#F9FAFB] via-gray to-gray-300 overflow-hidden">
+      <section className="relative pt-24 pb-16 md:pt-32 md:pb-14 bg-gradient-to-b from-[#F9FAFB] via-gray to-gray-300 overflow-hidden">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -41,7 +41,7 @@ const HomePage: React.FC = () => {
               <p className="text-xl text-gray-700 mb-8 md:max-w-xl mx-auto lg:mx-0">
                 Aprende los conceptos fundamentales de la IA, cómo funciona y empieza a explorar el futuro de la tecnología
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start transition-transform duration-300 hover:translate-x-2">
                 <Link to="/explanation" className="btn-primary">
                   Empieza ahora
                 </Link>
@@ -83,7 +83,7 @@ const HomePage: React.FC = () => {
                 autoPlay
                 loop
                 controls
-                className="w-full rounded-lg"
+                className="w-full rounded-3xl"
               ></video>
             </div>
           </div>
@@ -91,7 +91,7 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="section bg-gradient-to-b from-[#F9FAFB] via-gray to-gray-300">
+      <section className="section bg-gradient-to-t from-[#F9FAFB] via-gray to-gray-300">
         <div className="container-custom">
           <div className="text-center max-w-3xl mb-20 mx-auto">
             <h2 className="section-title">Lo que aprenderás...</h2>
@@ -108,9 +108,9 @@ const HomePage: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <motion.div
               whileHover={{ y: -5 }}
-              className="card p-6 text-center"
+              className="card p-6 text-center rounded-3xl"
             >
-              <div className="bg-primary-100 w-16 h-16 rounded-lg flex items-center justify-center mb-6 mx-auto">
+              <div className="bg-primary-100 w-16 h-16 rounded-3xl flex items-center justify-center mb-6 mx-auto">
                 <BookOpen size={28} className="text-primary-600 transition animate-bounce" />
               </div>
               <h3 className="text-xl font-semibold mb-4">Entiende los conceptos básicos</h3>
@@ -121,9 +121,9 @@ const HomePage: React.FC = () => {
 
             <motion.div
               whileHover={{ y: -5 }}
-              className="card p-6 text-center"
+              className="card p-6 text-center rounded-3xl"
             >
-              <div className="bg-primary-100 w-16 h-16 rounded-lg flex items-center justify-center mb-6 mx-auto">
+              <div className="bg-primary-100 w-16 h-16 rounded-3xl flex items-center justify-center mb-6 mx-auto">
                 <Compass size={28} className="text-secondary-600 transition animate-bounce" />
               </div>
               <h3 className="text-xl font-semibold mb-4">Accede a herramientas populares</h3>
@@ -134,9 +134,9 @@ const HomePage: React.FC = () => {
 
             <motion.div
               whileHover={{ y: -5 }}
-              className="card p-6 text-center"
+              className="card p-6 text-center rounded-3xl"
             >
-              <div className="bg-primary-100 w-16 h-16 rounded-lg flex items-center justify-center mb-6 mx-auto">
+              <div className="bg-primary-100 w-16 h-16 rounded-3xl flex items-center justify-center mb-6 mx-auto">
                 <Lightbulb size={28} className="text-accent-600 transition animate-bounce" />
               </div>
               <h3 className="text-xl font-semibold mb-4">Sigue guías paso a paso</h3>
@@ -149,7 +149,7 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* Featured Sections Preview */}
-      <section className="section bg-gradient-to-t from-[#F9FAFB] via-gray to-gray-300 ">
+      <section className="section bg-gradient-to-b from-[#F9FAFB] via-gray to-gray-300 ">
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="section-title">Explora nuestras secciones...</h2>
@@ -181,7 +181,7 @@ const HomePage: React.FC = () => {
                   el mundo. Descubre los diferentes tipos de inteligencia artificial y las
                   tecnologías que hacen posible que esto suceda.
                 </p>
-                <Link to="/explanation" className="inline-flex items-center text-primary-600 font-medium hover:text-primary-700">
+                <Link to="/explanation" className="inline-flex items-center text-primary-600 font-medium hover:text-primary-700 transition-transform duration-300 hover:translate-x-2">
                   Conoce más <ArrowRight size={16} className="ml-1" />
                 </Link>
               </motion.div>
@@ -195,7 +195,7 @@ const HomePage: React.FC = () => {
                 <img
                   src={sec1}
                   alt="Qué es la IA"
-                  className="rounded-xl shadow-md w-full h-64 md:h-80 object-cover"
+                  className="rounded-3xl shadow-md w-full h-64 md:h-80 object-cover"
                 />
               </motion.div>
             </div>
@@ -212,7 +212,7 @@ const HomePage: React.FC = () => {
                 <img
                   src={sec2}
                   alt="Herramientas de IA"
-                  className="rounded-xl shadow-md w-full h-64 md:h-80 object-cover"
+                  className="rounded-3xl shadow-md w-full h-64 md:h-80 object-cover"
                 />
               </motion.div>
               <motion.div
@@ -227,7 +227,7 @@ const HomePage: React.FC = () => {
                   Conoce las herramientas de IA que están transformando el mundo, desde generadores de texto e imágenes hasta agentes inteligentes que hacen el trabajo por ti.
                   Descubre cómo te pueden ayudar en tus proyectos personales o tu entorno laboral.
                 </p>
-                <Link to="/tools" className="inline-flex items-center text-primary-600 font-medium hover:text-primary-700">
+                <Link to="/tools" className="inline-flex items-center text-primary-600 font-medium hover:text-primary-700 transition-transform duration-300 hover:translate-x-2">
                   Ver herramientas <ArrowRight size={16} className="ml-1" />
                 </Link>
               </motion.div>
@@ -248,7 +248,7 @@ const HomePage: React.FC = () => {
                   tareas específicas. Desde crear tu primer chatbot hasta generar imágenes impresionantes
                   con IA, nuestras guías te llevarán de la mano.
                 </p>
-                <Link to="/guides" className="inline-flex items-center text-primary-600 font-medium hover:text-primary-700">
+                <Link to="/guides" className="inline-flex items-center text-primary-600 font-medium hover:text-primary-700 transition-transform duration-300 hover:translate-x-2">
                   Explorar guías <ArrowRight size={16} className="ml-1" />
                 </Link>
               </motion.div>
@@ -262,7 +262,7 @@ const HomePage: React.FC = () => {
                 <img
                   src={sec3}
                   alt="Guías paso a paso"
-                  className="rounded-xl shadow-md w-full h-64 md:h-80 object-cover"
+                  className="rounded-3xl shadow-md w-full h-64 md:h-80 object-cover"
                 />
               </motion.div>
             </div>
@@ -270,33 +270,33 @@ const HomePage: React.FC = () => {
             {/* Section 4: Tests */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="order-1"
+              >
+                <img
+                  src={sec4}
+                  alt="Tests de IA"
+                  className="rounded-3xl shadow-md w-full h-64 md:h-80 object-cover"
+                />
+              </motion.div>
+              <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="order-2 lg:order-1"
+                className="order-2"
               >
                 <h3 className="text-2xl md:text-3xl font-bold mb-6">Evalúa tus conocimientos</h3>
                 <p className="text-gray-700 mb-6 text-justify">
                   Pon a prueba lo que has aprendido sobre inteligencia artificial con nuestros tests interactivos.
                   Descubre tus fortalezas y áreas de mejora para seguir avanzando en tu aprendizaje.
                 </p>
-                <Link to="/assessment" className="inline-flex items-center text-primary-600 font-medium hover:text-primary-700">
-                  Ir a tests <ArrowRight size={16} className="ml-1" />
+                <Link to="/assessment" className="inline-flex items-center text-primary-600 font-medium hover:text-primary-700 transition-transform duration-300 hover:translate-x-2">
+                  Realizar tests <ArrowRight size={16} className="ml-1" />
                 </Link>
-              </motion.div>
-                <img
-                  src={sec4}
-                  alt="Tests de IA"
-                  className="rounded-xl shadow-md w-full h-64 md:h-80 object-cover"
-                />
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className="order-1 lg:order-2"
-              >
               </motion.div>
             </div>
 
@@ -314,8 +314,8 @@ const HomePage: React.FC = () => {
                   Únete a nuestra comunidad, comparte tus dudas, experiencias y aprende junto a otros entusiastas de la inteligencia artificial.
                   El foro es el lugar ideal para crecer y colaborar.
                 </p>
-                <Link to="/guides" className="inline-flex items-center text-primary-600 font-medium hover:text-primary-700">
-                  Explorar guías <ArrowRight size={16} className="ml-1" />
+                <Link to="/guides" className="inline-flex items-center text-primary-600 font-medium hover:text-primary-700 transition-transform duration-300 hover:translate-x-2">
+                  Ir al foro <ArrowRight size={16} className="ml-1" />
                 </Link>
               </motion.div>
               <motion.div
@@ -328,7 +328,7 @@ const HomePage: React.FC = () => {
                 <img
                   src={sec5}
                   alt="Foro de la comunidad"
-                  className="rounded-xl shadow-md w-full h-64 md:h-80 object-cover"
+                  className="rounded-3xl shadow-md w-full h-64 md:h-80 object-cover"
                 />
               </motion.div>
             </div> 
@@ -337,13 +337,13 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 text-white relative overflow-hidden">
+      <section className="py-10 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-primary-600 via-secondary-600 to-primary-600 animated-gradient"></div>
         
         {/* Content */}
         <div className="container-custom text-center relative z-10">
           <div className="max-w-3xl mx-auto">
-            <Award size={48} className="mx-auto mb-6 text-white/90" />
+            <Award size={48} className="mx-auto mb-6 text-white/90 transition animate-bounce" />
             <p className="text-xl text-white/80 mb-8">
               Regístrate gratis y obtén acceso a todos nuestros recursos educativos, guías y evaluaciones para medir tu progreso
             </p>

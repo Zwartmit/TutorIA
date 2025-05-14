@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, MessageSquare, Image, Code, ArrowRight, FileText, Megaphone, LineChart } from 'lucide-react';
+import { LuBoxes } from 'react-icons/lu';
 
 interface Tool {
   id: string;
@@ -105,45 +106,64 @@ const AIToolsPage: React.FC = () => {
   }, []);
   
   return (
-    <div className="pt-20">
-      {/* Hero Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-primary-50 via-white to-accent-50">
-        <div className="container-custom">
-          <div className="max-w-3xl mx-auto text-center">
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
-            >
-              Herramientas de{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-accent-600">
-                Inteligencia Artificial
-              </span>
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-xl text-gray-700 mb-8"
-            >
-              Descubre las herramientas de IA más populares y comienza a utilizarlas en tus proyectos.
-            </motion.p>
+    <div className="min-h-screen">
+      <div className="w-full bg-gradient-to-b mt-20 from-[#F9FAFB] via-gray to-gray-300">
+        <section className="min-h-full pt-12">
+          <div className="container-custom">
+            <div className="max-w-3xl mx-auto text-center">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="flex flex-col items-center mb-6"
+              >
+                <LuBoxes size={42} className="text-primary-600 mb-2 transition animate-bounce" />
+                <h1 className="text-3xl md:text-4xl font-bold text-gray-900">
+                  Herramientas de{' '}
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-secondary-600 font-bold">
+                    Inteligencia Artificial
+                  </span>
+                </h1>
+              </motion.div>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+              >
+                Descubre las IA más populares, para qué sirven y comienza a utilizarlas en tus proyectos
+              </motion.p>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
 
       {/* Tools Section */}
-      <section className="section bg-white">
+      <section className="section bg-gradient-to-t from-[#F9FAFB] via-gray to-gray-300 pb-16 pt-10">
         <div className="container-custom">
           {/* Search and Filter */}
           <div className="max-w-5xl mx-auto mb-12">
-            <div className="flex flex-col md:flex-row gap-6 items-center justify-between">
-              <div className="relative w-full md:w-96">
+            <div className="flex flex-col gap-6 items-center">
+              <div className="flex flex-wrap gap-2 w-full md:w-auto justify-center">
+                {categories.map(category => (
+                  <button
+                    key={category}
+                    className={`h-10 min-w-[100px] px-4 py-2 flex items-center justify-center rounded-full text-sm font-medium transition-colors ${
+                      selectedCategory === category
+                        ? 'bg-primary-600 text-white'
+                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                    }`}
+                    style={{ boxSizing: 'border-box' }}
+                    onClick={() => setSelectedCategory(category)}
+                  >
+                    {category}
+                  </button>
+                ))}
+              </div>
+              {/* <div className="relative w-full md:w-96">
                 <input
                   type="text"
                   placeholder="Buscar herramientas..."
-                  className="w-full pl-4 pr-10 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                  className="w-full pl-4 pr-10 py-3 border border-gray-300 rounded-3xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                 />
@@ -153,22 +173,7 @@ const AIToolsPage: React.FC = () => {
                     <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                   </svg>
                 </span>
-              </div>
-              <div className="flex flex-wrap gap-2 w-full md:w-auto justify-center">
-                {categories.map(category => (
-                  <button
-                    key={category}
-                    className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                      selectedCategory === category
-                        ? 'bg-primary-600 text-white'
-                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                    }`}
-                    onClick={() => setSelectedCategory(category)}
-                  >
-                    {category}
-                  </button>
-                ))}
-              </div>
+              </div> */}
             </div>
           </div>
 
@@ -233,95 +238,89 @@ const AIToolsPage: React.FC = () => {
           )}
         </div>
       </section>
-
-      {/* How to Choose Section */}
-      <section className="section bg-gray-50">
+      <section className="section bg-gradient-to-b from-[#F9FAFB] via-gray to-gray-300 pt-0 pb-0">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="section-title">Cómo elegir la herramienta adecuada</h2>
-              <p className="section-subtitle mx-auto">
+            <div className="text-center">
+              <h2 className="section-title">
+                ¿Cómo elegir la{' '}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-secondary-600 font-bold">
+                  IA
+                </span>{' '}
+                adecuada?
+              </h2>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+              >
                 Con tantas opciones disponibles, puede ser difícil saber por dónde empezar.
                 Aquí hay algunos consejos para ayudarte a elegir la herramienta de IA más 
-                adecuada para tus necesidades.
-              </p>
+                adecuada para tus necesidades
+              </motion.p>
             </div>
 
-            <div className="bg-white rounded-xl shadow-md overflow-hidden">
-              <div className="p-8">
-                <div className="space-y-6">
-                  <div className="flex items-start">
-                    <div className="bg-primary-100 rounded-full p-2 mr-4 mt-1">
-                      <span className="text-primary-600 font-bold">1</span>
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold mb-2">Identifica tu necesidad específica</h3>
-                      <p className="text-gray-700">
-                        Antes de elegir una herramienta, define claramente qué tarea quieres realizar.
-                        ¿Necesitas generar texto, crear imágenes, analizar datos o automatizar tareas?
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start">
-                    <div className="bg-primary-100 rounded-full p-2 mr-4 mt-1">
-                      <span className="text-primary-600 font-bold">2</span>
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold mb-2">Considera el nivel de especialización</h3>
-                      <p className="text-gray-700">
-                        Algunas herramientas son de propósito general (como ChatGPT), mientras que otras
-                        están especializadas en tareas específicas (como Midjourney para imágenes).
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start">
-                    <div className="bg-primary-100 rounded-full p-2 mr-4 mt-1">
-                      <span className="text-primary-600 font-bold">3</span>
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold mb-2">Evalúa la facilidad de uso</h3>
-                      <p className="text-gray-700">
-                        ¿Necesitas una solución simple con interfaz amigable o estás dispuesto a 
-                        aprender a utilizar herramientas más técnicas para obtener resultados más personalizados?
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start">
-                    <div className="bg-primary-100 rounded-full p-2 mr-4 mt-1">
-                      <span className="text-primary-600 font-bold">4</span>
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold mb-2">Considera el costo</h3>
-                      <p className="text-gray-700">
-                        Muchas herramientas ofrecen versiones gratuitas con limitaciones y planes de pago
-                        para acceso completo. Evalúa tu presupuesto y necesidades antes de decidir.
-                      </p>
-                    </div>
-                  </div>
+            <div className="p-8 flex flex-col items-center">
+              <div className="flex flex-col gap-8 w-full max-w-xl mx-auto">
+                {/* Paso 1 */}
+                <div className="flex flex-col items-center text-center bg-gray-50 rounded-3xl shadow p-6">
+                  <span className="bg-primary-600 text-white rounded-full px-3 py-0.5 text-sm font-bold mr-2 mb-2">1</span>
+                  <h3 className="text-xl font-semibold mb-2 flex items-center justify-center">
+                    Identifica tu necesidad específica
+                  </h3>
+                  <p className="text-gray-700">
+                    Antes de elegir una herramienta, define claramente qué tarea quieres realizar.
+                    ¿Necesitas generar texto, crear imágenes, analizar datos o automatizar tareas?
+                  </p>
+                </div>
+                {/* Paso 2 */}
+                <div className="flex flex-col items-center text-center bg-gray-50 rounded-3xl shadow p-6">
+                  <span className="bg-primary-600 text-white rounded-full px-3 py-0.5 text-sm font-bold mr-2 mb-2">2</span>
+                  <h3 className="text-xl font-semibold mb-2 flex items-center justify-center">
+                    Considera el nivel de especialización
+                  </h3>
+                  <p className="text-gray-700">
+                    Algunas herramientas son de propósito general (como ChatGPT), mientras que otras
+                    están especializadas en tareas específicas (como Midjourney para imágenes, Whisper para transcripción de audio, HeyGen para crear videos con avatares, etc)
+                  </p>
+                </div>
+                {/* Paso 3 */}
+                <div className="flex flex-col items-center text-center bg-gray-50 rounded-3xl shadow p-6">
+                  <span className="bg-primary-600 text-white rounded-full px-3 py-0.5 text-sm font-bold mr-2 mb-2">3</span>
+                  <h3 className="text-xl font-semibold mb-2 flex items-center justify-center">
+                    Evalúa la facilidad de uso
+                  </h3>
+                  <p className="text-gray-700">
+                    ¿Necesitas una solución simple con interfaz amigable o estás dispuesto a
+                    aprender a utilizar herramientas más técnicas para obtener resultados más personalizados?
+                  </p>
+                </div>
+                {/* Paso 4 */}
+                <div className="flex flex-col items-center text-center bg-gray-50 rounded-3xl shadow p-6">
+                  <span className="bg-primary-600 text-white rounded-full px-3 py-0.5 text-sm font-bold mr-2 mb-2">4</span>
+                  <h3 className="text-xl font-semibold mb-2 flex items-center justify-center">
+                    Considera el costo
+                  </h3>
+                  <p className="text-gray-700">
+                    Muchas herramientas ofrecen versiones gratuitas con limitaciones y planes de pago
+                    para acceso completo. Evalúa tu presupuesto y necesidades antes de decidir.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-
-      {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-primary-600 to-accent-600 text-white">
+      
+      <section className="py-10 bg-gradient-to-t from-[#F9FAFB] via-gray to-gray-300 text-black mt-0">
         <div className="container-custom text-center">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              ¿Listo para poner en práctica estas herramientas?
+              ¿Qué sigue?... <br />¡Aprender a usar estas herramientas!
             </h2>
-            <p className="text-xl text-white/80 mb-8">
-              Explora nuestras guías paso a paso para aprender a utilizar estas 
-              herramientas de IA en proyectos reales.
-            </p>
             <a
               href="/guides"
-              className="btn bg-white text-primary-700 hover:bg-gray-100 focus:ring-white inline-flex items-center"
+              className="btn bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-600 inline-flex items-center transition-transform duration-300 hover:translate-x-2"
             >
               Ver guías paso a paso <ArrowRight size={16} className="ml-2" />
             </a>

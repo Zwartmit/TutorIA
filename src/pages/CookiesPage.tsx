@@ -97,7 +97,7 @@ const CookiesPage: React.FC = () => {
               <li>Configurar tu navegador para que rechace cookies</li>
             </ul>
 
-            <div className="bg-gray-50 p-6 rounded-lg my-8">
+            <div className="bg-gray-50 p-6 rounded-3xl my-8">
               <h3 className="text-lg font-semibold mb-4">
                 Cómo gestionar cookies en diferentes navegadores
               </h3>

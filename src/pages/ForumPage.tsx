@@ -3,8 +3,9 @@ import { motion } from 'framer-motion';
 import { useUser } from '@clerk/clerk-react';
 import { formatDistanceToNow } from 'date-fns';
 import { es } from 'date-fns/locale';
-import { MessageSquare, Heart, Send, Plus, ThumbsUp, Edit, Trash2 } from 'lucide-react';
+import { MessageSquare, Heart, Send, Plus, Trash2 } from 'lucide-react';
 import { supabase } from '../lib/supabase';
+import { LiaUsersSolid } from 'react-icons/lia';
 
 interface Post {
   id: string;
@@ -401,27 +402,22 @@ const ForumPage: React.FC = () => {
     }, []);
       
   return (
-    <div className="pt-20">
+    <div className="pt-16">
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-br from-primary-50 via-white to-secondary-50">
+      <section className="w-full bg-gradient-to-b mt-16 from-[#F9FAFB] via-gray to-gray-300">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
-            >
-              Foro de la comunidad
-            </motion.h1>
+            
+            <div className="flex flex-col items-center">
+              <LiaUsersSolid size={42} className="text-primary-600 mb-2 transition animate-bounce" />
+              <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Foro de la comunidad</h1>
+            </div>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-xl text-gray-700 mb-8"
             >
-              Comparte tus experiencias, proyectos y opiniones sobre inteligencia artificial
-              con otros miembros de la comunidad.
+              Comparte tus experiencias, proyectos y opiniones sobre inteligencia artificial con otros miembros de la comunidad
             </motion.p>
             {isSignedIn && (
               <motion.button
@@ -429,7 +425,7 @@ const ForumPage: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
                 onClick={() => setIsCreatingPost(true)}
-                className="btn-primary flex items-center mx-auto"
+                className="btn-primary flex items-center mx-auto mt-6"
               >
                 <Plus size={20} className="mr-2" />
                 Crear nueva publicación
@@ -440,11 +436,11 @@ const ForumPage: React.FC = () => {
       </section>
 
       {/* Forum Content */}
-      <section className="py-12 bg-gray-50">
+      <section className="py-12 bg-gradient-to-t from-[#F9FAFB] via-gray to-gray-300">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
             {error && (
-              <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg mb-6">
+              <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-3xl mb-6">
                 {error}
               </div>
             )}
@@ -461,7 +457,7 @@ const ForumPage: React.FC = () => {
                     <h2 className="text-2xl font-bold mb-6">Crear nueva publicación</h2>
                     <form onSubmit={handleCreatePost}>
                       <div className="mb-4">
-                        <label htmlFor="title" className="block text-sm font-medium text-gray-700 mb-1">
+                        <label htmlFor="title" className="block text-sm font-medium text-gray-700">
                           Título
                         </label>
                         <input
@@ -469,19 +465,19 @@ const ForumPage: React.FC = () => {
                           id="title"
                           value={newPost.title}
                           onChange={(e) => setNewPost({ ...newPost, title: e.target.value })}
-                          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
+                          className="w-full px-3 py-2 border border-gray-300 rounded-3xl focus:outline-none focus:ring-2 focus:ring-primary-500"
                           required
                         />
                       </div>
                       <div className="mb-6">
-                        <label htmlFor="content" className="block text-sm font-medium text-gray-700 mb-1">
+                        <label htmlFor="content" className="block text-sm font-medium text-gray-700">
                           Contenido
                         </label>
                         <textarea
                           id="content"
                           value={newPost.content}
                           onChange={(e) => setNewPost({ ...newPost, content: e.target.value })}
-                          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 h-32"
+                          className="w-full px-3 py-2 border border-gray-300 rounded-3xl focus:outline-none focus:ring-2 focus:ring-primary-500 h-32"
                           required
                         />
                       </div>
@@ -684,7 +680,7 @@ const ForumPage: React.FC = () => {
                               </div>
                             )}
                             <div className="flex-grow">
-                              <div className="bg-gray-50 rounded-lg p-3">
+                              <div className="bg-gray-50 rounded-3xl p-3">
                                 <div className="flex items-center justify-between mb-1">
                                   <h4 className="font-medium text-gray-900">
                                     {comment.user?.firstName} {comment.user?.lastName}
@@ -722,7 +718,7 @@ const ForumPage: React.FC = () => {
                           value={newComment}
                           onChange={(e) => setNewComment(e.target.value)}
                           placeholder="Escribe un comentario..."
-                          className="flex-grow px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
+                          className="flex-grow px-4 py-2 border border-gray-300 rounded-3xl focus:outline-none focus:ring-2 focus:ring-primary-500"
                           required
                         />
                         <button

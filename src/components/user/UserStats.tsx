@@ -40,7 +40,7 @@ const UserStats: React.FC<UserStatsProps> = ({ isOpen, onClose }) => {
           </div>
 
           <div className="space-y-6">
-            <div className="bg-primary-50 p-4 rounded-lg">
+            <div className="bg-primary-50 p-4 rounded-3xl">
               <div className="flex items-center justify-between mb-2">
                 <div className="flex items-center">
                   <BookOpen size={20} className="text-primary-600 mr-2" />
@@ -60,7 +60,7 @@ const UserStats: React.FC<UserStatsProps> = ({ isOpen, onClose }) => {
               </div>
             </div>
 
-            <div className="bg-secondary-50 p-4 rounded-lg">
+            <div className="bg-secondary-50 p-4 rounded-3xl">
               <div className="flex items-center justify-between mb-2">
                 <div className="flex items-center">
                   <Award size={20} className="text-secondary-600 mr-2" />
@@ -80,7 +80,7 @@ const UserStats: React.FC<UserStatsProps> = ({ isOpen, onClose }) => {
               </div>
             </div>
 
-            <div className="bg-accent-50 p-4 rounded-lg">
+            <div className="bg-accent-50 p-4 rounded-3xl">
               <div className="flex items-center justify-between mb-2">
                 <div className="flex items-center">
                   <CheckCircle size={20} className="text-accent-600 mr-2" />

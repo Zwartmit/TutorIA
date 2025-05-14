@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { BookOpen, ExternalLink, ChevronRight, Search, Check, MessageSquare, Image, ArrowRight, Brain, Code, LineChart } from 'lucide-react';
+import { BookOpen, ExternalLink, ChevronRight, Search, Check, MessageSquare, Image, ArrowRight, Brain } from 'lucide-react';
+import { IoLibrary } from 'react-icons/io5';
 
 interface Guide {
   id: string;
@@ -240,7 +241,7 @@ const GuidesPage: React.FC = () => {
         
         <div className="min-h-screen">
           {/* Guide Header */}
-          <section className="py-16 bg-gradient-to-br from-primary-50 via-white to-primary-50">
+          <section className="w-full bg-gradient-to-b from-[#F9FAFB] via-gray to-gray-300">
             <div className="container-custom">
               <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
                 <button 
@@ -267,14 +268,14 @@ const GuidesPage: React.FC = () => {
                 <p className="text-xl text-gray-700 mb-8">{selectedGuide.description}</p>
 
                 {/* Progress Bar */}
-                <div className="w-full bg-gray-200 rounded-full h-2.5 mb-6">
+                <div className="w-full bg-gray-100 rounded-full h-2.5 mb-6">
                   <div 
                     className="bg-primary-600 h-2.5 rounded-full transition-all duration-300" 
                     style={{ width: `${((currentStep + 1) / selectedGuide.steps.length) * 100}%` }}
                   ></div>
                 </div>
 
-                <div className="flex justify-between items-center text-sm text-gray-600 mb-8">
+                <div className="flex justify-between items-center text-sm text-gray-600">
                   <span>Paso {currentStep + 1} de {selectedGuide.steps.length}</span>
                   <span>{Math.round(((currentStep + 1) / selectedGuide.steps.length) * 100)}% completado</span>
                 </div>
@@ -283,7 +284,7 @@ const GuidesPage: React.FC = () => {
           </section>
 
           {/* Step Content */}
-          <section className="py-12 bg-white">
+          <section className="py-12 bg-gradient-to-t from-[#F9FAFB] via-gray to-gray-300">
             <div className="container-custom">
               <div className="max-w-3xl mx-auto">
                 <motion.div
@@ -338,7 +339,7 @@ const GuidesPage: React.FC = () => {
           </section>
 
           {/* Step Navigation */}
-          <section className="py-12 bg-gray-50">
+          <section className="py-12 bg-gradient-to-b from-[#F9FAFB] via-gray to-gray-300">
             <div className="container-custom">
               <div className="max-w-3xl mx-auto">
                 <h3 className="text-xl font-semibold mb-6">Todos los pasos</h3>
@@ -347,7 +348,7 @@ const GuidesPage: React.FC = () => {
                     <button
                       key={index}
                       onClick={() => setCurrentStep(index)}
-                      className={`flex items-center w-full p-4 rounded-lg transition-colors ${
+                      className={`flex items-center w-full p-4 rounded-3xl transition-colors ${
                         currentStep === index
                           ? 'bg-primary-100 border-l-4 border-primary-600'
                           : index < currentStep
@@ -388,32 +389,26 @@ const GuidesPage: React.FC = () => {
         
         <>
           {/* Hero Section */}
-          <section className="py-16 md:py-24 bg-gradient-to-br from-secondary-50 via-white to-primary-50">
+          <section className="w-full bg-gradient-to-b mt-12 from-[#F9FAFB] via-gray to-gray-300">
             <div className="container-custom">
               <div className="max-w-3xl mx-auto text-center">
-                <motion.h1
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5 }}
-                  className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
-                >
-                  Guías paso a paso
-                </motion.h1>
-                <motion.p
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.1 }}
-                  className="text-xl text-gray-700 mb-8"
-                >
-                  Aprende a utilizar herramientas de IA con nuestros tutoriales detallados,
-                  diseñados para principiantes.
-                </motion.p>
+                <div className="flex flex-col items-center">
+                    <IoLibrary size={42} className="text-primary-600 mb-2 transition animate-bounce" />
+                    <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Guías</h1>
+                  </div>
+                  <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.1 }}
+                  >
+                    Aprende a utilizar herramientas IA con nuestras guías paso a paso
+                  </motion.p>
               </div>
             </div>
           </section>
 
           {/* Filters Section */}
-          <section className="py-8 bg-white border-b border-gray-200">
+          <section className="py-8 bg-gradient-to-t from-[#F9FAFB] via-gray to-gray-300">
             <div className="container-custom">
               <div className="max-w-5xl mx-auto">
                 {/* Search Bar */}
@@ -421,7 +416,7 @@ const GuidesPage: React.FC = () => {
                   <input
                     type="text"
                     placeholder="Buscar guías..."
-                    className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                    className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-3xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                   />
@@ -567,7 +562,7 @@ const GuidesPage: React.FC = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                   <div className="bg-gray-50 rounded-xl p-6 flex gap-6 items-center">
-                    <div className="bg-primary-100 p-4 rounded-lg">
+                    <div className="bg-primary-100 p-4 rounded-3xl">
                       <MessageSquare size={32} className="text-primary-600" />
                     </div>
                     <div>
@@ -587,7 +582,7 @@ const GuidesPage: React.FC = () => {
                   </div>
 
                   <div className="bg-gray-50 rounded-xl p-6 flex gap-6 items-center">
-                    <div className="bg-secondary-100 p-4 rounded-lg">
+                    <div className="bg-secondary-100 p-4 rounded-3xl">
                       <Image size={32} className="text-secondary-600" />
                     </div>
                     <div>
@@ -607,7 +602,7 @@ const GuidesPage: React.FC = () => {
                   </div>
 
                   <div className="bg-gray-50 rounded-xl p-6 flex gap-6 items-center">
-                    <div className="bg-accent-100 p-4 rounded-lg">
+                    <div className="bg-accent-100 p-4 rounded-3xl">
                       <Brain size={32} className="text-accent-600" />
                     </div>
                     <div>

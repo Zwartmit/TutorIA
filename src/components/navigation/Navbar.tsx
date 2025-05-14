@@ -119,7 +119,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                       }`
                     }
                   >
-                    Evaluación
+                    Tests
                   </NavLink>
                 </>
               )}

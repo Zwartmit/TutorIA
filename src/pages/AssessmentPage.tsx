@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Award, Check, X, RefreshCw, ChevronRight } from 'lucide-react';
+import { PiExam } from 'react-icons/pi';
 
 interface Question {
   id: number;
@@ -189,34 +190,28 @@ const AssessmentPage: React.FC = () => {
   }, []);
     
   return (
-    <div className="pt-20">
+    <div className="pt-8">
       {/* Hero Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-accent-50 via-white to-primary-50">
+      <section className="py-16 md:py-24 bg-gradient-to-b from-[#F9FAFB] via-gray to-gray-300">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
-            >
-              Evaluación de conocimientos
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-xl text-gray-700 mb-8"
-            >
-              Pon a prueba lo que has aprendido sobre inteligencia artificial con nuestra
-              evaluación interactiva.
-            </motion.p>
+            <div className="flex flex-col items-center">
+                <PiExam size={42} className="text-primary-600 mb-2 transition animate-bounce" />
+                <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Tests de conocimientos</h1>
+              </div>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+              >
+                Pon a prueba lo que has aprendido sobre inteligencia artificial con nuestras evaluaciones interactivas.
+              </motion.p>
           </div>
         </div>
       </section>
 
       {/* Quiz Section */}
-      <section className="section bg-white">
+      <section className="section bg-gradient-to-t from-[#F9FAFB] via-gray to-gray-300">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto">
             {quizState === QuizState.NOT_STARTED && (
@@ -236,7 +231,7 @@ const AssessmentPage: React.FC = () => {
                     </p>
                   </div>
 
-                  <div className="bg-gray-50 p-6 rounded-lg mb-8">
+                  <div className="bg-gray-50 p-6 rounded-3xl mb-8">
                     <h3 className="font-semibold text-lg mb-3">Antes de comenzar:</h3>
                     <ul className="space-y-2 text-gray-700">
                       <li className="flex items-start">
@@ -288,7 +283,7 @@ const AssessmentPage: React.FC = () => {
                       <button
                         key={index}
                         onClick={() => handleAnswerSelect(index)}
-                        className={`w-full text-left p-4 rounded-lg border transition-colors ${
+                        className={`w-full text-left p-4 rounded-3xl border transition-colors ${
                           selectedAnswers[currentQuestion] === index
                             ? showFeedback
                               ? isCorrectAnswer
@@ -322,7 +317,7 @@ const AssessmentPage: React.FC = () => {
                   </div>
 
                   {showFeedback && (
-                    <div className={`p-4 rounded-lg mb-6 ${
+                    <div className={`p-4 rounded-3xl mb-6 ${
                       isCorrectAnswer ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
                     }`}>
                       {isCorrectAnswer ? (
@@ -446,7 +441,7 @@ const AssessmentPage: React.FC = () => {
                     {questions.map((question, index) => (
                       <div
                         key={index}
-                        className={`p-4 rounded-lg border ${
+                        className={`p-4 rounded-3xl border ${
                           selectedAnswers[index] === question.correctAnswer
                             ? 'border-green-200 bg-green-50'
                             : 'border-red-200 bg-red-50'
