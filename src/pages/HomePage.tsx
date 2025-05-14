@@ -8,6 +8,7 @@ import sec2 from '../assets/sec2.png';
 import sec3 from '../assets/sec3.png';
 import sec4 from '../assets/sec4.png';
 import sec5 from '../assets/sec5.png';
+import bienvenida from '../assets/Bienvenida.mp4';
 
 const HomePage: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
@@ -19,7 +20,7 @@ const HomePage: React.FC = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative pt-24 pb-16 md:pt-32 md:pb-14 bg-gradient-to-t from-secondary-50 via-gray to-gray-300 overflow-hidden">
+      <section className="relative pt-24 pb-16 md:pt-32 md:pb-14 bg-gradient-to-t from-[#F9FAFB] via-gray to-gray-300 overflow-hidden">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -54,17 +55,18 @@ const HomePage: React.FC = () => {
               className="relative flex flex-col items-center"
             >
               <video src={hero} autoPlay loop muted className="w-full rounded-full"></video>
-              <button
+              {/* <button
                 className="absolute bottom-0.5 -translate-x-1/2 px-3 py-2 bg-primary-600 text-white rounded-full shadow transition animate-bounce hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-opacity-50"
                 onClick={() => setShowModal(true)}
                 style={{ zIndex: 2 }}
               >
                 Pulsa aquí
-              </button>
+              </button> */}
               <div className="absolute inset-0 bg-gradient-to-tr from-primary-900/20 to-transparent rounded-full" />
             </motion.div>
           </div>
         </div>
+        
         {/* Modal */}
         {showModal && (
           <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
@@ -77,10 +79,9 @@ const HomePage: React.FC = () => {
                 ×
               </button>
               <video
-                src="https://www.w3schools.com/html/mov_bbb.mp4"
+                src={bienvenida}
                 autoPlay
                 loop
-                muted
                 controls
                 className="w-full rounded-lg"
               ></video>
@@ -90,7 +91,7 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="section bg-gradient-to-b from-secondary-50 via-gray to-gray-300">
+      <section className="section bg-gradient-to-b from-[#F9FAFB] via-gray to-gray-300">
         <div className="container-custom">
           <div className="text-center max-w-3xl mb-20 mx-auto">
             <h2 className="section-title">Lo que aprenderás...</h2>
@@ -148,7 +149,7 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* Featured Sections Preview */}
-      <section className="section bg-gradient-to-t from-secondary-50 via-gray to-gray-300 ">
+      <section className="section bg-gradient-to-t from-[#F9FAFB] via-gray to-gray-300 ">
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="section-title">Explora nuestras secciones...</h2>
