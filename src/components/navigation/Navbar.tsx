@@ -3,7 +3,8 @@ import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { useUser, useClerk } from '@clerk/clerk-react';
 import { motion } from 'framer-motion';
 import { Menu, X, LogIn, LogOut, UserCircle, BarChart2, Settings } from 'lucide-react';
-import UserStats from '../user/UserStats';
+import Swal from 'sweetalert2';
+// import UserStats from '../user/UserStats';
 import icon from '../../../public/icon.png';
 
 interface NavbarProps {
@@ -18,9 +19,22 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
   const navigate = useNavigate();
 
   const handleSignOut = async () => {
+    const result = await Swal.fire({
+      text: '¿Deseas cerrar sesión?',
+      showCancelButton: true,
+      confirmButtonText: 'Sí, cerrar sesión',
+      cancelButtonText: 'No, cancelar',
+      customClass: {
+        confirmButton: 'btn-primary text-sm',
+        cancelButton: 'btn-red text-sm',
+        popup: 'rounded-3xl p-6',
+      },
+    });
+    if (!result.isConfirmed) return;
     await signOut();
     navigate('/');
   };
+
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -83,18 +97,6 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
               >
                 Herramientas
               </NavLink>
-              <NavLink
-                to="/forum"
-                className={({ isActive }) =>
-                  `font-medium transition-colors ${
-                    isActive
-                      ? 'text-primary-600'
-                      : 'text-gray-700 hover:text-primary-600'
-                  }`
-                }
-              >
-                Foro
-              </NavLink>
               {isSignedIn && (
                 <>
                   <NavLink
@@ -123,18 +125,30 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                   </NavLink>
                 </>
               )}
+              {/* <NavLink
+                to="/forum"
+                className={({ isActive }) =>
+                  `font-medium transition-colors ${
+                    isActive
+                      ? 'text-primary-600'
+                  : 'text-gray-700 hover:text-primary-600'
+                  }`
+                }
+              >
+                Foro
+              </NavLink> */}
             </nav>
 
             <div className="hidden md:flex items-center space-x-4">
               {isSignedIn ? (
                 <div className="flex items-center space-x-4">
-                  <button
+                  {/* <button
                     onClick={() => setIsStatsOpen(true)}
                     className="text-gray-700 hover:text-primary-600 transition-colors"
                     title="Ver estadísticas"
                   >
                     <BarChart2 size={20} />
-                  </button>
+                  </button> */}
                   <button
                     onClick={handleEditProfile}
                     className="text-gray-700 hover:text-primary-600 transition-colors"
@@ -232,7 +246,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
             >
               Herramientas
             </NavLink>
-            <NavLink
+            {/* <NavLink
               to="/forum"
               className={({ isActive }) =>
                 `block py-2 font-medium ${
@@ -242,7 +256,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
               onClick={() => setIsMenuOpen(false)}
             >
               Foro
-            </NavLink>
+            </NavLink> */}
             {isSignedIn && (
               <>
                 <NavLink
@@ -288,7 +302,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                     </span>
                   </div>
                   <div className="flex space-x-4">
-                    <button
+                    {/* <button
                       onClick={() => {
                         setIsStatsOpen(true);
                         setIsMenuOpen(false);
@@ -297,7 +311,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                     >
                       <BarChart2 size={18} />
                       <span>Estadísticas</span>
-                    </button>
+                    </button> */}
                     <button
                       onClick={() => {
                         handleEditProfile();
@@ -341,7 +355,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
         </motion.div>
       </header>
 
-      <UserStats isOpen={isStatsOpen} onClose={() => setIsStatsOpen(false)} />
+      {/* <UserStats isOpen={isStatsOpen} onClose={() => setIsStatsOpen(false)} /> */}
     </>
   );
 };

@@ -62,6 +62,10 @@
     @apply btn bg-secondary-600 text-white hover:bg-secondary-700 focus:ring-secondary-500;
   }
 
+  .btn-red {
+    @apply btn bg-red-600 text-white hover:bg-red-700 focus:ring-red-500;
+  }
+
   .btn-accent {
     @apply btn bg-accent-600 text-white hover:bg-accent-700 focus:ring-accent-500;
   }

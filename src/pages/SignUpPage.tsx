@@ -2,7 +2,6 @@ import React from 'react';
 import { Navigate } from 'react-router-dom';
 import { SignUp, useUser } from '@clerk/clerk-react';
 import { motion } from 'framer-motion';
-import icon from '../../public/icon.png';
 
 const SignUpPage: React.FC = () => {
   const { isSignedIn } = useUser();
@@ -12,16 +11,7 @@ const SignUpPage: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary-50 via-white to-secondary-50 flex flex-col">
-      <div className="container-custom py-6">
-        <div className="flex justify-center">
-          <a href="/" className="flex items-center space-x-2">
-            <img src={icon} alt="" style={{ width: '45px', height: 'auto' }}/>
-            <span className="text-xl font-bold text-gray-900">TutorIA</span>
-          </a>
-        </div>
-      </div>
-      
+    <div className="min-h-screen bg-gradient-to-br from-primary-50 via-white to-secondary-50 flex flex-col">      
       <div className="flex-grow flex items-center justify-center py-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

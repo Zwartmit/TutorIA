@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BrainCircuit, Bot, ListFilter, Languages, ShieldPlus, BookOpen } from 'lucide-react';
+import { BrainCircuit, Bot, ListFilter, Languages, ShieldPlus, BookOpen, ArrowRight } from 'lucide-react';
 import { GiArtificialIntelligence, GiBrainstorm, GiTechnoHeart } from 'react-icons/gi';
 import { MdWifi, MdWifi2Bar, MdClose } from 'react-icons/md';
 import { RiGlobalFill } from 'react-icons/ri';
@@ -341,51 +341,13 @@ const AIExplanationPage: React.FC = () => {
                     interconectadas que procesan la información de forma similar a cómo lo hacen las neuronas biológicas.
                   </p>
 
-                  <div className="bg-gray-50 p-6 rounded-3xl my-8 mx-auto w-1/2">
-                    {/* <h4 className="font-semibold text-lg mb-4">Componentes de una red neuronal:</h4>
-                    <ul className="space-y-3">
-                      <li className="flex items-start">
-                        <div className="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center mr-2 mt-0.5">
-                          <span className="text-primary-600 font-medium">1</span>
-                        </div>
-                        <div>
-                          <strong>Capa de entrada:</strong> Recibe los datos iniciales (como píxeles de una imagen).
-                        </div>
-                      </li>
-                      <li className="flex items-start">
-                        <div className="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center mr-2 mt-0.5">
-                          <span className="text-primary-600 font-medium">2</span>
-                        </div>
-                        <div>
-                          <strong>Capas ocultas:</strong> Procesan la información, detectando patrones cada vez más complejos.
-                        </div>
-                      </li>
-                      <li className="flex items-start">
-                        <div className="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center mr-2 mt-0.5">
-                          <span className="text-primary-600 font-medium">3</span>
-                        </div>
-                        <div>
-                          <strong>Capa de salida:</strong> Proporciona el resultado final (como "esto es un gato" en reconocimiento de imágenes).
-                        </div>
-                      </li>
-                      <li className="flex items-start">
-                        <div className="w-6 h-6 bg-secondary-100 rounded-full flex items-center justify-center mr-2 mt-0.5">
-                          <span className="text-secondary-600 font-medium">4</span>
-                        </div>
-                        <div>
-                          <strong>Pesos y sesgos:</strong> Valores que la red ajusta durante el entrenamiento para mejorar sus predicciones.
-                        </div>
-                      </li>
-                      <li className="flex items-start">
-                        <div className="w-6 h-6 bg-secondary-100 rounded-full flex items-center justify-center mr-2 mt-0.5">
-                          <span className="text-secondary-600 font-medium">5</span>
-                        </div>
-                        <div>
-                          <strong>Funciones de activación:</strong> Determinan cuándo se "activa" una neurona, introduciendo no-linealidades que permiten modelar relaciones complejas.
-                        </div>
-                      </li>
-                    </ul> */}
-                    <img src={redes} alt="Redes Neuronales" className="mx-auto" style={{ height: 'auto', width: '100%' }} />
+                  <div className="bg-gray-50 p-6 rounded-3xl my-8 mx-auto w-full sm:w-3/4 md:w-1/2">
+                    <img
+                      src={redes}
+                      alt="Redes Neuronales"
+                      className="mx-auto w-[80vw] max-w-md sm:w-10/12 md:w-4/5 lg:w-full rounded-3xl"
+                      style={{ height: 'auto' }}
+                    />
                   </div>
 
                   <p className='text-justify mt-10'>
@@ -398,6 +360,23 @@ const AIExplanationPage: React.FC = () => {
             </div>
           </section>
         </div>
+
+        {/* CTA Section */}
+        <section className="py-10 bg-gradient-to-t from-[#F9FAFB] via-gray to-gray-300">
+          <div className="container-custom text-center">
+            <div className="max-w-3xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                Ahora que sabes cómo funciona la IA, conoce las herramientas que puedes usar
+              </h2>
+              <a
+                href="/tools"
+                className="btn bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-600 inline-flex items-center transition-transform duration-300 hover:translate-x-2"
+              >
+                Ver herramientas<ArrowRight size={16} className="ml-2" />
+              </a>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   );

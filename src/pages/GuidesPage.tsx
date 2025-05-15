@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { BookOpen, ExternalLink, ChevronRight, Search, Check, MessageSquare, Image, ArrowRight, Brain } from 'lucide-react';
+import { BookOpen, ChevronRight, Search, Check, ArrowRight } from 'lucide-react';
 import { IoLibrary } from 'react-icons/io5';
 
 interface Guide {
@@ -518,7 +518,7 @@ const GuidesPage: React.FC = () => {
                         <p className="text-gray-600 mb-4 flex-grow">{guide.description}</p>
                         <div className="flex items-center justify-between">
                           <span className="text-sm text-gray-500">{guide.steps.length} pasos</span>
-                          <button className="inline-flex items-center text-primary-600 font-medium hover:text-primary-700">
+                          <button className="inline-flex items-center text-primary-600 font-medium hover:text-primary-700 transition-transform duration-300 hover:translate-x-2">
                             Ver guía <ArrowRight size={16} className="ml-1" />
                           </button>
                         </div>
@@ -549,99 +549,18 @@ const GuidesPage: React.FC = () => {
             </div>
           </section>
 
-          {/* Featured Tools */}
-          <section className="section bg-white">
-            <div className="container-custom">
-              <div className="max-w-5xl mx-auto">
-                <div className="text-center mb-12">
-                  <h2 className="section-title">Herramientas destacadas</h2>
-                  <p className="section-subtitle mx-auto">
-                    Descubre las herramientas de IA más populares que se utilizan en nuestras guías.
-                  </p>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                  <div className="bg-gray-50 rounded-xl p-6 flex gap-6 items-center">
-                    <div className="bg-primary-100 p-4 rounded-3xl">
-                      <MessageSquare size={32} className="text-primary-600" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold mb-2">ChatGPT</h3>
-                      <p className="text-gray-600 mb-3">
-                        El asistente de IA conversacional más popular para generar texto y responder preguntas.
-                      </p>
-                      <a
-                        href="https://chat.openai.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center text-primary-600 font-medium hover:text-primary-700"
-                      >
-                        Visitar sitio web <ExternalLink size={16} className="ml-1" />
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="bg-gray-50 rounded-xl p-6 flex gap-6 items-center">
-                    <div className="bg-secondary-100 p-4 rounded-3xl">
-                      <Image size={32} className="text-secondary-600" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold mb-2">Midjourney</h3>
-                      <p className="text-gray-600 mb-3">
-                        Generador de imágenes por IA para crear arte digital impresionante.
-                      </p>
-                      <a
-                        href="https://www.midjourney.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center text-primary-600 font-medium hover:text-primary-700"
-                      >
-                        Visitar sitio web <ExternalLink size={16} className="ml-1" />
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="bg-gray-50 rounded-xl p-6 flex gap-6 items-center">
-                    <div className="bg-accent-100 p-4 rounded-3xl">
-                      <Brain size={32} className="text-accent-600" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold mb-2">TensorFlow.js</h3>
-                      <p className="text-gray-600 mb-3">
-                        Biblioteca de machine learning para desarrollar modelos en el navegador.
-                      </p>
-                      <a
-                        href="https://www.tensorflow.org/js"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center text-primary-600 font-medium hover:text-primary-700"
-                      >
-                        Visitar sitio web <ExternalLink size={16} className="ml-1" />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
           {/* CTA Section */}
-          <section className="py-16 bg-gradient-to-r from-primary-600 to-secondary-700 text-white">
+          <section className="py-10 bg-gradient-to-b from-[#F9FAFB] via-gray to-gray-300">
             <div className="container-custom text-center">
               <div className="max-w-3xl mx-auto">
-                <BookOpen size={48} className="mx-auto mb-6 text-white/90" />
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">
                   ¿Quieres probar tus conocimientos?
                 </h2>
-                <p className="text-xl text-white/80 mb-8">
-                  Realiza nuestras evaluaciones interactivas para medir tu comprensión de los 
-                  conceptos de IA y obtén un certificado de finalización.
-                </p>
                 <a
                   href="/assessment"
-                  className="btn bg-white text-primary-700 hover:bg-gray-100 focus:ring-white"
+                  className="btn bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-600 inline-flex items-center transition-transform duration-300 hover:translate-x-2"
                 >
-                  Ir a evaluaciones
+                  Realizar tests<ArrowRight size={16} className="ml-2" />
                 </a>
               </div>
             </div>

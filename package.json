@@ -1,5 +1,5 @@
 {
-  "name": "tutoria-ai-education",
+  "name": "tutoria-education",
   "private": true,
   "version": "0.1.0",
   "type": "module",
@@ -10,22 +10,18 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@clerk/clerk-react": "^4.30.3",
-    "@supabase/supabase-js": "^2.39.3",
+    "@clerk/clerk-react": "^5.31.3",
+    "@clerk/localizations": "^3.15.3",
     "@tsconfig/vite-react": "^3.0.0",
     "@types/react-slick": "^0.23.13",
     "date-fns": "^3.3.1",
     "framer-motion": "^11.0.8",
-    "i18next": "^23.8.2",
-    "i18next-browser-languagedetector": "^7.2.0",
     "lucide-react": "^0.344.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-i18next": "^14.0.5",
     "react-icons": "^5.5.0",
     "react-router-dom": "^6.22.1",
-    "react-slick": "^0.30.3",
-    "slick-carousel": "^1.8.1"
+    "sweetalert2": "^11.21.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.1",
@@ -42,6 +38,6 @@
     "tailwindcss": "^3.4.1",
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.3.0",
-    "vite": "^5.4.2"
+    "vite": "^6.3.5"
   }
 }

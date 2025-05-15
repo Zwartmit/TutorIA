@@ -312,7 +312,8 @@ const AIToolsPage: React.FC = () => {
         </div>
       </section>
       
-      <section className="py-10 bg-gradient-to-t from-[#F9FAFB] via-gray to-gray-300 text-black mt-0">
+      {/* CTA Section */}
+      <section className="py-10 bg-gradient-to-t from-[#F9FAFB] via-gray to-gray-300">
         <div className="container-custom text-center">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
@@ -322,7 +323,7 @@ const AIToolsPage: React.FC = () => {
               href="/guides"
               className="btn bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-600 inline-flex items-center transition-transform duration-300 hover:translate-x-2"
             >
-              Ver guías paso a paso <ArrowRight size={16} className="ml-2" />
+              Explorar guías<ArrowRight size={16} className="ml-2" />
             </a>
           </div>
         </div>

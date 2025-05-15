@@ -8,7 +8,7 @@ import sec2 from '../assets/sec2.png';
 import sec3 from '../assets/sec3.png';
 import sec4 from '../assets/sec4.png';
 import sec5 from '../assets/sec5.png';
-import bienvenida from '../assets/Bienvenida.mp4';
+// import bienvenida from '../assets/Bienvenida.mp4';
 
 const HomePage: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
@@ -20,7 +20,7 @@ const HomePage: React.FC = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative pt-24 pb-16 md:pt-32 md:pb-14 bg-gradient-to-b from-[#F9FAFB] via-gray to-gray-300 overflow-hidden">
+      <section className="relative pt-24 pb-0 md:pt-32 md:pb-0 bg-gradient-to-b from-[#F9FAFB] via-gray to-gray-300 overflow-hidden">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -68,7 +68,7 @@ const HomePage: React.FC = () => {
         </div>
         
         {/* Modal */}
-        {showModal && (
+        {/* {showModal && (
           <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
             <div className="bg-white rounded-xl p-6 shadow-lg max-w-lg w-full relative">
               <button
@@ -87,13 +87,13 @@ const HomePage: React.FC = () => {
               ></video>
             </div>
           </div>
-        )}
+        )} */}
       </section>
 
       {/* Benefits Section */}
       <section className="section bg-gradient-to-t from-[#F9FAFB] via-gray to-gray-300">
         <div className="container-custom">
-          <div className="text-center max-w-3xl mb-20 mx-auto">
+          <div className="text-center max-w-3xl mb-10 mx-auto">
             <h2 className="section-title">Lo que aprenderás...</h2>
             <p className="section-subtitle">
               Nuestra plataforma está diseñada para guiarte paso a paso
@@ -149,9 +149,9 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* Featured Sections Preview */}
-      <section className="section bg-gradient-to-b from-[#F9FAFB] via-gray to-gray-300 ">
+      <section className="section bg-gradient-to-b from-[#F9FAFB] via-gray to-gray-300 pt-0">
         <div className="container-custom">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <h2 className="section-title">Explora nuestras secciones...</h2>
             <p className="section-subtitle mx-auto">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-secondary-600 font-bold">
@@ -301,7 +301,7 @@ const HomePage: React.FC = () => {
             </div>
 
             {/* Section 5: Forum */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -314,7 +314,7 @@ const HomePage: React.FC = () => {
                   Únete a nuestra comunidad, comparte tus dudas, experiencias y aprende junto a otros entusiastas de la inteligencia artificial.
                   El foro es el lugar ideal para crecer y colaborar.
                 </p>
-                <Link to="/guides" className="inline-flex items-center text-primary-600 font-medium hover:text-primary-700 transition-transform duration-300 hover:translate-x-2">
+                <Link to="/forum" className="inline-flex items-center text-primary-600 font-medium hover:text-primary-700 transition-transform duration-300 hover:translate-x-2">
                   Ir al foro <ArrowRight size={16} className="ml-1" />
                 </Link>
               </motion.div>
@@ -331,7 +331,7 @@ const HomePage: React.FC = () => {
                   className="rounded-3xl shadow-md w-full h-64 md:h-80 object-cover"
                 />
               </motion.div>
-            </div> 
+            </div>  */}
           </div>
         </div>
       </section>

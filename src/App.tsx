@@ -2,8 +2,10 @@ import { Routes, Route } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import { useUser } from '@clerk/clerk-react';
 
+// Layouts
 import MainLayout from './layouts/MainLayout';
 
+// Pages
 import HomePage from './pages/HomePage';
 import AIExplanationPage from './pages/AIExplanationPage';
 import AIToolsPage from './pages/AIToolsPage';
@@ -12,18 +14,19 @@ import AssessmentPage from './pages/AssessmentPage';
 import SignInPage from './pages/SignInPage';
 import SignUpPage from './pages/SignUpPage';
 import ProfilePage from './pages/ProfilePage';
-import ForumPage from './pages/ForumPage';
 import NotFoundPage from './pages/NotFoundPage';
 import TermsPage from './pages/TermsPage';
 import PrivacyPage from './pages/PrivacyPage';
 import CookiesPage from './pages/CookiesPage';
 
+// Components
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import ProfileForm from './components/auth/ProfileForm';
 
 function App() {
   const { isSignedIn, user } = useUser();
 
+  // Check if the user needs to complete their profile
   const needsProfile = isSignedIn && (!user?.firstName || !user?.lastName);
 
   if (needsProfile) {
@@ -37,7 +40,6 @@ function App() {
           <Route index element={<HomePage />} />
           <Route path="explanation" element={<AIExplanationPage />} />
           <Route path="tools" element={<AIToolsPage />} />
-          <Route path="forum" element={<ForumPage />} />
           <Route
             path="guides"
             element={
