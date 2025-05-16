@@ -1,7 +1,5 @@
 # TutorIA🤖🎓
 
-**Plataforma Educativa sobre Inteligencia Artificial**
-
 TutorIA 🤖🎓 es una plataforma educativa (en desarrollo) diseñada para introducir a personas con poca o ninguna experiencia en el mundo de la Inteligencia Artificial. El objetivo es crear una experiencia amigable, interactiva y motivadora, ofreciendo contenido actualizado, guías prácticas, evaluaciones y más a medida que la plataforma avanza.
 
 ## Acceso al Proyecto
