@@ -1,4 +1,6 @@
-# TutorIA🤖🎓 - Plataforma Educativa sobre Inteligencia Artificial
+# TutorIA🤖🎓
+
+**Plataforma Educativa sobre Inteligencia Artificial**
 
 TutorIA 🤖🎓 es una plataforma educativa (en desarrollo) diseñada para introducir a personas con poca o ninguna experiencia en el mundo de la Inteligencia Artificial. El objetivo es crear una experiencia amigable, interactiva y motivadora, ofreciendo contenido actualizado, guías prácticas, evaluaciones y más a medida que la plataforma avanza.
 
@@ -30,27 +32,28 @@ Pronto podrás ver algunas capturas del proyecto.
 
 - **Frontend**: React, TypeScript, Vite
 - **Estilos**: Tailwind CSS
+- **Enrutamiento**: React Router DOM
 - **Autenticación**: Clerk
-- **Base de Datos**: Supabase
+<!-- - **Base de Datos**: Supabase -->
 - **Animaciones**: Framer Motion
-- **Iconos**: Lucide React
-- **Formateo de Fechas**: date-fns
+- **Iconos**: Lucide React, React Icons
+- **Alertas**: SweetAlert2
 
 ## Estructura del Proyecto
 
 ```
 TutorIA/
-├── public/         # Archivos estáticos (imágenes, iconos, etc.)
-├── src/            # Código fuente principal
+├── public/             # Archivos estáticos (imágenes, iconos, etc.)
+├── src/                # Código fuente principal
 │   ├── assets/         # Recursos multimedia
 │   ├── components/     # Componentes reutilizables
 │   ├── layouts/        # Estructuras de layout
 │   ├── pages/          # Páginas de la app
 │   └── ...             # Otros archivos fuente
-├── package.json     # Dependencias y scripts
+├── package.json        # Dependencias y scripts
 ├── tailwind.config.js  # Configuración de Tailwind CSS
 ├── vite.config.ts      # Configuración de Vite
-└── ...              # Otros archivos y configuraciones
+└── ...                 # Otros archivos y configuraciones
 ```
 
 ## Características de Seguridad
