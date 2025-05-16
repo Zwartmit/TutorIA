@@ -1,31 +1,33 @@
-import { esES } from '@clerk/localizations';
+import { esMX } from '@clerk/localizations';
 
-export const customEsES = {
-  ...esES,
+export const customEsMX = {
+  ...esMX,
   signIn: {
-    ...esES.signIn,
+    ...esMX.signIn,
     start: {
-      ...esES.signIn?.start,
+      ...esMX.signIn?.start,
       title: "¡Hola!",
       subtitle: "Inicia sesión para acceder a todos los recursos que tenemos para ti",
       actionText: "¿Aún no tienes una cuenta?",
       actionLink: "Regístrate",
+      emailPlaceholder: "Tu correo electrónico personalizado",
+      passwordPlaceholder: "Tu contraseña personalizada"
     },
   },
   signUp: {
-    ...esES.signUp,
+    ...esMX.signUp,
     start: {
-      ...esES.signUp?.start,
-      title: "Crea tu cuenta en TutorIA",
+      ...esMX.signUp?.start,
+      title: "¡Hola!",
       subtitle: "Regístrate para acceder a todos los recursos que tenemos para ti",
       actionText: "¿Ya tienes una cuenta?",
       actionLink: "Inicia sesión",
     },
   },
   userProfile: {
-    ...esES.userProfile,
+    ...esMX.userProfile,
     start: {
-      ...esES.userProfile?.start,
+      ...esMX.userProfile?.start,
       headerTitle: "Perfil de usuario personalizado",
       headerSubtitle: "Gestiona tu información personal y preferencias.",
     },

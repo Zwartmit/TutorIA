@@ -6,8 +6,10 @@ import { Home } from 'lucide-react';
 const NotFoundPage: React.FC = () => {
   
   useEffect(() => {
+    setTimeout(() => {
       window.scrollTo(0, 0);
-    }, []);
+    }, 100);
+  }, []);
       
   return (
     <motion.div

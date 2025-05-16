@@ -232,8 +232,10 @@ const GuidesPage: React.FC = () => {
   };
 
   useEffect(() => {
+    setTimeout(() => {
       window.scrollTo(0, 0);
-    }, []);
+    }, 100);
+  }, []);
       
   return (
     <div className="pt-20">

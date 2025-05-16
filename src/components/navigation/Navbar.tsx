@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { useUser, useClerk } from '@clerk/clerk-react';
 import { motion } from 'framer-motion';
-import { Menu, X, LogIn, LogOut, UserCircle, BarChart2, Settings } from 'lucide-react';
+import { Menu, X, LogIn, LogOut, UserCircle, Settings } from 'lucide-react';
 import Swal from 'sweetalert2';
 // import UserStats from '../user/UserStats';
 import icon from '../../../public/icon.png';
@@ -15,6 +15,18 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isStatsOpen, setIsStatsOpen] = useState(false);
   const { user, isSignedIn } = useUser();
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!isMenuOpen) return;
+    function handleClickOutside(event: MouseEvent) {
+      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node)) {
+        setIsMenuOpen(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [isMenuOpen]);
   const { signOut } = useClerk();
   const navigate = useNavigate();
 
@@ -149,34 +161,49 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                   >
                     <BarChart2 size={20} />
                   </button> */}
-                  <button
-                    onClick={handleEditProfile}
-                    className="text-gray-700 hover:text-primary-600 transition-colors"
-                    title="Editar perfil"
-                  >
-                    <Settings size={20} />
-                  </button>
-                  <div className="flex items-center space-x-2">
-                    {user.imageUrl ? (
-                      <img
-                        src={user.imageUrl}
-                        alt={user.firstName || 'Profile'}
-                        className="w-8 h-8 rounded-full object-cover"
-                      />
-                    ) : (
-                      <UserCircle size={20} className="text-gray-700" />
+                  <div className="relative">
+                    <div
+                      className="flex items-center space-x-2 cursor-pointer"
+                      onClick={() => setIsStatsOpen((prev) => !prev)}
+                    >
+                      {user.imageUrl ? (
+                        <img
+                          src={user.imageUrl}
+                          alt={user.firstName || 'Profile'}
+                          className="w-8 h-8 rounded-full object-cover"
+                        />
+                      ) : (
+                        <UserCircle size={20} className="text-gray-700" />
+                      )}
+                      <span className="text-sm font-medium text-gray-700">
+                        {user.firstName || user.username}
+                      </span>
+                    </div>
+                    {isStatsOpen && (
+                      <div className="absolute right-0 mt-2 w-44 bg-white border rounded-3xl shadow-lg z-50 flex flex-col items-center">
+                        <button
+                          onClick={() => {
+                            setIsStatsOpen(false);
+                            handleEditProfile();
+                          }}
+                          className="w-44 rounded-t-3xl flex items-center justify-center px-4 py-1 text-gray-700 hover:bg-gray-100 text-left"
+                        >
+                          <UserCircle size={18} className="mr-2" />
+                          <span>Mi perfil</span>
+                        </button>
+                        <button
+                          onClick={() => {
+                            setIsStatsOpen(false);
+                            handleSignOut();
+                          }}
+                          className="w-44 rounded-b-3xl flex items-center justify-center px-4 py-1 text-gray-700 hover:bg-gray-100 text-left"
+                        >
+                          <LogOut size={18} className="mr-2" />
+                          <span>Cerrar sesión</span>
+                        </button>
+                      </div>
                     )}
-                    <span className="text-sm font-medium text-gray-700">
-                      {user.firstName || user.username}
-                    </span>
                   </div>
-                  <button
-                    onClick={handleSignOut}
-                    className="flex items-center space-x-1 text-gray-700 hover:text-primary-600 transition-colors"
-                  >
-                    <LogOut size={18} />
-                    <span>Salir</span>
-                  </button>
                 </div>
               ) : (
                 <div className="flex items-center space-x-3">
@@ -206,123 +233,123 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
 
         {/* Mobile Menu */}
         <motion.div
+          ref={mobileMenuRef}
           initial={false}
           animate={isMenuOpen ? { height: 'auto', opacity: 1 } : { height: 0, opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="md:hidden overflow-hidden bg-white shadow-lg"
+          className="md:hidden overflow-hidden bg-white shadow-lg rounded-3xl"
         >
-          <div className="container-custom py-4 space-y-3">
-            <NavLink
-              to="/"
-              end
-              className={({ isActive }) =>
-                `block py-2 font-medium ${
-                  isActive ? 'text-primary-600' : 'text-gray-700'
-                }`
-              }
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Inicio
-            </NavLink>
-            <NavLink
-              to="/explanation"
-              className={({ isActive }) =>
-                `block py-2 font-medium ${
-                  isActive ? 'text-primary-600' : 'text-gray-700'
-                }`
-              }
-              onClick={() => setIsMenuOpen(false)}
-            >
-              ¿Qué es IA?
-            </NavLink>
-            <NavLink
-              to="/tools"
-              className={({ isActive }) =>
-                `block py-2 font-medium ${
-                  isActive ? 'text-primary-600' : 'text-gray-700'
-                }`
-              }
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Herramientas
-            </NavLink>
-            {/* <NavLink
-              to="/forum"
-              className={({ isActive }) =>
-                `block py-2 font-medium ${
-                  isActive ? 'text-primary-600' : 'text-gray-700'
-                }`
-              }
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Foro
-            </NavLink> */}
+          <div className="container-custom py-2 space-y-2">
+            <div className="flex flex-col space-y-2">
+              <div className="flex justify-between space-x-2">
+                <NavLink
+                  to="/"
+                  end
+                  className={({ isActive }) =>
+                    `flex-1 text-center py-2 font-medium rounded-2xl transition-colors ${
+                      isActive ? 'text-primary-600 bg-primary-100' : 'text-gray-700 hover:bg-gray-100'
+                    }`
+                  }
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Inicio
+                </NavLink>
+                <NavLink
+                  to="/explanation"
+                  className={({ isActive }) =>
+                    `flex-1 text-center py-2 font-medium rounded-2xl transition-colors ${
+                      isActive ? 'text-primary-600 bg-primary-100' : 'text-gray-700 hover:bg-gray-100'
+                    }`
+                  }
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  ¿Qué es IA?
+                </NavLink>
+                <NavLink
+                  to="/tools"
+                  className={({ isActive }) =>
+                    `flex-1 text-center py-2 font-medium rounded-2xl transition-colors ${
+                      isActive ? 'text-primary-600 bg-primary-100' : 'text-gray-700 hover:bg-gray-100'
+                    }`
+                  }
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Herramientas
+                </NavLink>
+              </div>
+              <div className="flex justify-between space-x-2">
+                {isSignedIn ? (
+                  <>
+                    <NavLink
+                      to="/guides"
+                      className={({ isActive }) =>
+                        `flex-1 text-center py-2 font-medium rounded-2xl transition-colors ${
+                          isActive ? 'text-primary-600 bg-primary-100' : 'text-gray-700 hover:bg-gray-100'
+                        }`
+                      }
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Guías
+                    </NavLink>
+                    <NavLink
+                      to="/assessment"
+                      className={({ isActive }) =>
+                        `flex-1 text-center py-2 font-medium rounded-2xl transition-colors ${
+                          isActive ? 'text-primary-600 bg-primary-100' : 'text-gray-700 hover:bg-gray-100'
+                        }`
+                      }
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Evaluación
+                    </NavLink>
+                  </>
+                ) : (
+                  <>
+                    <Link
+                      to="/sign-in"
+                      className="flex-1 text-center py-2 font-medium rounded-2xl text-gray-700 hover:bg-gray-100 transition-colors"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Iniciar sesión
+                    </Link>
+                    <Link
+                      to="/sign-up"
+                      className="flex-1 text-center py-2 font-medium rounded-2xl btn-primary"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Registrarse
+                    </Link>
+                  </>
+                )}
+              </div>
+            </div>
             {isSignedIn && (
-              <>
-                <NavLink
-                  to="/guides"
-                  className={({ isActive }) =>
-                    `block py-2 font-medium ${
-                      isActive ? 'text-primary-600' : 'text-gray-700'
-                    }`
-                  }
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Guías
-                </NavLink>
-                <NavLink
-                  to="/assessment"
-                  className={({ isActive }) =>
-                    `block py-2 font-medium ${
-                      isActive ? 'text-primary-600' : 'text-gray-700'
-                    }`
-                  }
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Evaluación
-                </NavLink>
-              </>
-            )}
-
-            <div className="pt-4 border-t border-gray-200">
-              {isSignedIn ? (
-                <div className="space-y-3">
-                  <div className="flex items-center space-x-2">
-                    {user.imageUrl ? (
-                      <img
-                        src={user.imageUrl}
-                        alt={user.firstName || 'Profile'}
-                        className="w-8 h-8 rounded-full object-cover"
-                      />
-                    ) : (
-                      <UserCircle size={20} className="text-gray-700" />
-                    )}
-                    <span className="text-sm font-medium text-gray-700">
-                      {user.firstName || user.username}
-                    </span>
-                  </div>
-                  <div className="flex space-x-4">
-                    {/* <button
-                      onClick={() => {
-                        setIsStatsOpen(true);
-                        setIsMenuOpen(false);
-                      }}
-                      className="flex items-center space-x-1 text-gray-700"
-                    >
-                      <BarChart2 size={18} />
-                      <span>Estadísticas</span>
-                    </button> */}
-                    <button
-                      onClick={() => {
-                        handleEditProfile();
-                        setIsMenuOpen(false);
-                      }}
-                      className="flex items-center space-x-1 text-gray-700"
-                    >
-                      <Settings size={18} />
-                      <span>Editar perfil</span>
-                    </button>
-                  </div>
+              <div className="pt-2 border-t border-gray-200 flex flex-col items-center">
+                <div className="flex flex-row items-center space-x-2 py-3">
+                  {user.imageUrl ? (
+                    <img
+                      src={user.imageUrl}
+                      alt={user.firstName || 'Profile'}
+                      className="w-8 h-8 rounded-full object-cover"
+                    />
+                  ) : (
+                    <UserCircle size={20} className="text-gray-700" />
+                  )}
+                  <span className="text-sm font-medium text-gray-700">
+                    {user.firstName || user.username}
+                  </span>
+                </div>
+                <div className="flex flex-row items-center justify-center space-x-8 mb-2">
+                  <button
+                    onClick={() => {
+                      handleEditProfile();
+                      setIsMenuOpen(false);
+                    }}
+                    className="flex items-center space-x-1 text-gray-700"
+                  >
+                    <Settings size={18} />
+                    <span>Editar perfil</span>
+                  </button>
                   <button
                     onClick={handleSignOut}
                     className="flex items-center space-x-1 text-gray-700"
@@ -331,26 +358,8 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                     <span>Salir</span>
                   </button>
                 </div>
-              ) : (
-                <div className="space-y-3">
-                  <Link
-                    to="/sign-in"
-                    className="flex items-center space-x-1 text-gray-700"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    <LogIn size={18} />
-                    <span>Iniciar sesión</span>
-                  </Link>
-                  <Link
-                    to="/sign-up"
-                    className="btn-primary w-full justify-center"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Registrarse
-                  </Link>
-                </div>
-              )}
-            </div>
+              </div>
+            )}
           </div>
         </motion.div>
       </header>

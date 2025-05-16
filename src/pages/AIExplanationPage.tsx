@@ -73,7 +73,9 @@ const AIExplanationPage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 100);
   }, []);
 
   const filteredGlossaryItems = glossaryItems.filter(item =>

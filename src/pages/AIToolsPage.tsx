@@ -102,9 +102,11 @@ const AIToolsPage: React.FC = () => {
   });
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 100);
   }, []);
-  
+
   return (
     <div className="min-h-screen">
       <div className="w-full bg-gradient-to-b mt-20 from-[#F9FAFB] via-gray to-gray-300">

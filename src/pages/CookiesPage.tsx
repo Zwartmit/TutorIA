@@ -5,8 +5,10 @@ import { Cookie } from 'lucide-react';
 const CookiesPage: React.FC = () => {
   
   useEffect(() => {
+    setTimeout(() => {
       window.scrollTo(0, 0);
-    }, []);
+    }, 100);
+  }, []);
       
   return (
     <div className="pt-20">

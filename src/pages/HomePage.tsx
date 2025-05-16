@@ -7,14 +7,16 @@ import sec1 from '../assets/sec1.png';
 import sec2 from '../assets/sec2.png';
 import sec3 from '../assets/sec3.png';
 import sec4 from '../assets/sec4.png';
-import sec5 from '../assets/sec5.png';
+// import sec5 from '../assets/sec5.png';
 // import bienvenida from '../assets/Bienvenida.mp4';
 
 const HomePage: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
   
   useEffect(() => {
-    window.scrollTo(0, 0);
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 100);
   }, []);
     
   return (

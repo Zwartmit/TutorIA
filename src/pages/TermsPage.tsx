@@ -5,8 +5,10 @@ import { Shield } from 'lucide-react';
 const TermsPage: React.FC = () => {
 
   useEffect(() => {
+    setTimeout(() => {
       window.scrollTo(0, 0);
-    }, []);
+    }, 100);
+  }, []);
         
   return (
     <div className="pt-20">
