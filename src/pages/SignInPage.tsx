@@ -19,7 +19,7 @@ const SignInPage: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary-50 via-white to-secondary-50 flex flex-col">
+    <div className="min-h-screen bg-gradient-to-br from-gray-300 via-gray to-gray-300 flex flex-col">
       <div className="flex-grow flex items-center justify-center py-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -27,7 +27,7 @@ const SignInPage: React.FC = () => {
           transition={{ duration: 0.5 }}
           className="w-full max-w-md"
         >
-          <div className="bg-white rounded-xl shadow-md overflow-hidden">
+          <div>
             <div className="px-4 py-6">
               <SignIn
                 path="/sign-in"

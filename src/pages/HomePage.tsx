@@ -22,7 +22,7 @@ const HomePage: React.FC = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative pt-24 pb-0 md:pt-32 md:pb-0 bg-gradient-to-b from-[#F9FAFB] via-gray to-gray-300 overflow-hidden">
+      <section className="relative pt-24 pb-0 md:pt-32 md:pb-0 bg-gradient-to-b from-gray-300 via-gray to-gray-300 overflow-hidden">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -92,8 +92,8 @@ const HomePage: React.FC = () => {
         )} */}
       </section>
 
-      {/* Benefits Section */}
-      <section className="section bg-gradient-to-t from-[#F9FAFB] via-gray to-gray-300">
+      {/* Sección de Beneficios */}
+      <section className="section bg-gradient-to-t from-gray-300 via-gray to-gray-300">
         <div className="container-custom">
           <div className="text-center max-w-3xl mb-10 mx-auto">
             <h2 className="section-title">Lo que aprenderás...</h2>
@@ -150,8 +150,8 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* Featured Sections Preview */}
-      <section className="section bg-gradient-to-b from-[#F9FAFB] via-gray to-gray-300 pt-0">
+      {/* Secciones destacadas */}
+      <section className="section bg-gradient-to-b from-gray-300 via-gray to-gray-300 pt-0">
         <div className="container-custom">
           <div className="text-center mb-12">
             <h2 className="section-title">Explora nuestras secciones...</h2>
@@ -164,7 +164,7 @@ const HomePage: React.FC = () => {
           </div>
 
           <div className="space-y-16">
-            {/* Section 1: What is AI */}
+            {/* Sección 1: ¿Qué es la IA? */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
@@ -202,7 +202,7 @@ const HomePage: React.FC = () => {
               </motion.div>
             </div>
 
-            {/* Section 2: AI Tools */}
+            {/* Sección 2: Herramientas de IA */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
@@ -235,7 +235,7 @@ const HomePage: React.FC = () => {
               </motion.div>
             </div>
 
-            {/* Section 3: Guides */}
+            {/* Sección 3: Guías */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
@@ -269,7 +269,7 @@ const HomePage: React.FC = () => {
               </motion.div>
             </div>
 
-            {/* Section 4: Tests */}
+            {/* Sección 4: Tests */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
@@ -302,7 +302,7 @@ const HomePage: React.FC = () => {
               </motion.div>
             </div>
 
-            {/* Section 5: Forum */}
+            {/* Sección 5: Foro */}
             {/* <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
@@ -342,7 +342,7 @@ const HomePage: React.FC = () => {
       <section className="py-10 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-primary-600 via-secondary-600 to-primary-600 animated-gradient"></div>
         
-        {/* Content */}
+        {/* Contenido */}
         <div className="container-custom text-center relative z-10">
           <div className="max-w-3xl mx-auto">
             <Award size={48} className="mx-auto mb-6 text-white/90 transition animate-bounce" />

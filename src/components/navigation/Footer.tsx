@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 // import { Github, Twitter, Linkedin } from 'lucide-react';
 import icon from '../../../public/icon.png';
+import devmitLogo from '../../assets/DevMit.png';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -9,15 +10,14 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-gray-900 text-gray-300">
       <div className="container-custom py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          {/* Columna izquierda: Logo y descripción */}
-          <div className="space-y-4">
-            <Link to="/" className="flex items-center space-x-2">
+        <div className="grid grid-cols-1 md:grid-cols-3 items-center text-center">
+          <div className="space-y-4 flex flex-col items-center justify-center text-center">
+            <Link to="/" className="flex items-center justify-center space-x-2">
               <img src={icon} alt="" style={{ width: '45px', height: 'auto' }} />
               <span className="text-xl font-bold text-white">TutorIA</span>
             </Link>
-            <p className="text-gray-400 text-sm">
-            Aprende los conceptos fundamentales de la IA, cómo funciona y empieza a explorar el futuro de la tecnología
+            <p className="text-gray-400 text-sm max-w-xs">
+              Aprende los conceptos fundamentales de la IA, cómo funciona y empieza a explorar el futuro de la tecnología
             </p>
             {/* <div className="flex space-x-4 pt-2">
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
@@ -32,13 +32,11 @@ const Footer: React.FC = () => {
             </div> */}
           </div>
 
-          {/* Columna central vacía o futura sección */}
-          <div></div>
+          <div className="flex flex-col items-center justify-center text-center"></div>
 
-          {/* Columna derecha: Legal y Contacto */}
-          <div className="flex flex-col md:flex-row md:justify-end md:gap-20 w-full">
+          <div className="flex flex-col items-center justify-center w-full text-center gap-6 md:gap-6 pt-6 md:pt-0">
             <div>
-              <h3 className="text-white font-medium text-lg mb-4">Legal</h3>
+              <h3 className="text-white font-medium text-lg mb-2">Legal</h3>
               <ul className="space-y-2 whitespace-nowrap">
                 <li>
                   <Link to="/terms" className="text-gray-400 hover:text-white transition-colors">
@@ -59,15 +57,23 @@ const Footer: React.FC = () => {
             </div>
 
             <div>
-              <h3 className="text-white font-medium text-lg mb-4">Contacto</h3>
-              <ul className="space-y-2">
-                <li className="text-gray-400">
-                  <span className="block">Email:</span>
-                  <a href="mailto:brandonurbanobuz@gmail.com" className="text-primary-400 hover:text-primary-300">
-                    brandonurbanobuz@gmail.com
-                  </a>
-                </li>
-              </ul>
+              <h3 className="text-white font-medium text-lg mb-2">Desarrollado por</h3>
+              <div className="flex flex-col items-center">
+                <a
+                  href="https://dev-mit.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:opacity-80 hover:scale-105 transition cursor-pointer animate-pulse"
+                  title="Visitar dev-mit.com"
+                >
+                  <img
+                    src={devmitLogo}
+                    alt="Logo DEVMIT"
+                    style={{ width: '90px', height: 'auto' }}
+                    className="mx-auto"
+                  />
+                </a>
+              </div>
             </div>
           </div>
         </div>

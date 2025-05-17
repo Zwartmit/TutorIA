@@ -194,7 +194,7 @@ const AssessmentPage: React.FC = () => {
   return (
     <div className="pt-8">
       {/* Hero Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-[#F9FAFB] via-gray to-gray-300">
+      <section className="pt-16 md:pt-24 bg-gradient-to-b from-gray-300 via-gray to-gray-300">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
             <div className="flex flex-col items-center">
@@ -212,8 +212,8 @@ const AssessmentPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Quiz Section */}
-      <section className="section bg-gradient-to-t from-[#F9FAFB] via-gray to-gray-300">
+      {/* Sección de evaluación */}
+      <section className="section bg-gradient-to-t from-gray-300 via-gray to-gray-300 pt-8">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto">
             {quizState === QuizState.NOT_STARTED && (
@@ -502,7 +502,7 @@ const AssessmentPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Tips Section */}
+      {/* Sección de consejos */}
       {quizState !== QuizState.COMPLETED && (
         <section className="section bg-gray-50">
           <div className="container-custom">

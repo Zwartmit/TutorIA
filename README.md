@@ -1,14 +1,14 @@
 # TutorIA🤖🎓
 
-TutorIA 🤖🎓 es una plataforma educativa (en desarrollo) diseñada para introducir a personas con poca o ninguna experiencia en el mundo de la Inteligencia Artificial. El objetivo es crear una experiencia amigable, interactiva y motivadora, ofreciendo contenido actualizado, guías prácticas, evaluaciones y más a medida que la plataforma avanza.
+TutorIA es una plataforma educativa (en desarrollo) diseñada para introducir a personas con poca o ninguna experiencia en el mundo de la Inteligencia Artificial. El objetivo es crear una experiencia amigable, interactiva y motivadora, ofreciendo contenido actualizado, guías prácticas, evaluaciones y más a medida que la plataforma avanza.
 
-## Acceso al Proyecto
+## 🌐 Acceso al proyecto
 
 Pronto podrás acceder a la plataforma.
 
 <!-- [TutorIA🤖🎓](https://tutoria.dev-mit.com) -->
 
-## Capturas de Pantalla
+## 📸 Capturas de pantalla
 
 Pronto podrás ver algunas capturas del proyecto.
 
@@ -16,28 +16,27 @@ Pronto podrás ver algunas capturas del proyecto.
 <!-- ![Inicio](./public/screenshots/inicio.png) -->
 <!-- ![Foro](./public/screenshots/foro.png) -->
 
-## Características
+## 🧩 Funcionalidades   
 
-- 📚 **Contenido educativo**: Explicaciones claras y concisas sobre conceptos de IA
-- 🛠️ **Herramientas de IA**: Directorio curado de herramientas populares de IA
-- 📝 **Guías paso a paso**: Tutoriales prácticos para usar herramientas de IA
-- 📊 **Evaluaciones**: Tests interactivos para medir el progreso
-- 💬 **Foro comunitario**: Espacio para compartir experiencias y proyectos
-- 👤 **Perfiles de usuario**: Sistema de autenticación y perfiles personalizados
-- 🌐 **Otras en desarrollo...**
+- **Contenido educativo**: Explicaciones claras y concisas sobre conceptos de IA
+- **Herramientas de IA**: Directorio curado de herramientas populares de IA
+- **Guías paso a paso**: Tutoriales prácticos para usar herramientas de IA
+- **Evaluaciones**: Tests interactivos para medir el progreso
+- **Foro comunitario**: Espacio para compartir experiencias y proyectos
+- **Perfiles de usuario**: Sistema de autenticación y perfiles personalizados
+- **Otras en desarrollo...**
 
-## Tecnologías
+## 🛠️ Tecnologías
 
 - **Frontend**: React, TypeScript, Vite
 - **Estilos**: Tailwind CSS
 - **Enrutamiento**: React Router DOM
 - **Autenticación**: Clerk
-<!-- - **Base de Datos**: Supabase -->
 - **Animaciones**: Framer Motion
 - **Iconos**: Lucide React, React Icons
 - **Alertas**: SweetAlert2
 
-## Estructura del Proyecto
+## 📁 Estructura del proyecto
 
 ```
 TutorIA/
@@ -54,7 +53,7 @@ TutorIA/
 └── ...                 # Otros archivos y configuraciones
 ```
 
-## Características de Seguridad
+## 🛡️ Seguridad
 
 - Autenticación segura con Clerk
 - Validación de datos en frontend y backend

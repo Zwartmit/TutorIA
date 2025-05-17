@@ -14,7 +14,7 @@ const ProfilePage: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50">
+    <div className="min-h-screen pt-10 flex items-center justify-center bg-gray-300">
       <UserProfile
         appearance={{
           elements: {

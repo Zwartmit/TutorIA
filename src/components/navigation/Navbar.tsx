@@ -60,7 +60,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
     <>
       <header
         className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-          isScrolled ? 'bg-white shadow-md' : 'bg-transparent'
+          isScrolled ? 'bg-white shadow-md rounded-b-3xl' : 'bg-gray-300'
         }`}
       >
         <div className="container-custom">
@@ -70,7 +70,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
               <span className="text-xl font-bold text-gray-900">TutorIA</span>
             </Link>
 
-            {/* Desktop Navigation */}
+            {/* Navegación en escritorio */}
             <nav className="hidden md:flex items-center space-x-8">
               <NavLink
                 to="/"
@@ -221,7 +221,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
               )}
             </div>
 
-            {/* Mobile Menu Button */}
+            {/* Botón de menú móvil */}
             <button
               className="md:hidden text-gray-700 focus:outline-none"
               onClick={toggleMenu}
@@ -231,7 +231,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
           </div>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Menú móvil */}
         <motion.div
           ref={mobileMenuRef}
           initial={false}

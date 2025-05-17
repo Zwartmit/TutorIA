@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { BookOpen, ChevronRight, Search, Check, ArrowRight } from 'lucide-react';
+import { ChevronRight, Search, Check, ArrowRight } from 'lucide-react';
 import { IoLibrary } from 'react-icons/io5';
 
 interface Guide {
@@ -238,12 +238,12 @@ const GuidesPage: React.FC = () => {
   }, []);
       
   return (
-    <div className="pt-20">
+    <div className="pt-20 bg-gray-300">
       {selectedGuide ? (
         
         <div className="min-h-screen">
-          {/* Guide Header */}
-          <section className="w-full bg-gradient-to-b from-[#F9FAFB] via-gray to-gray-300">
+          {/* Encabezado de la guía */}
+          <section className="w-full bg-gradient-to-t from-gray-300 via-gray to-gray-300">
             <div className="container-custom">
               <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
                 <button 
@@ -269,7 +269,7 @@ const GuidesPage: React.FC = () => {
                 <h1 className="text-3xl md:text-4xl font-bold mb-6">{selectedGuide.title}</h1>
                 <p className="text-xl text-gray-700 mb-8">{selectedGuide.description}</p>
 
-                {/* Progress Bar */}
+                {/* Barra de progreso */}
                 <div className="w-full bg-gray-100 rounded-full h-2.5 mb-6">
                   <div 
                     className="bg-primary-600 h-2.5 rounded-full transition-all duration-300" 
@@ -285,8 +285,8 @@ const GuidesPage: React.FC = () => {
             </div>
           </section>
 
-          {/* Step Content */}
-          <section className="py-12 bg-gradient-to-t from-[#F9FAFB] via-gray to-gray-300">
+          {/* Contenido de cada paso */}
+          <section className="py-12 bg-gradient-to-t from-gray-300 via-gray to-gray-300">
             <div className="container-custom">
               <div className="max-w-3xl mx-auto">
                 <motion.div
@@ -340,8 +340,8 @@ const GuidesPage: React.FC = () => {
             </div>
           </section>
 
-          {/* Step Navigation */}
-          <section className="py-12 bg-gradient-to-b from-[#F9FAFB] via-gray to-gray-300">
+          {/* Navegación de los pasos */}
+          <section className="py-12 bg-gradient-to-b from-gray-300 via-gray to-gray-300">
             <div className="container-custom">
               <div className="max-w-3xl mx-auto">
                 <h3 className="text-xl font-semibold mb-6">Todos los pasos</h3>
@@ -391,7 +391,7 @@ const GuidesPage: React.FC = () => {
         
         <>
           {/* Hero Section */}
-          <section className="w-full bg-gradient-to-b mt-12 from-[#F9FAFB] via-gray to-gray-300">
+          <section className="w-full bg-gradient-to-b mt-12 from-gray-300 via-gray to-gray-300">
             <div className="container-custom">
               <div className="max-w-3xl mx-auto text-center">
                 <div className="flex flex-col items-center">
@@ -409,11 +409,11 @@ const GuidesPage: React.FC = () => {
             </div>
           </section>
 
-          {/* Filters Section */}
-          <section className="py-8 bg-gradient-to-t from-[#F9FAFB] via-gray to-gray-300">
+          {/* Sección de filtros */}
+          <section className="py-8 bg-gradient-to-t from-gray-300 via-gray to-gray-300">
             <div className="container-custom">
               <div className="max-w-5xl mx-auto">
-                {/* Search Bar */}
+                {/* Barra de búsqueda */}
                 <div className="relative w-full mb-6">
                   <input
                     type="text"
@@ -427,7 +427,7 @@ const GuidesPage: React.FC = () => {
                   </span>
                 </div>
 
-                {/* Category Filters */}
+                {/* Filtros de categoría */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -482,8 +482,8 @@ const GuidesPage: React.FC = () => {
             </div>
           </section>
 
-          {/* Guides Grid */}
-          <section className="section bg-gray-50">
+          {/* Grid de guías */}
+          <section className="section bg-gray-300">
             <div className="container-custom">
               <div className="max-w-5xl mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -552,7 +552,7 @@ const GuidesPage: React.FC = () => {
           </section>
 
           {/* CTA Section */}
-          <section className="py-10 bg-gradient-to-b from-[#F9FAFB] via-gray to-gray-300">
+          <section className="py-10 bg-gradient-to-b from-gray-300 via-gray to-gray-300">
             <div className="container-custom text-center">
               <div className="max-w-3xl mx-auto">
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">

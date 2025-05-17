@@ -1,70 +1,75 @@
 import React, { useEffect, useState } from 'react';
-import { BrainCircuit, Bot, ListFilter, Languages, ShieldPlus, BookOpen, ArrowRight } from 'lucide-react';
+import { BrainCircuit, Bot, ListFilter, Languages, ShieldPlus, BookOpen, ArrowRight, ExternalLink } from 'lucide-react';
 import { GiArtificialIntelligence, GiBrainstorm, GiTechnoHeart } from 'react-icons/gi';
 import { MdWifi, MdWifi2Bar, MdClose } from 'react-icons/md';
+import { FaSearchPlus } from 'react-icons/fa';
 import { RiGlobalFill } from 'react-icons/ri';
 import redes from '../assets/redes.png';
 
 const glossaryItems = [
   {
-    term: 'Inteligencia Artificial (IA)',
-    definition: 'Rama de la informática que busca crear sistemas capaces de realizar tareas que requieren inteligencia humana'
-  },
-  {
     term: 'Algoritmo',
     definition: 'Conjunto de reglas o instrucciones que siguen los sistemas para resolver un problema o realizar una tarea'
-  },
-  {
-    term: 'Entrenamiento',
-    definition: 'Proceso mediante el cual un modelo de IA aprende a partir de los datos'
-  },
-  {
-    term: 'Modelo',
-    definition: 'Herramientas y algoritmos utilizados para entrenar a los ordenadores a procesar y analizar datos'
-  },
-  {
-    term: 'Regresión',
-    definition: 'Técnica de aprendizaje automático que se utiliza para predecir valores numéricos continuos a partir de un conjunto de datos'
-  },
-  {
-    term: 'Red Neuronal',
-    definition: 'Modelo inspirado en el cerebro humano que se utiliza para reconocer patrones y aprender de datos'
-  },
-  {
-    term: 'Subajuste (Underfitting)',
-    definition: 'Cuando un modelo no aprende lo suficiente de los datos de entrenamiento y tiene bajo rendimiento'
-  },
-  {
-    term: 'Sesgo Algorítmico',
-    definition: 'Tendencia de un sistema de IA a tomar decisiones injustas debido a datos de entrenamiento sesgados (Suposiciones)'
-  },
-  {
-    term: 'Ética en IA',
-    definition: 'Disciplina que estudia las implicaciones morales y sociales del uso de IA'
-  },
-  {
-    term: 'Datos (Data)',
-    definition: 'Información que se utiliza para entrenar y probar modelos de IA. Puede ser estructurada (tablas) o no estructurada (imágenes, texto)'
-  },
-  {
-    term: 'Sobreajuste (Overfitting)',
-    definition: 'Se produce cuando un modelo aprende demasiado bien las peculiaridades de los datos de entrenamiento, hasta el punto de que pierde su capacidad de generalizar con nuevos datos'
   },
   {
     term: 'Aprendizaje Automático (Machine Learning)',
     definition: 'Subcampo de la IA que permite a las máquinas aprender de datos y mejorar su desempeño sin ser programadas explícitamente'
   },
   {
-    term: 'Visión por Computadora (Computer Vision)',
-    definition: 'Área que permite a las máquinas interpretar imágenes y videos'
+    term: 'Datos (Data)',
+    definition: 'Información que se utiliza para entrenar y probar modelos de IA. Puede ser estructurada (tablas) o no estructurada (imágenes, texto)'
+  },
+  {
+    term: 'Deep Learning (Aprendizaje Profundo)',
+    definition: 'Tipo de aprendizaje automático basado en redes neuronales con muchas capas (profundas), ideal para procesamiento de imágenes, voz y texto'
+  },
+  {
+    term: 'Entrenamiento',
+    definition: 'Proceso mediante el cual un modelo de IA aprende a partir de los datos'
+  },
+  {
+    term: 'Ética en IA',
+    definition: 'Disciplina que estudia las implicaciones morales y sociales del uso de IA'
+  },
+  {
+    term: 'Inteligencia Artificial (IA)',
+    definition: 'Rama de la informática que busca crear sistemas capaces de realizar tareas que requieren inteligencia humana'
+  },
+  {
+    term: 'Modelo',
+    definition: 'Herramientas y algoritmos utilizados para entrenar a los ordenadores a procesar y analizar datos'
   },
   {
     term: 'Procesamiento de Lenguaje Natural (PLN / NLP)',
     definition: 'Rama de la IA que permite a las máquinas entender, interpretar y generar lenguaje humano'
   },
   {
-    term: 'Deep Learning (Aprendizaje Profundo)',
-    definition: 'Tipo de aprendizaje automático basado en redes neuronales con muchas capas (profundas), ideal para procesamiento de imágenes, voz y texto'
+    term: 'Red Neuronal',
+    definition: 'Modelo inspirado en el cerebro humano que se utiliza para reconocer patrones y aprender de datos'
+  },
+  {
+    term: 'Regresión',
+    definition: 'Técnica de aprendizaje automático que se utiliza para predecir valores numéricos continuos a partir de un conjunto de datos'
+  },
+  {
+    term: 'Sesgo Algorítmico',
+    definition: 'Tendencia de un sistema de IA a tomar decisiones injustas debido a datos de entrenamiento sesgados (Suposiciones)'
+  },
+  {
+    term: 'Sobreajuste (Overfitting)',
+    definition: 'Se produce cuando un modelo aprende demasiado bien las peculiaridades de los datos de entrenamiento, hasta el punto de que pierde su capacidad de generalizar con nuevos datos'
+  },
+  {
+    term: 'Subajuste (Underfitting)',
+    definition: 'Cuando un modelo no aprende lo suficiente de los datos de entrenamiento y tiene bajo rendimiento'
+  },
+  {
+    term: 'Token',
+    definition: 'Se refiere a una unidad mínima de procesamiento de datos, como una palabra o una subpalabra, utilizada por los modelos de IA para entender y generar lenguaje o información'
+  },
+  {
+    term: 'Visión por Computadora (Computer Vision)',
+    definition: 'Área que permite a las máquinas interpretar imágenes y videos'
   }
 ];
 
@@ -85,7 +90,7 @@ const AIExplanationPage: React.FC = () => {
 
   return (
     <div className="min-h-screen relative">
-      {/* Glossary Button */}
+      {/* Botón de glosario */}
       <div
         className={`
           fixed z-10
@@ -120,7 +125,7 @@ const AIExplanationPage: React.FC = () => {
         </div>
       </div>
 
-      {/* Glossary Modal */}
+      {/* Modal del glosario */}
       {isGlossaryOpen && (
         <div
           className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4 text-center"
@@ -176,10 +181,10 @@ const AIExplanationPage: React.FC = () => {
         </div>
       )}
 
-      {/* Main Content */}
+      {/* Contenido principal */}
       <div>
-        {/* Introduction to AI */}
-        <div className="w-full bg-gradient-to-b mt-20 from-[#F9FAFB] via-gray to-gray-300">
+        {/* Introducción a la IA */}
+        <div className="w-full bg-gradient-to-b mt-20 from-gray-300 via-gray to-gray-300">
           <section className="min-h-full py-12">
             <div className="container-custom">
               <div className="max-w-4xl mx-auto">
@@ -244,8 +249,8 @@ const AIExplanationPage: React.FC = () => {
           </section>
         </div>
 
-        {/* Types of AI */}
-        <div className="w-full bg-gradient-to-t from-[#F9FAFB] via-gray to-gray-300">
+        {/* Tipos de IA */}
+        <div className="w-full bg-gradient-to-t from-gray-300 via-gray to-gray-300">
           <section className="min-h-full py-12">
             <div className="container-custom">
               <div className="max-w-5xl mx-auto px-4">
@@ -308,8 +313,8 @@ const AIExplanationPage: React.FC = () => {
           </section>
         </div>
 
-        {/* How AI Works */}
-        <div className="w-full bg-gradient-to-b from-[#F9FAFB] via-gray to-gray-300">
+        {/* ¿Cómo funciona la IA? */}
+        <div className="w-full bg-gradient-to-b from-gray-300 via-gray to-gray-300">
           <section className="min-h-full py-12">
             <div className="container-custom">
               <div className="max-w-4xl mx-auto">
@@ -363,8 +368,99 @@ const AIExplanationPage: React.FC = () => {
           </section>
         </div>
 
+        {/* Canales de YouTube recomendados */}
+        <div className="w-full bg-gradient-to-t from-gray-300 via-gray to-gray-300">
+          <section className="min-h-full py-12">
+            <div className="container-custom">
+              <div className="max-w-4xl mx-auto">
+                <div className="mb-10 text-center">
+                  <div className="flex flex-col items-center mb-4">
+                    <FaSearchPlus size={42} className="text-primary-600 mb-2 animate-bounce" />
+                  </div>
+                  <h2 className="text-3xl md:text-4xl font-bold mb-4">¿Quieres saber más?</h2>
+                  <h3 className="text-2xl font-semibold text-gray-700">Te recomendamos estos canales de YouTube</h3>
+                </div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {/* Canal 1 - Dot CSV */}
+                  <a 
+                    href="https://www.youtube.com/c/DotCSV" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col"
+                  >
+                    <h4 className="text-xl font-semibold mb-2 text-primary-600">Dot CSV</h4>
+                    <p className="text-gray-600 mb-4">Uno de los canales más populares en español sobre IA, con tutoriales, explicaciones y análisis de los últimos avances.</p>
+                    <span className="mt-auto text-sm text-gray-500">+700K suscriptores</span>
+                  </a>
+
+                  {/* Canal 2 - Gustavo Entrala */}
+                  <a 
+                    href="https://www.youtube.com/@gustavo-entrala" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col"
+                  >
+                    <h4 className="text-xl font-semibold mb-2 text-primary-600">Gustavo Entrala</h4>
+                    <p className="text-gray-600 mb-4">Análisis y reflexiones sobre el impacto de la IA en la sociedad, la empresa y la vida cotidiana.</p>
+                    <span className="mt-auto text-sm text-gray-500">+50K suscriptores</span>
+                  </a>
+
+                  {/* Canal 3 - Inteligencia Artificial */}
+                  <a 
+                    href="https://www.youtube.com/@la_inteligencia_artificial" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col"
+                  >
+                    <h4 className="text-xl font-semibold mb-2 text-primary-600">Inteligencia Artificial</h4>
+                    <p className="text-gray-600 mb-4">Canal dedicado a explicar conceptos de IA de manera accesible, con tutoriales y análisis de herramientas.</p>
+                    <span className="mt-auto text-sm text-gray-500">+100K suscriptores</span>
+                  </a>
+
+                  {/* Canal 4 - MiduDev */}
+                  <a 
+                    href="https://www.youtube.com/@midudev" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col"
+                  >
+                    <h4 className="text-xl font-semibold mb-2 text-primary-600">MiduDev</h4>
+                    <p className="text-gray-600 mb-4">Desarrollo web y programación con un enfoque práctico, incluyendo IA aplicada y las últimas tecnologías.</p>
+                    <span className="mt-auto text-sm text-gray-500">+500K suscriptores</span>
+                  </a>
+
+                  {/* Canal 5 - Platzi */}
+                  <a 
+                    href="https://www.youtube.com/c/Platzi" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col"
+                  >
+                    <h4 className="text-xl font-semibold mb-2 text-primary-600">Platzi</h4>
+                    <p className="text-gray-600 mb-4">Ofrece cursos completos sobre IA, machine learning y ciencia de datos en español, con contenido para todos los niveles.</p>
+                    <span className="mt-auto text-sm text-gray-500">+1.1M suscriptores</span>
+                  </a>
+                </div>
+
+                <div className="mt-10 text-center">
+                  <p className="text-gray-600 mb-4">¿Conoces otros canales interesantes sobre IA?</p>
+                  <a 
+                    href="https://www.youtube.com/results?search_query=inteligencia+artificial+espa%C3%B1ol" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-primary-600 font-medium hover:text-primary-700"
+                  >
+                    Explora más canales en español <ExternalLink size={16} className="ml-1" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
         {/* CTA Section */}
-        <section className="py-10 bg-gradient-to-t from-[#F9FAFB] via-gray to-gray-300">
+        <section className="py-10 bg-gradient-to-b from-gray-300 via-gray to-gray-300">
           <div className="container-custom text-center">
             <div className="max-w-3xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">

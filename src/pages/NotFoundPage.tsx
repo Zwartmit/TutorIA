@@ -15,7 +15,7 @@ const NotFoundPage: React.FC = () => {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="min-h-screen bg-gray-50 flex flex-col items-center justify-center p-4"
+      className="min-h-screen bg-gray-300 flex flex-col items-center justify-center p-4"
     >
       <div className="text-center max-w-md">
         <h1 className="text-9xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-secondary-600 mb-4">¡UPS!</h1>
