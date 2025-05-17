@@ -192,7 +192,7 @@ const AssessmentPage: React.FC = () => {
   }, []);
     
   return (
-    <div className="pt-8">
+    <div className="pt-2">
       {/* Hero Section */}
       <section className="pt-16 md:pt-24 bg-gradient-to-b from-gray-300 via-gray to-gray-300">
         <div className="container-custom">
@@ -221,7 +221,7 @@ const AssessmentPage: React.FC = () => {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.3 }}
-                className="bg-white rounded-xl shadow-md overflow-hidden"
+                className="bg-white rounded-3xl shadow-md overflow-hidden"
               >
                 <div className="p-8">
                   <div className="text-center mb-8">

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { BookOpen, Lightbulb, Compass, Award, ArrowRight } from 'lucide-react';
@@ -7,11 +7,8 @@ import sec1 from '../assets/sec1.png';
 import sec2 from '../assets/sec2.png';
 import sec3 from '../assets/sec3.png';
 import sec4 from '../assets/sec4.png';
-// import sec5 from '../assets/sec5.png';
-// import bienvenida from '../assets/Bienvenida.mp4';
 
 const HomePage: React.FC = () => {
-  const [showModal, setShowModal] = useState(false);
   
   useEffect(() => {
     setTimeout(() => {
@@ -57,39 +54,10 @@ const HomePage: React.FC = () => {
               className="relative flex flex-col items-center"
             >
               <video src={hero} autoPlay loop muted className="w-full rounded-full"></video>
-              {/* <button
-                className="absolute bottom-0.5 -translate-x-1/2 px-3 py-2 bg-primary-600 text-white rounded-full shadow transition animate-bounce hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-opacity-50"
-                onClick={() => setShowModal(true)}
-                style={{ zIndex: 2 }}
-              >
-                Pulsa aquí
-              </button> */}
               <div className="absolute inset-0 bg-gradient-to-tr from-primary-900/20 to-transparent rounded-full" />
             </motion.div>
           </div>
         </div>
-        
-        {/* Modal */}
-        {/* {showModal && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
-            <div className="bg-white rounded-xl p-6 shadow-lg max-w-lg w-full relative">
-              <button
-                className="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-2xl"
-                onClick={() => setShowModal(false)}
-                aria-label="Cerrar"
-              >
-                ×
-              </button>
-              <video
-                src={bienvenida}
-                autoPlay
-                loop
-                controls
-                className="w-full rounded-3xl"
-              ></video>
-            </div>
-          </div>
-        )} */}
       </section>
 
       {/* Sección de Beneficios */}

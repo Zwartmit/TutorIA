@@ -184,7 +184,7 @@ const AIExplanationPage: React.FC = () => {
       {/* Contenido principal */}
       <div>
         {/* Introducción a la IA */}
-        <div className="w-full bg-gradient-to-b mt-20 from-gray-300 via-gray to-gray-300">
+        <div className="w-full bg-gradient-to-b mt-14 from-gray-300 via-gray to-gray-300">
           <section className="min-h-full py-12">
             <div className="container-custom">
               <div className="max-w-4xl mx-auto">

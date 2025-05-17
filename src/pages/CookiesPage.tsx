@@ -9,7 +9,7 @@ const CookiesPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="pt-12 min-h-screen bg-gradient-to-br from-gray-300 via-gray to-gray-300">
+    <div className="pt-8 min-h-screen bg-gradient-to-br from-gray-300 via-gray to-gray-300">
       <section className="pt-16">
         <div className="container-custom">
           <div className="max-w-2xl mx-auto text-center">
@@ -19,7 +19,7 @@ const CookiesPage: React.FC = () => {
               transition={{ duration: 0.5 }}
             >
               <div className="flex items-center justify-center mb-2">
-                <Cookie size={56} className="text-primary-600 drop-shadow-lg" />
+                <Cookie size={56} className="text-primary-600 drop-shadow-lg animate-bounce" />
               </div>
               <h1 className="text-4xl font-extrabold text-gray-900 mb-2 tracking-tight">Política de Cookies</h1>
               <p className="text-lg text-gray-600 mb-2 font-medium">Última actualización: {new Date().toLocaleDateString('es-ES')}</p>

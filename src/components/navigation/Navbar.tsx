@@ -180,29 +180,45 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                       </span>
                     </div>
                     {isStatsOpen && (
-                      <div className="absolute right-0 mt-2 w-44 bg-white border rounded-3xl shadow-lg z-50 flex flex-col items-center">
-                        <button
-                          onClick={() => {
-                            setIsStatsOpen(false);
-                            handleEditProfile();
-                          }}
-                          className="w-44 rounded-t-3xl flex items-center justify-center px-4 py-1 text-gray-700 hover:bg-gray-100 text-left"
-                        >
-                          <UserCircle size={18} className="mr-2" />
-                          <span>Mi perfil</span>
-                        </button>
-                        <button
-                          onClick={() => {
-                            setIsStatsOpen(false);
-                            handleSignOut();
-                          }}
-                          className="w-44 rounded-b-3xl flex items-center justify-center px-4 py-1 text-gray-700 hover:bg-gray-100 text-left"
-                        >
-                          <LogOut size={18} className="mr-2" />
-                          <span>Cerrar sesión</span>
-                        </button>
-                      </div>
-                    )}
+                    <div
+                      className="absolute right-0 mt-2 w-44 bg-white border rounded-3xl shadow-lg z-50 flex flex-col items-center"
+                      tabIndex={-1}
+                      ref={el => {
+                        if (el) {
+                          const handleClickOutside = (event: MouseEvent) => {
+                            if (!el.contains(event.target as Node)) {
+                              setIsStatsOpen(false);
+                            }
+                          };
+                          document.addEventListener('mousedown', handleClickOutside);
+                          return () => {
+                            document.removeEventListener('mousedown', handleClickOutside);
+                          };
+                        }
+                      }}
+                    >
+                      <button
+                        onClick={() => {
+                          setIsStatsOpen(false);
+                          handleEditProfile();
+                        }}
+                        className="w-44 rounded-t-3xl flex items-center justify-center px-4 py-1 text-gray-700 hover:bg-gray-100 text-left"
+                      >
+                        <UserCircle size={18} className="mr-2" />
+                        <span>Mi perfil</span>
+                      </button>
+                      <button
+                        onClick={() => {
+                          setIsStatsOpen(false);
+                          handleSignOut();
+                        }}
+                        className="w-44 rounded-b-3xl flex items-center justify-center px-4 py-1 text-gray-700 hover:bg-gray-100 text-left"
+                      >
+                        <LogOut size={18} className="mr-2" />
+                        <span>Cerrar sesión</span>
+                      </button>
+                    </div>
+                  )}
                   </div>
                 </div>
               ) : (

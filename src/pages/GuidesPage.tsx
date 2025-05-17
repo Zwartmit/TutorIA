@@ -238,7 +238,7 @@ const GuidesPage: React.FC = () => {
   }, []);
       
   return (
-    <div className="pt-20 bg-gray-300">
+    <div className="pt-14 bg-gray-300">
       {selectedGuide ? (
         
         <div className="min-h-screen">
