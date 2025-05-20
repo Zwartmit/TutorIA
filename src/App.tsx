@@ -17,6 +17,8 @@ import NotFoundPage from './pages/NotFoundPage';
 import TermsPage from './pages/TermsPage';
 import PrivacyPage from './pages/PrivacyPage';
 import CookiesPage from './pages/CookiesPage';
+import ForumPage from './pages/ForumPage';
+import PostPage from './pages/PostPage';
 
 // Components
 import ProtectedRoute from './components/auth/ProtectedRoute';
@@ -27,8 +29,8 @@ function App() {
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<HomePage />} />
-          <Route path="explanation" element={<AIExplanationPage />} />
-          <Route path="tools" element={<AIToolsPage />} />
+          <Route path="ia" element={<AIExplanationPage />} />
+          <Route path="herramientas" element={<AIToolsPage />} />
           <Route
             path="guides"
             element={
@@ -56,6 +58,8 @@ function App() {
           <Route path="terms" element={<TermsPage />} />
           <Route path="privacy" element={<PrivacyPage />} />
           <Route path="cookies" element={<CookiesPage />} />
+          <Route path="/foro" element={<ForumPage />} />
+          <Route path="/foro/:id" element={<PostPage />} />
         </Route>
         <Route path="/sign-in/*" element={<SignInPage />} />
         <Route path="/sign-up/*" element={<SignUpPage />} />

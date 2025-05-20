@@ -86,7 +86,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                 Inicio
               </NavLink>
               <NavLink
-                to="/explanation"
+                to="/ia"
                 className={({ isActive }) =>
                   `font-medium transition-colors ${
                     isActive
@@ -98,7 +98,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                 ¿Qué es la IA?
               </NavLink>
               <NavLink
-                to="/tools"
+                to="/herramientas"
                 className={({ isActive }) =>
                   `font-medium transition-colors ${
                     isActive
@@ -108,6 +108,18 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                 }
               >
                 Herramientas
+              </NavLink>
+              <NavLink
+                to="/foro"
+                className={({ isActive }) =>
+                  `font-medium transition-colors ${
+                    isActive
+                      ? 'text-primary-600'
+                      : 'text-gray-700 hover:text-primary-600'
+                  }`
+                }
+              >
+                Foro
               </NavLink>
               {isSignedIn && (
                 <>
@@ -137,18 +149,6 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                   </NavLink>
                 </>
               )}
-              {/* <NavLink
-                to="/forum"
-                className={({ isActive }) =>
-                  `font-medium transition-colors ${
-                    isActive
-                      ? 'text-primary-600'
-                  : 'text-gray-700 hover:text-primary-600'
-                  }`
-                }
-              >
-                Foro
-              </NavLink> */}
             </nav>
 
             <div className="hidden md:flex items-center space-x-4">
@@ -271,7 +271,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                   Inicio
                 </NavLink>
                 <NavLink
-                  to="/explanation"
+                  to="/ia"
                   className={({ isActive }) =>
                     `flex-1 text-center py-2 font-medium rounded-2xl transition-colors ${
                       isActive ? 'text-primary-600 bg-primary-100' : 'text-gray-700 hover:bg-gray-100'
@@ -282,7 +282,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                   ¿Qué es IA?
                 </NavLink>
                 <NavLink
-                  to="/tools"
+                  to="/herramientas"
                   className={({ isActive }) =>
                     `flex-1 text-center py-2 font-medium rounded-2xl transition-colors ${
                       isActive ? 'text-primary-600 bg-primary-100' : 'text-gray-700 hover:bg-gray-100'
@@ -317,6 +317,17 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                       onClick={() => setIsMenuOpen(false)}
                     >
                       Evaluación
+                    </NavLink>
+                    <NavLink
+                      to="/foro"
+                      className={({ isActive }) =>
+                        `flex-1 text-center py-2 font-medium rounded-2xl transition-colors ${
+                          isActive ? 'text-primary-600 bg-primary-100' : 'text-gray-700 hover:bg-gray-100'
+                        }`
+                      }
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Foro
                     </NavLink>
                   </>
                 ) : (

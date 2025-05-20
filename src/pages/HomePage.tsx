@@ -7,6 +7,7 @@ import sec1 from '../assets/sec1.png';
 import sec2 from '../assets/sec2.png';
 import sec3 from '../assets/sec3.png';
 import sec4 from '../assets/sec4.png';
+import sec5 from '../assets/sec5.png';
 
 const HomePage: React.FC = () => {
   
@@ -41,7 +42,7 @@ const HomePage: React.FC = () => {
                 Aprende los conceptos fundamentales de la IA, cómo funciona y empieza a explorar el futuro de la tecnología
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start transition-transform duration-300 hover:translate-x-2">
-                <Link to="/explanation" className="btn-primary">
+                <Link to="/ia" className="btn-primary">
                   Empieza ahora
                 </Link>
               </div>
@@ -151,7 +152,7 @@ const HomePage: React.FC = () => {
                   el mundo. Descubre los diferentes tipos de inteligencia artificial y las
                   tecnologías que hacen posible que esto suceda.
                 </p>
-                <Link to="/explanation" className="inline-flex items-center text-primary-600 font-medium hover:text-primary-700 transition-transform duration-300 hover:translate-x-2">
+                <Link to="/ia" className="inline-flex items-center text-primary-600 font-medium hover:text-primary-700 transition-transform duration-300 hover:translate-x-2">
                   Conoce más <ArrowRight size={16} className="ml-1" />
                 </Link>
               </motion.div>
@@ -197,7 +198,7 @@ const HomePage: React.FC = () => {
                   Conoce las herramientas de IA que están transformando el mundo, desde generadores de texto e imágenes hasta agentes inteligentes que hacen el trabajo por ti.
                   Descubre cómo te pueden ayudar en tus proyectos personales o tu entorno laboral.
                 </p>
-                <Link to="/tools" className="inline-flex items-center text-primary-600 font-medium hover:text-primary-700 transition-transform duration-300 hover:translate-x-2">
+                <Link to="/herramientas" className="inline-flex items-center text-primary-600 font-medium hover:text-primary-700 transition-transform duration-300 hover:translate-x-2">
                   Ver herramientas <ArrowRight size={16} className="ml-1" />
                 </Link>
               </motion.div>
@@ -271,7 +272,7 @@ const HomePage: React.FC = () => {
             </div>
 
             {/* Sección 5: Foro */}
-            {/* <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -284,7 +285,7 @@ const HomePage: React.FC = () => {
                   Únete a nuestra comunidad, comparte tus dudas, experiencias y aprende junto a otros entusiastas de la inteligencia artificial.
                   El foro es el lugar ideal para crecer y colaborar.
                 </p>
-                <Link to="/forum" className="inline-flex items-center text-primary-600 font-medium hover:text-primary-700 transition-transform duration-300 hover:translate-x-2">
+                <Link to="/foro" className="inline-flex items-center text-primary-600 font-medium hover:text-primary-700 transition-transform duration-300 hover:translate-x-2">
                   Ir al foro <ArrowRight size={16} className="ml-1" />
                 </Link>
               </motion.div>
@@ -301,7 +302,7 @@ const HomePage: React.FC = () => {
                   className="rounded-3xl shadow-md w-full h-64 md:h-80 object-cover"
                 />
               </motion.div>
-            </div>  */}
+            </div> 
           </div>
         </div>
       </section>
@@ -325,7 +326,7 @@ const HomePage: React.FC = () => {
                 Crear cuenta gratis
               </Link>
               <Link
-                to="/explanation"
+                to="/ia"
                 className="btn bg-transparent border-2 border-white/30 text-white hover:bg-white/10 focus:ring-white/30"
               >
                 Explorar sin registrarse

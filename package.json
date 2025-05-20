@@ -12,6 +12,7 @@
   "dependencies": {
     "@clerk/clerk-react": "^5.31.3",
     "@clerk/localizations": "^3.15.3",
+    "@supabase/supabase-js": "^2.49.5",
     "@tsconfig/vite-react": "^3.0.0",
     "@types/react-slick": "^0.23.13",
     "date-fns": "^3.3.1",
