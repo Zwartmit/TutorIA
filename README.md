@@ -6,16 +6,6 @@ TutorIA es una plataforma educativa (en desarrollo) diseñada para introducir a 
 
 [TutorIA🤖🎓](https://tutoria.dev-mit.com)
 
-## 📸 Capturas de pantalla
-
-![Inicio](./src/assets/screenshots/screen1.png)
-![¿Qué es la IA?](./src/assets/screenshots/screen2.png)
-![Herramientas IA](./src/assets/screenshots/screen3.png)
-![Guías](./src/assets/screenshots/screen4.png)
-![Tests](./src/assets/screenshots/screen5.png)
-![Foro](./src/assets/screenshots/screen6.png)
-![Perfil de usuario](./src/assets/screenshots/screen7.png)
-
 ## 🧩 Funcionalidades   
 
 - **Contenido educativo**: Explicaciones claras y concisas sobre conceptos de IA
@@ -57,3 +47,13 @@ TutorIA/
 - Autenticación segura con Clerk
 - Validación de datos en frontend y backend
 - Protección contra ataques XSS
+
+## 📸 Capturas de pantalla
+
+![Inicio](./src/assets/screenshots/screen1.png)
+![¿Qué es la IA?](./src/assets/screenshots/screen2.png)
+![Herramientas IA](./src/assets/screenshots/screen3.png)
+![Guías](./src/assets/screenshots/screen4.png)
+![Tests](./src/assets/screenshots/screen5.png)
+![Foro](./src/assets/screenshots/screen6.png)
+![Perfil de usuario](./src/assets/screenshots/screen7.png)
