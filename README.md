@@ -4,27 +4,30 @@ TutorIA es una plataforma educativa (en desarrollo) diseñada para introducir a 
 
 ## 🌐 Acceso al proyecto
 
-Pronto podrás acceder a la plataforma.
+Acceso a la plataforma.
 
-<!-- [TutorIA🤖🎓](https://tutoria.dev-mit.com) -->
+[TutorIA🤖🎓](https://tutoria.dev-mit.com)
 
 ## 📸 Capturas de pantalla
 
-Pronto podrás ver algunas capturas del proyecto.
+Capturas del proyecto.
 
-<!-- Agrega aquí tus imágenes, por ejemplo: -->
-<!-- ![Inicio](./public/screenshots/inicio.png) -->
-<!-- ![Foro](./public/screenshots/foro.png) -->
+![Inicio](./src/assets/screenshots/screen1.png)
+![¿Qué es la IA?](./src/assets/screenshots/screen2.png)
+![Herramientas IA](./src/assets/screenshots/screen3.png)
+![Guías](./src/assets/screenshots/screen4.png)
+![Tests](./src/assets/screenshots/screen5.png)
+![Foro](./src/assets/screenshots/screen6.png)
+![Perfil de usuario](./src/assets/screenshots/screen7.png)
 
 ## 🧩 Funcionalidades   
 
 - **Contenido educativo**: Explicaciones claras y concisas sobre conceptos de IA
-- **Herramientas de IA**: Directorio curado de herramientas populares de IA
+- **Herramientas IA**: Directorio curado de herramientas populares de IA
 - **Guías paso a paso**: Tutoriales prácticos para usar herramientas de IA
-- **Evaluaciones**: Tests interactivos para medir el progreso
-- **Foro comunitario**: Espacio para compartir experiencias y proyectos
-- **Perfiles de usuario**: Sistema de autenticación y perfiles personalizados
-- **Otras en desarrollo...**
+- **Tests**: Tests interactivos para medir el progreso
+- **Foro**: Espacio para interactuar con la comunidad
+- **Perfil de usuario**: Sistema de autenticación y perfiles personalizados
 
 ## 🛠️ Tecnologías
 

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Award, Check, X, RefreshCw, ChevronRight } from 'lucide-react';
+import { Award, Check, X, RefreshCw, ChevronRight, Brain, BrainCircuit } from 'lucide-react';
 import { PiExam } from 'react-icons/pi';
+import Swal from 'sweetalert2';
 
 interface Question {
   id: number;
@@ -11,7 +12,9 @@ interface Question {
   explanation: string;
 }
 
-const questions: Question[] = [
+type TestType = 'basic' | 'advanced';
+
+const basicQuestions: Question[] = [
   {
     id: 1,
     text: '¿Qué es la Inteligencia Artificial?',
@@ -26,7 +29,7 @@ const questions: Question[] = [
   },
   {
     id: 2,
-    text: '¿Cuál de las siguientes NO es un ejemplo de IA débil o especializada?',
+    text: '¿Cuál de las siguientes NO es un ejemplo de IA estrecha?',
     options: [
       'Un asistente virtual como Siri o Alexa',
       'Un sistema de recomendación de películas en Netflix',
@@ -34,7 +37,7 @@ const questions: Question[] = [
       'Un programa de ajedrez que puede vencer a campeones mundiales'
     ],
     correctAnswer: 2,
-    explanation: 'Una IA que puede resolver cualquier problema intelectual humano sería un ejemplo de IA fuerte o general (AGI), que aún no existe. Los otros ejemplos son IA débil o especializada, diseñada para tareas específicas.'
+    explanation: 'Una IA que puede resolver cualquier problema intelectual humano sería un ejemplo de IA fuerte o general (AGI), que aún no existe. Los otros ejemplos son IA estrecha o especializada, diseñada para tareas específicas.'
   },
   {
     id: 3,
@@ -107,6 +110,153 @@ const questions: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Un conjunto de datos de entrenamiento es una colección de ejemplos que se utilizan para entrenar un modelo de machine learning, permitiéndole aprender patrones y relaciones en los datos.'
+  },
+  {
+    id: 9,
+    text: '¿Qué es la visión por computadora?',
+    options: [
+      'Ver películas en la computadora',
+      'Área de la IA que permite a las máquinas interpretar imágenes y videos',
+      'Un monitor de alta resolución',
+      'Un programa para editar fotos'
+    ],
+    correctAnswer: 1,
+    explanation: 'La visión por computadora es un campo de la IA que permite a las máquinas interpretar y comprender el contenido visual del mundo que las rodea.'
+  },
+  {
+    id: 10,
+    text: '¿Qué es un algoritmo en el contexto de la IA?',
+    options: [
+      'Un programa de computadora',
+      'Un conjunto de reglas o instrucciones para resolver un problema',
+      'Un tipo de base de datos',
+      'Un lenguaje de programación'
+    ],
+    correctAnswer: 1,
+    explanation: 'En IA, un algoritmo es un conjunto de reglas o instrucciones que los sistemas siguen para resolver un problema o realizar una tarea específica.'
+  }
+];
+
+const advancedQuestions: Question[] = [
+  {
+    id: 1,
+    text: '¿Qué es el aprendizaje por refuerzo?',
+    options: [
+      'Un tipo de aprendizaje donde el modelo aprende a base de recompensas y castigos',
+      'Un método para reforzar la seguridad en sistemas de IA',
+      'Una técnica para mejorar la velocidad de entrenamiento de modelos',
+      'Un enfoque para validar modelos de machine learning'
+    ],
+    correctAnswer: 0,
+    explanation: 'El aprendizaje por refuerzo es un tipo de aprendizaje automático donde un agente aprende a tomar decisiones mediante la interacción con un entorno, recibiendo recompensas o castigos por sus acciones.'
+  },
+  {
+    id: 2,
+    text: '¿Qué es el sesgo algorítmico?',
+    options: [
+      'Un error de programación en los algoritmos',
+      'La tendencia de un sistema a tomar decisiones injustas debido a datos de entrenamiento sesgados',
+      'Un tipo de algoritmo más rápido que otros',
+      'Un método para reducir el sobreajuste en modelos de IA'
+    ],
+    correctAnswer: 1,
+    explanation: 'El sesgo algorítmico ocurre cuando un sistema de IA toma decisiones injustas o discriminatorias debido a datos de entrenamiento que contienen prejuicios humanos.'
+  },
+  {
+    id: 3,
+    text: '¿Qué es el aprendizaje no supervisado?',
+    options: [
+      'Cuando el modelo no tiene supervisión humana',
+      'Cuando el modelo encuentra patrones en datos sin etiquetar',
+      'Cuando el modelo aprende sin usar datos',
+      'Cuando el modelo se entrena en tiempo real'
+    ],
+    correctAnswer: 1,
+    explanation: 'El aprendizaje no supervisado es un tipo de machine learning donde el modelo encuentra patrones y relaciones en datos sin etiquetar, sin supervisión explícita.'
+  },
+  {
+    id: 4,
+    text: '¿Qué es el procesamiento de lenguaje natural (NLP) en tiempo real?',
+    options: [
+      'Un sistema que traduce idiomas instantáneamente',
+      'La capacidad de procesar y generar lenguaje humano con mínima latencia',
+      'Un tipo de chatbot avanzado',
+      'Un modelo de lenguaje con actualizaciones en tiempo real'
+    ],
+    correctAnswer: 1,
+    explanation: 'El NLP en tiempo real se refiere a sistemas que pueden procesar y generar lenguaje humano con una latencia mínima, permitiendo interacciones fluidas y naturales.'
+  },
+  {
+    id: 5,
+    text: '¿Qué es el aprendizaje por transferencia en IA?',
+    options: [
+      'Transferir archivos entre modelos',
+      'Usar conocimientos aprendidos en una tarea para mejorar el rendimiento en otra',
+      'Cambiar de un modelo a otro durante el entrenamiento',
+      'Un método de respaldo de modelos'
+    ],
+    correctAnswer: 1,
+    explanation: 'El aprendizaje por transferencia es una técnica donde un modelo desarrollado para una tarea se reutiliza como punto de partida para un modelo en una segunda tarea relacionada.'
+  },
+  {
+    id: 6,
+    text: '¿Qué es el aprendizaje federado?',
+    options: [
+      'Un método para entrenar modelos en múltiples dispositivos descentralizados',
+      'Un tipo de red neuronal federal',
+      'Un algoritmo de cifrado de datos',
+      'Un protocolo de comunicación entre modelos de IA'
+    ],
+    correctAnswer: 0,
+    explanation: 'El aprendizaje federado es un enfoque de machine learning que permite entrenar modelos en múltiples dispositivos o servidores descentralizados que contienen datos locales, sin necesidad de intercambiar los datos.'
+  },
+  {
+    id: 7,
+    text: '¿Qué es la explicabilidad en IA?',
+    options: [
+      'La capacidad de un modelo para explicar sus decisiones en términos comprensibles',
+      'Un documento técnico sobre un modelo de IA',
+      'Un método para depurar código de IA',
+      'La documentación de un sistema de IA'
+    ],
+    correctAnswer: 0,
+    explanation: 'La explicabilidad en IA se refiere a la capacidad de un sistema de IA para explicar sus decisiones, predicciones o recomendaciones de manera que sean comprensibles para los seres humanos.'
+  },
+  {
+    id: 8,
+    text: '¿Qué es la generación de lenguaje natural?',
+    options: [
+      'Un traductor automático',
+      'La capacidad de un sistema para producir texto que parezca escrito por humanos',
+      'Un corrector gramatical avanzado',
+      'Un sistema de reconocimiento de voz'
+    ],
+    correctAnswer: 1,
+    explanation: 'La generación de lenguaje natural es una rama del procesamiento del lenguaje natural que se centra en producir texto que sea indistinguible del escrito por humanos.'
+  },
+  {
+    id: 9,
+    text: '¿Qué es el aprendizaje multimodal?',
+    options: [
+      'Usar múltiples métodos de enseñanza',
+      'Entrenar modelos que pueden procesar y relacionar información de múltiples fuentes (texto, imagen, audio, etc.)',
+      'Un modelo que funciona en varios idiomas',
+      'Un sistema que combina diferentes algoritmos de aprendizaje'
+    ],
+    correctAnswer: 1,
+    explanation: 'El aprendizaje multimodal implica entrenar modelos que pueden procesar y relacionar información de múltiples modalidades, como texto, imágenes, audio y video, para realizar tareas más complejas.'
+  },
+  {
+    id: 10,
+    text: '¿Qué es el aprendizaje por pocos ejemplos (few-shot learning)?',
+    options: [
+      'Aprender con un conjunto de datos pequeño',
+      'Un modelo que puede aprender nuevas tareas con muy pocos ejemplos',
+      'Un método para filtrar datos de entrenamiento',
+      'Una técnica de compresión de modelos'
+    ],
+    correctAnswer: 1,
+    explanation: 'El aprendizaje por pocos ejemplos es una técnica de machine learning donde un modelo puede aprender a realizar nuevas tareas con muy pocos ejemplos de entrenamiento, imitando la capacidad humana de aprendizaje rápido.'
   }
 ];
 
@@ -116,21 +266,29 @@ enum QuizState {
   COMPLETED
 }
 
-const PASSING_SCORE = 80; // Se requiere el 80% para aprobar
+const PASSING_SCORE = 75; // Se requiere el 75% para aprobar
 
 const AssessmentPage: React.FC = () => {
+  const [testType, setTestType] = useState<TestType | null>(null);
   const [quizState, setQuizState] = useState<QuizState>(QuizState.NOT_STARTED);
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [selectedAnswers, setSelectedAnswers] = useState<number[]>(Array(questions.length).fill(-1));
+  const [selectedAnswers, setSelectedAnswers] = useState<number[]>([]);
   const [showFeedback, setShowFeedback] = useState(false);
   const [score, setScore] = useState(0);
+  
+  const questions = testType === 'basic' ? basicQuestions : advancedQuestions;
 
-  const handleStartQuiz = () => {
+  const handleStartQuiz = (type: TestType) => {
+    setTestType(type);
     setQuizState(QuizState.IN_PROGRESS);
     setCurrentQuestion(0);
-    setSelectedAnswers(Array(questions.length).fill(-1));
+    setSelectedAnswers(Array(type === 'basic' ? basicQuestions.length : advancedQuestions.length).fill(-1));
     setShowFeedback(false);
     setScore(0);
+  };
+  
+  const handleSelectTest = (type: TestType) => {
+    setTestType(type);
   };
 
   const handleAnswerSelect = (optionIndex: number) => {
@@ -159,12 +317,37 @@ const AssessmentPage: React.FC = () => {
     }
   };
 
+  const handleCancelQuiz = async () => {
+    const result = await Swal.fire({
+      text: '¿Deseas cancelar el test? Perderás todo tu progreso.',
+      showCancelButton: true,
+      confirmButtonText: 'Sí, cancelar',
+      cancelButtonText: 'No, continuar',
+      customClass: {
+        confirmButton: 'btn-red text-sm',
+        cancelButton: 'btn-primary text-sm',
+        popup: 'rounded-3xl p-6',
+      }
+    });
+
+    if (result.isConfirmed) {
+      setQuizState(QuizState.NOT_STARTED);
+      setCurrentQuestion(0);
+      setSelectedAnswers(Array(questions.length).fill(-1));
+      setShowFeedback(false);
+      setScore(0);
+    }
+  };
+
   const handleRestartQuiz = () => {
-    handleStartQuiz();
+    if (testType) {
+      handleStartQuiz(testType);
+    }
   };
 
   const calculatePercentageScore = () => {
-    return Math.round((score / questions.length) * 100);
+    const totalQuestions = testType === 'basic' ? basicQuestions.length : advancedQuestions.length;
+    return Math.round((score / totalQuestions) * 100);
   };
 
   const hasPassed = () => {
@@ -172,17 +355,18 @@ const AssessmentPage: React.FC = () => {
   };
 
   const renderProgressBar = () => {
+    const totalQuestions = testType === 'basic' ? basicQuestions.length : advancedQuestions.length;
     return (
       <div className="w-full bg-gray-200 rounded-full h-2.5 mb-6">
         <div 
           className="bg-primary-600 h-2.5 rounded-full transition-all duration-300" 
-          style={{ width: `${((currentQuestion + 1) / questions.length) * 100}%` }}
+          style={{ width: `${((currentQuestion + 1) / totalQuestions) * 100}%` }}
         ></div>
       </div>
     );
   };
 
-  const isAnswerSelected = selectedAnswers[currentQuestion] !== -1;
+  const isAnswerSelected = selectedAnswers[currentQuestion] !== undefined && selectedAnswers[currentQuestion] !== -1;
   const isCorrectAnswer = selectedAnswers[currentQuestion] === questions[currentQuestion]?.correctAnswer;
   
   useEffect(() => {
@@ -206,14 +390,14 @@ const AssessmentPage: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
               >
-                Pon a prueba lo que has aprendido sobre inteligencia artificial con nuestras evaluaciones interactivas.
+                Pon a prueba lo que has aprendido sobre inteligencia artificial con nuestros tests interactivos.
               </motion.p>
           </div>
         </div>
       </section>
 
       {/* Sección de evaluación */}
-      <section className="section bg-gradient-to-t from-gray-300 via-gray to-gray-300 pt-8">
+      <section className="section bg-gradient-to-t from-gray-300 via-gray to-gray-300 pt-8 pb-14">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto">
             {quizState === QuizState.NOT_STARTED && (
@@ -226,11 +410,67 @@ const AssessmentPage: React.FC = () => {
                 <div className="p-8">
                   <div className="text-center mb-8">
                     <Award size={48} className="mx-auto mb-4 text-primary-600" />
-                    <h2 className="text-2xl font-bold mb-4">Evaluación de conceptos básicos de IA</h2>
-                    <p className="text-gray-700">
-                      Esta evaluación contiene {questions.length} preguntas sobre los conceptos fundamentales
-                      de la inteligencia artificial que hemos cubierto en nuestras lecciones.
+                    <h2 className="text-2xl font-bold mb-4">Test de conceptos básicos de IA</h2>
+                    <p className="text-gray-700 text-center">
+                      Este test contiene {questions.length} preguntas sobre los conceptos fundamentales
+                      de la inteligencia artificial que hemos cubierto en nuestras lecciones
                     </p>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div 
+                      onClick={() => handleSelectTest('basic')}
+                      className={`p-6 rounded-3xl border-2 cursor-pointer transition-all ${testType === 'basic' ? 'border-primary-600 bg-primary-50' : 'border-gray-200 hover:border-primary-400'}`}
+                    >
+                      <div className="flex items-center mb-4 justify-center">
+                        <div className={`p-3 rounded-full ${testType === 'basic' ? 'bg-primary-100 text-primary-600' : 'bg-gray-100 text-gray-600'} mr-3`}>
+                          <Brain size={24} />
+                        </div>
+                        <h3 className="text-xl font-semibold">Conceptos básicos</h3>
+                      </div>
+                      <p className="text-gray-700 mb-4 text-center">Ideal para principiantes que están comenzando a aprender sobre IA</p>
+                      <ul className="space-y-2 text-sm text-gray-600">
+                        <li className="flex items-start">
+                          <span className="text-primary-600 mr-2">•</span>
+                          {basicQuestions.length} preguntas
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-primary-600 mr-2">•</span>
+                          Nivel: Principiante
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-primary-600 mr-2">•</span>
+                          Conceptos fundamentales
+                        </li>
+                      </ul>
+                    </div>
+                    
+                    <div 
+                      onClick={() => handleSelectTest('advanced')}
+                      className={`p-6 rounded-3xl border-2 cursor-pointer transition-all ${testType === 'advanced' ? 'border-secondary-600 bg-secondary-50' : 'border-gray-200 hover:border-secondary-400'}`}
+                    >
+                      <div className="flex items-center mb-4 justify-center">
+                        <div className={`p-3 rounded-full ${testType === 'advanced' ? 'bg-secondary-100 text-secondary-600' : 'bg-gray-100 text-gray-600'} mr-3`}>
+                          <BrainCircuit size={24} />
+                        </div>
+                        <h3 className="text-xl font-semibold">Conceptos avanzados</h3>
+                      </div>
+                      <p className="text-gray-700 mb-4 text-center">Para aquellos con conocimientos previos que buscan profundizar en IA</p>
+                      <ul className="space-y-2 text-sm text-gray-600">
+                        <li className="flex items-start">
+                          <span className="text-secondary-600 mr-2">•</span>
+                          {advancedQuestions.length} preguntas
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-secondary-600 mr-2">•</span>
+                          Nivel: Avanzado
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-secondary-600 mr-2">•</span>
+                          Temas especializados
+                        </li>
+                      </ul>
+                    </div>
                   </div>
 
                   <div className="bg-gray-50 p-6 rounded-3xl mb-8">
@@ -238,7 +478,7 @@ const AssessmentPage: React.FC = () => {
                     <ul className="space-y-2 text-gray-700">
                       <li className="flex items-start">
                         <span className="text-primary-600 mr-2">•</span>
-                        La evaluación dura aproximadamente 10-15 minutos.
+                        El test dura aproximadamente 10-15 minutos.
                       </li>
                       <li className="flex items-start">
                         <span className="text-primary-600 mr-2">•</span>
@@ -250,13 +490,19 @@ const AssessmentPage: React.FC = () => {
                       </li>
                       <li className="flex items-start">
                         <span className="text-primary-600 mr-2">•</span>
-                        Necesitas un 80% de respuestas correctas para aprobar.
+                        Necesitas un 75% de respuestas correctas para aprobar.
                       </li>
                     </ul>
                   </div>
 
-                  <button onClick={handleStartQuiz} className="btn-primary w-full">
-                    Comenzar evaluación
+                  <button 
+                    onClick={() => testType && handleStartQuiz(testType)} 
+                    disabled={!testType}
+                    className={`btn-primary w-full ${!testType ? 'opacity-50 cursor-not-allowed' : ''}`}
+                  >
+                    {testType === 'basic' ? 'Comenzar test de Conceptos básicos' : 
+                     testType === 'advanced' ? 'Comenzar test de Conceptos avanzados' : 
+                     'Selecciona un tipo de test'}
                   </button>
                 </div>
               </motion.div>
@@ -268,7 +514,7 @@ const AssessmentPage: React.FC = () => {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.3 }}
-                className="bg-white rounded-xl shadow-md overflow-hidden"
+                className="bg-white rounded-3xl shadow-md overflow-hidden"
               >
                 <div className="p-8">
                   {renderProgressBar()}
@@ -345,26 +591,34 @@ const AssessmentPage: React.FC = () => {
                     </div>
                   )}
 
-                  <div className="flex justify-end">
-                    {!showFeedback ? (
-                      <button
-                        onClick={handleCheckAnswer}
-                        disabled={!isAnswerSelected}
-                        className={`btn-primary ${
-                          !isAnswerSelected ? 'opacity-50 cursor-not-allowed' : ''
-                        }`}
-                      >
-                        Comprobar respuesta
-                      </button>
-                    ) : (
-                      <button
-                        onClick={handleNextQuestion}
-                        className="btn-primary flex items-center"
-                      >
-                        {currentQuestion === questions.length - 1 ? 'Ver resultados' : 'Siguiente'}
-                        <ChevronRight size={16} className="ml-1" />
-                      </button>
-                    )}
+                  <div className="flex justify-between">
+                    <button
+                      onClick={handleCancelQuiz}
+                      className="px-4 py-2 text-sm font-medium text-red-600 hover:text-red-800 transition-colors"
+                    >
+                      Cancelar
+                    </button>
+                    <div className="flex space-x-3">
+                      {!showFeedback ? (
+                        <button
+                          onClick={handleCheckAnswer}
+                          disabled={!isAnswerSelected}
+                          className={`btn-primary ${
+                            !isAnswerSelected ? 'opacity-50 cursor-not-allowed' : ''
+                          }`}
+                        >
+                          Comprobar respuesta
+                        </button>
+                      ) : (
+                        <button
+                          onClick={handleNextQuestion}
+                          className="btn-primary flex items-center"
+                        >
+                          {currentQuestion === questions.length - 1 ? 'Ver resultados' : 'Siguiente'}
+                          <ChevronRight size={16} className="ml-1" />
+                        </button>
+                      )}
+                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -375,12 +629,12 @@ const AssessmentPage: React.FC = () => {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.3 }}
-                className="bg-white rounded-xl shadow-md overflow-hidden"
+                className="bg-white rounded-3xl shadow-md overflow-hidden mb-10"
               >
                 <div className="p-8">
                   <div className="text-center mb-8">
                     <Award size={64} className="mx-auto mb-4 text-primary-600" />
-                    <h2 className="text-3xl font-bold mb-4">¡Evaluación completada!</h2>
+                    <h2 className="text-3xl font-bold mb-4">¡Test completado!</h2>
                     <p className="text-gray-700 mb-6">
                       Has respondido correctamente {score} de {questions.length} preguntas.
                     </p>
@@ -420,7 +674,7 @@ const AssessmentPage: React.FC = () => {
                       {hasPassed() ? (
                         <div className="text-center">
                           <p className="text-xl font-medium text-primary-600 mb-2">
-                            ¡Felicidades! Has superado la evaluación.
+                            ¡Felicidades! Has superado el test.
                           </p>
                           <p className="text-gray-600">
                             Has demostrado un excelente conocimiento de los conceptos básicos de IA.
@@ -484,15 +738,15 @@ const AssessmentPage: React.FC = () => {
                     ))}
                   </div>
 
-                  <div className="flex flex-col sm:flex-row gap-4">
+                  <div className="flex flex-col sm:flex-row gap-8">
                     <button
                       onClick={handleRestartQuiz}
                       className="btn-outline flex-1 flex items-center justify-center"
                     >
                       <RefreshCw size={16} className="mr-2" /> Intentar de nuevo
                     </button>
-                    <a href="/" className="btn-primary flex-1 flex items-center justify-center">
-                      Volver al inicio
+                    <a href="/tests" className="btn-primary flex-1 flex items-center justify-center">
+                      Volver a tests
                     </a>
                   </div>
                 </div>
@@ -501,39 +755,6 @@ const AssessmentPage: React.FC = () => {
           </div>
         </div>
       </section>
-
-      {/* Sección de consejos */}
-      {quizState !== QuizState.COMPLETED && (
-        <section className="section bg-gray-50">
-          <div className="container-custom">
-            <div className="max-w-3xl mx-auto">
-              <div className="bg-white rounded-xl shadow-md overflow-hidden">
-                <div className="p-8">
-                  <h3 className="text-xl font-semibold mb-4">Consejos para la evaluación</h3>
-                  <ul className="space-y-3 text-gray-700">
-                    <li className="flex items-start">
-                      <Check size={18} className="text-green-500 mr-2 mt-1" />
-                      <span>Lee cada pregunta cuidadosamente antes de responder.</span>
-                    </li>
-                    <li className="flex items-start">
-                      <Check size={18} className="text-green-500 mr-2 mt-1" />
-                      <span>Si no estás seguro de una respuesta, intenta eliminar las opciones que sabes que son incorrectas.</span>
-                    </li>
-                    <li className="flex items-start">
-                      <Check size={18} className="text-green-500 mr-2 mt-1" />
-                      <span>No te apresures. Tómate tu tiempo para considerar cada opción.</span>
-                    </li>
-                    <li className="flex items-start">
-                      <Check size={18} className="text-green-500 mr-2 mt-1" />
-                      <span>Utiliza el conocimiento que has adquirido en las secciones anteriores de este sitio.</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
     </div>
   );
 };

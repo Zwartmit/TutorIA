@@ -14,6 +14,26 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isStatsOpen, setIsStatsOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsStatsOpen(false);
+      }
+    };
+
+    if (isStatsOpen) {
+      const timer = setTimeout(() => {
+        document.addEventListener('click', handleClickOutside);
+      }, 100);
+
+      return () => {
+        clearTimeout(timer);
+        document.removeEventListener('click', handleClickOutside);
+      };
+    }
+  }, [isStatsOpen]);
   const { user, isSignedIn } = useUser();
   const mobileMenuRef = useRef<HTMLDivElement>(null);
 
@@ -53,7 +73,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
   };
 
   const handleEditProfile = () => {
-    navigate('/profile');
+    navigate('/perfil');
   };
 
   return (
@@ -124,7 +144,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
               {isSignedIn && (
                 <>
                   <NavLink
-                    to="/guides"
+                    to="/guias"
                     className={({ isActive }) =>
                       `font-medium transition-colors ${
                         isActive
@@ -136,7 +156,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                     Guías
                   </NavLink>
                   <NavLink
-                    to="/assessment"
+                    to="/tests"
                     className={({ isActive }) =>
                       `font-medium transition-colors ${
                         isActive
@@ -183,40 +203,36 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                     <div
                       className="absolute right-0 mt-2 w-44 bg-white border rounded-3xl shadow-lg z-50 flex flex-col items-center"
                       tabIndex={-1}
-                      ref={el => {
-                        if (el) {
-                          const handleClickOutside = (event: MouseEvent) => {
-                            if (!el.contains(event.target as Node)) {
-                              setIsStatsOpen(false);
-                            }
-                          };
-                          document.addEventListener('mousedown', handleClickOutside);
-                          return () => {
-                            document.removeEventListener('mousedown', handleClickOutside);
-                          };
-                        }
-                      }}
+                      ref={menuRef}
                     >
-                      <button
-                        onClick={() => {
-                          setIsStatsOpen(false);
-                          handleEditProfile();
-                        }}
-                        className="w-44 rounded-t-3xl flex items-center justify-center px-4 py-1 text-gray-700 hover:bg-gray-100 text-left"
-                      >
-                        <UserCircle size={18} className="mr-2" />
-                        <span>Mi perfil</span>
-                      </button>
-                      <button
-                        onClick={() => {
-                          setIsStatsOpen(false);
-                          handleSignOut();
-                        }}
-                        className="w-44 rounded-b-3xl flex items-center justify-center px-4 py-1 text-gray-700 hover:bg-gray-100 text-left"
-                      >
-                        <LogOut size={18} className="mr-2" />
-                        <span>Cerrar sesión</span>
-                      </button>
+                      <div className="w-full">
+                        <button
+                          onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            setIsStatsOpen(false);
+                            handleEditProfile();
+                          }}
+                          className="w-full rounded-t-3xl flex items-center justify-center px-4 py-1 text-gray-700 hover:bg-gray-100"
+                        >
+                          <UserCircle size={18} className="mr-2" />
+                          <span>Mi perfil</span>
+                        </button>
+                      </div>
+                      <div className="w-full">
+                        <button
+                          onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            setIsStatsOpen(false);
+                            handleSignOut();
+                          }}
+                          className="w-full rounded-b-3xl flex items-center justify-center px-4 py-1 text-gray-700 hover:bg-gray-100"
+                        >
+                          <LogOut size={18} className="mr-2" />
+                          <span>Cerrar sesión</span>
+                        </button>
+                      </div>
                     </div>
                   )}
                   </div>
@@ -293,31 +309,9 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                   Herramientas
                 </NavLink>
               </div>
-              <div className="flex justify-between space-x-2">
+              <div className="flex flex-col space-y-2">
                 {isSignedIn ? (
-                  <>
-                    <NavLink
-                      to="/guides"
-                      className={({ isActive }) =>
-                        `flex-1 text-center py-2 font-medium rounded-2xl transition-colors ${
-                          isActive ? 'text-primary-600 bg-primary-100' : 'text-gray-700 hover:bg-gray-100'
-                        }`
-                      }
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      Guías
-                    </NavLink>
-                    <NavLink
-                      to="/assessment"
-                      className={({ isActive }) =>
-                        `flex-1 text-center py-2 font-medium rounded-2xl transition-colors ${
-                          isActive ? 'text-primary-600 bg-primary-100' : 'text-gray-700 hover:bg-gray-100'
-                        }`
-                      }
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      Evaluación
-                    </NavLink>
+                  <div className="flex justify-between space-x-2">
                     <NavLink
                       to="/foro"
                       className={({ isActive }) =>
@@ -329,8 +323,45 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                     >
                       Foro
                     </NavLink>
-                  </>
+                    <NavLink
+                      to="/guias"
+                      className={({ isActive }) =>
+                        `flex-1 text-center py-2 font-medium rounded-2xl transition-colors ${
+                          isActive ? 'text-primary-600 bg-primary-100' : 'text-gray-700 hover:bg-gray-100'
+                        }`
+                      }
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Guías
+                    </NavLink>
+                    <NavLink
+                      to="/tests"
+                      className={({ isActive }) =>
+                        `flex-1 text-center py-2 font-medium rounded-2xl transition-colors ${
+                          isActive ? 'text-primary-600 bg-primary-100' : 'text-gray-700 hover:bg-gray-100'
+                        }`
+                      }
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Tests
+                    </NavLink>
+                  </div>
                 ) : (
+                  <NavLink
+                    to="/foro"
+                    className={({ isActive }) =>
+                      `flex-1 text-center py-2 font-medium rounded-2xl transition-colors ${
+                        isActive ? 'text-primary-600 bg-primary-100' : 'text-gray-700 hover:bg-gray-100'
+                      }`
+                    }
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Foro
+                  </NavLink>
+                )}
+              </div>
+              <div className="flex justify-between space-x-2">
+                {!isSignedIn && (
                   <>
                     <Link
                       to="/sign-in"

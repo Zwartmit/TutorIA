@@ -30,6 +30,12 @@ const PostPage: React.FC = () => {
   const { isSignedIn } = useUser();
 
   useEffect(() => {
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 100);
+  }, []);
+    
+  useEffect(() => {
     const fetchPostAndComments = async () => {
       const { data: postData } = await supabase
         .from('posts')
@@ -63,11 +69,11 @@ const PostPage: React.FC = () => {
             <Link to="/foro" className="text-primary-600 hover:underline">← Volver al foro</Link>
             <div className="rounded-3xl bg-white shadow-lg border border-gray-200 p-8 mt-4 mb-8">
 
-              <h1 className="text-3xl font-bold text-primary-600 mb-2">{post.title}</h1>
-              <p className="text-gray-700 mt-2 mb-2 whitespace-pre-line">{post.content}</p>
-              <div className="flex justify-between items-center text-xs text-gray-400 mt-2">
+              <div className="flex justify-between items-center text-xs text-gray-400 mb-4">
                 <span>Publicado el {new Date(post.created_at).toLocaleString()}</span>
               </div>
+              <h1 className="text-3xl font-bold text-primary-600 mb-2">{post.title}</h1>
+              <p className="text-gray-700 mt-2 mb-2 whitespace-pre-line">{post.content}</p>
             </div>
             <h2 className="text-lg font-semibold mb-4">Comentarios</h2>
             {isSignedIn ? (

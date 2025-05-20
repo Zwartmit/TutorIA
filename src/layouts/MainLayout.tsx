@@ -22,7 +22,7 @@ const MainLayout: React.FC = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar isScrolled={isScrolled} />
-      <main className="flex-grow">
+      <main className="flex-grow bg-gray-300">
         <motion.div
           key={location.pathname}
           initial={{ opacity: 0, y: 20 }}

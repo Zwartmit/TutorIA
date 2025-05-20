@@ -17,6 +17,12 @@ const ForumPage: React.FC = () => {
   const { isSignedIn } = useUser();
 
   useEffect(() => {
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 100);
+  }, []);
+    
+  useEffect(() => {
     const fetchPosts = async () => {
       const { data, error } = await supabase
         .from('posts')
@@ -61,15 +67,7 @@ const ForumPage: React.FC = () => {
               {posts.map((post) => (
                 <li key={post.id} className="rounded-3xl bg-white shadow-lg border border-gray-200 p-6 hover:shadow-xl transition">
                   <div className="flex flex-col h-full">
-                    <span className="text-sm text-gray-500">
-                      Publicado el {new Date(post.created_at).toLocaleDateString('es-ES', {
-                        day: '2-digit',
-                        month: 'long',
-                        year: 'numeric',
-                        hour: '2-digit',
-                        minute: '2-digit'
-                      })}
-                    </span>
+                    <span className="text-sm text-gray-500 mb-4">Publicado el {new Date(post.created_at).toLocaleString()}</span>
                     <Link to={`/foro/${post.id}`} className="text-2xl font-bold text-primary-600 hover:underline">
                       {post.title}
                     </Link>

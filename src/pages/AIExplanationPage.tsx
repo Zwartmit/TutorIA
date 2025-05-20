@@ -2,9 +2,16 @@ import React, { useEffect, useState } from 'react';
 import { BrainCircuit, Bot, ListFilter, Languages, ShieldPlus, BookOpen, ArrowRight, ExternalLink } from 'lucide-react';
 import { GiArtificialIntelligence, GiBrainstorm, GiTechnoHeart } from 'react-icons/gi';
 import { MdWifi, MdWifi2Bar, MdClose } from 'react-icons/md';
-import { FaSearchPlus } from 'react-icons/fa';
+import { FaSearchPlus, FaExternalLinkAlt } from 'react-icons/fa';
 import { RiGlobalFill } from 'react-icons/ri';
 import redes from '../assets/redes.png';
+import midugato from '../assets/midugato.png';
+import miduIcon from '../assets/youtube/midu.jpg';
+import dotIcon from '../assets/youtube/dot.jpg';
+import gustavoIcon from '../assets/youtube/gustavo.jpg';
+import platziIcon from '../assets/youtube/platzi.jpg';
+import iaIcon from '../assets/youtube/ia.jpg';
+import iaEsIcon from '../assets/youtube/iaes.jpg';
 
 const glossaryItems = [
   {
@@ -138,9 +145,10 @@ const AIExplanationPage: React.FC = () => {
             className="bg-white rounded-3xl shadow-2xl w-full max-w-3xl max-h-[80vh] flex flex-col"
             onClick={e => e.stopPropagation()}
           >
-            <div className="p-6 border-b border-gray-200 flex justify-between items-center">
+            <div className="p-3 border-b border-gray-200 flex justify-between items-center">
               <div className="w-full flex flex-col items-center justify-center">
-                <h3 className="text-2xl font-bold text-gray-800 text-center">Glosario de términos básicos 🤓☝🏽</h3>
+                <h3 className="text-2xl font-bold text-gray-800 text-center">Glosario de términos básicos</h3>
+                <img src={midugato} className="w-20 h-20" alt="midugato" />
               </div>
               <button
                 onClick={() => {
@@ -382,76 +390,123 @@ const AIExplanationPage: React.FC = () => {
                 </div>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {/* Canal 1 - Dot CSV */}
-                  <a 
-                    href="https://www.youtube.com/c/DotCSV" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col"
-                  >
-                    <h4 className="text-xl font-semibold mb-2 text-primary-600">Dot CSV</h4>
-                    <p className="text-gray-600 mb-4">Uno de los canales más populares en español sobre IA, con tutoriales, explicaciones y análisis de los últimos avances.</p>
-                    <span className="mt-auto text-sm text-gray-500">+700K suscriptores</span>
-                  </a>
+                  <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col items-center text-center">
+                    <img 
+                      src={miduIcon} 
+                      alt="MiduDev" 
+                      className="w-20 h-20 rounded-full mb-4 object-cover border-2 border-primary-100"
+                    />
+                    <a 
+                      href="https://www.youtube.com/@midudev" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-2 mb-2 group"
+                    >
+                      <h4 className="text-xl font-semibold text-primary-600">MiduDev</h4>
+                      <FaExternalLinkAlt size={14} className="text-primary-600 transition animate-bounce" />
+                    </a>
+                    <p className="text-gray-600">Desarrollo web y programación con un enfoque práctico, incluyendo IA aplicada y las últimas tecnologías</p>
+                  </div>
 
-                  {/* Canal 2 - Gustavo Entrala */}
-                  <a 
-                    href="https://www.youtube.com/@gustavo-entrala" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col"
-                  >
-                    <h4 className="text-xl font-semibold mb-2 text-primary-600">Gustavo Entrala</h4>
-                    <p className="text-gray-600 mb-4">Análisis y reflexiones sobre el impacto de la IA en la sociedad, la empresa y la vida cotidiana.</p>
-                    <span className="mt-auto text-sm text-gray-500">+50K suscriptores</span>
-                  </a>
+                  <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col items-center text-center">
+                    <img 
+                      src={dotIcon} 
+                      alt="Dot CSV" 
+                      className="w-20 h-20 rounded-full mb-4 object-cover border-2 border-primary-100"
+                    />
+                    <a 
+                      href="https://www.youtube.com/c/DotCSV" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-2 mb-2 group"
+                    >
+                      <h4 className="text-xl font-semibold text-primary-600">Dot CSV</h4>
+                      <FaExternalLinkAlt size={14} className="text-primary-600 transition animate-bounce" />
+                    </a>
+                    <p className="text-gray-600">Divulgación sobre Inteligencia Artificial para que entiendas cómo funciona la próxima revolución industrial.</p>
+                  </div>
 
-                  {/* Canal 3 - Inteligencia Artificial */}
-                  <a 
-                    href="https://www.youtube.com/@la_inteligencia_artificial" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col"
-                  >
-                    <h4 className="text-xl font-semibold mb-2 text-primary-600">Inteligencia Artificial</h4>
-                    <p className="text-gray-600 mb-4">Canal dedicado a explicar conceptos de IA de manera accesible, con tutoriales y análisis de herramientas.</p>
-                    <span className="mt-auto text-sm text-gray-500">+100K suscriptores</span>
-                  </a>
+                  <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col items-center text-center">
+                    <img 
+                      src={gustavoIcon} 
+                      alt="Gustavo Entrala" 
+                      className="w-20 h-20 rounded-full mb-4 object-cover border-2 border-primary-100"
+                    />
+                    <a 
+                      href="https://www.youtube.com/@gustavo-entrala" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-2 mb-2 group"
+                    >
+                      <h4 className="text-xl font-semibold text-primary-600">Gustavo Entrala</h4>
+                      <FaExternalLinkAlt size={14} className="text-primary-600 transition animate-bounce" />
+                    </a>
+                    <p className="text-gray-600">Análisis y reflexiones sobre el impacto de la IA en la sociedad, el entorno laboral y la vida cotidiana</p>
+                  </div>
 
-                  {/* Canal 4 - MiduDev */}
-                  <a 
-                    href="https://www.youtube.com/@midudev" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col"
-                  >
-                    <h4 className="text-xl font-semibold mb-2 text-primary-600">MiduDev</h4>
-                    <p className="text-gray-600 mb-4">Desarrollo web y programación con un enfoque práctico, incluyendo IA aplicada y las últimas tecnologías.</p>
-                    <span className="mt-auto text-sm text-gray-500">+500K suscriptores</span>
-                  </a>
+                  <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col items-center text-center">
+                    <img 
+                      src={platziIcon} 
+                      alt="Platzi" 
+                      className="w-20 h-20 rounded-full mb-4 object-cover border-2 border-primary-100"
+                    />
+                    <a 
+                      href="https://www.youtube.com/c/Platzi" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-2 mb-2 group"
+                    >
+                      <h4 className="text-xl font-semibold text-primary-600">Platzi</h4>
+                      <FaExternalLinkAlt size={14} className="text-primary-600 transition animate-bounce" />
+                    </a>
+                    <p className="text-gray-600">Ofrece cursos completos sobre IA, machine learning y ciencia de datos, con contenido para todos los niveles</p>
+                  </div>
 
-                  {/* Canal 5 - Platzi */}
-                  <a 
-                    href="https://www.youtube.com/c/Platzi" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col"
-                  >
-                    <h4 className="text-xl font-semibold mb-2 text-primary-600">Platzi</h4>
-                    <p className="text-gray-600 mb-4">Ofrece cursos completos sobre IA, machine learning y ciencia de datos en español, con contenido para todos los niveles.</p>
-                    <span className="mt-auto text-sm text-gray-500">+1.1M suscriptores</span>
-                  </a>
+                  <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col items-center text-center">
+                    <img 
+                      src={iaIcon} 
+                      alt="Inteligencia Artificial" 
+                      className="w-20 h-20 rounded-full mb-4 object-cover border-2 border-primary-100"
+                    />
+                    <a 
+                      href="https://www.youtube.com/@la_inteligencia_artificial" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-2 mb-2 group"
+                    >
+                      <h4 className="text-xl font-semibold text-primary-600">Inteligencia Artificial</h4>
+                      <FaExternalLinkAlt size={14} className="text-primary-600 transition animate-bounce" />
+                    </a>
+                    <p className="text-gray-600">Canal dedicado a explicar conceptos de IA de manera accesible, con tutoriales y análisis de herramientas</p>
+                  </div>
+
+                  <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col items-center text-center">
+                    <img 
+                      src={iaEsIcon} 
+                      alt="IA en Español" 
+                      className="w-20 h-20 rounded-full mb-4 object-cover border-2 border-primary-100"
+                    />
+                    <a 
+                      href="https://www.youtube.com/@ia-en-espa%C3%B1ol" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-2 mb-2 group"
+                    >
+                      <h4 className="text-xl font-semibold text-primary-600">IA en Español</h4>
+                      <FaExternalLinkAlt size={14} className="text-primary-600 transition animate-bounce" />
+                    </a>
+                    <p className="text-gray-600">Canal educativo que cubre temas de inteligencia artificial, machine learning y tecnologías emergentes</p>
+                  </div>
                 </div>
 
                 <div className="mt-10 text-center">
-                  <p className="text-gray-600 mb-4">¿Conoces otros canales interesantes sobre IA?</p>
                   <a 
                     href="https://www.youtube.com/results?search_query=inteligencia+artificial+espa%C3%B1ol" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="inline-flex items-center text-primary-600 font-medium hover:text-primary-700"
                   >
-                    Explora más canales en español <ExternalLink size={16} className="ml-1" />
+                    Explora más en YouTube <ExternalLink size={16} className="ml-1 transition animate-bounce" />
                   </a>
                 </div>
               </div>

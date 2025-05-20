@@ -41,8 +41,8 @@ const HomePage: React.FC = () => {
               <p className="text-xl text-gray-700 mb-8 md:max-w-xl mx-auto lg:mx-0">
                 Aprende los conceptos fundamentales de la IA, cómo funciona y empieza a explorar el futuro de la tecnología
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start transition-transform duration-300 hover:translate-x-2">
-                <Link to="/ia" className="btn-primary">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <Link to="/ia" className="btn-primary transition-transform duration-300 hover:translate-x-2">
                   Empieza ahora
                 </Link>
               </div>
@@ -62,7 +62,7 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* Sección de Beneficios */}
-      <section className="section bg-gradient-to-t from-gray-300 via-gray to-gray-300">
+      <section className="section bg-gradient-to-t from-gray-300 via-gray to-gray-300 mt-8">
         <div className="container-custom">
           <div className="text-center max-w-3xl mb-10 mx-auto">
             <h2 className="section-title">Lo que aprenderás...</h2>
@@ -219,7 +219,7 @@ const HomePage: React.FC = () => {
                   tareas específicas. Desde crear tu primer chatbot hasta generar imágenes impresionantes
                   con IA, nuestras guías te llevarán de la mano.
                 </p>
-                <Link to="/guides" className="inline-flex items-center text-primary-600 font-medium hover:text-primary-700 transition-transform duration-300 hover:translate-x-2">
+                <Link to="/guias" className="inline-flex items-center text-primary-600 font-medium hover:text-primary-700 transition-transform duration-300 hover:translate-x-2">
                   Explorar guías <ArrowRight size={16} className="ml-1" />
                 </Link>
               </motion.div>
@@ -265,7 +265,7 @@ const HomePage: React.FC = () => {
                   Pon a prueba lo que has aprendido sobre inteligencia artificial con nuestros tests interactivos.
                   Descubre tus fortalezas y áreas de mejora para seguir avanzando en tu aprendizaje.
                 </p>
-                <Link to="/assessment" className="inline-flex items-center text-primary-600 font-medium hover:text-primary-700 transition-transform duration-300 hover:translate-x-2">
+                <Link to="/tests" className="inline-flex items-center text-primary-600 font-medium hover:text-primary-700 transition-transform duration-300 hover:translate-x-2">
                   Realizar tests <ArrowRight size={16} className="ml-1" />
                 </Link>
               </motion.div>
@@ -316,7 +316,7 @@ const HomePage: React.FC = () => {
           <div className="max-w-3xl mx-auto">
             <Award size={48} className="mx-auto mb-6 text-white/90 transition animate-bounce" />
             <p className="text-xl text-white/80 mb-8">
-              Regístrate gratis y obtén acceso a todos nuestros recursos educativos, guías y evaluaciones para medir tu progreso
+              Regístrate gratis y obtén acceso a todos nuestros recursos educativos, guías y tests para medir tu progreso
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

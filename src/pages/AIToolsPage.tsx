@@ -1,7 +1,27 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, MessageSquare, Image, Code, ArrowRight, FileText, Megaphone, LineChart } from 'lucide-react';
+import { ExternalLink, MessageSquare, Image, Code, ArrowRight, FileText, Megaphone } from 'lucide-react';
 import { LuBoxes } from 'react-icons/lu';
+import gpt from '../assets/logos/gpt.png';
+import claude from '../assets/logos/claude.png';
+import gemini from '../assets/logos/gemini.svg';
+import perplexity from '../assets/logos/perplexity.png';
+import midjourney from '../assets/logos/midjourney.png';
+import firefly from '../assets/logos/firefly.png';
+import labs from '../assets/logos/labs.png';
+import reve from '../assets/logos/reve.png';
+import copilot from '../assets/logos/copilot.png';
+import windsurf from '../assets/logos/windsurf.png';
+import blackbox from '../assets/logos/blackbox.png';
+import bolt from '../assets/logos/bolt.png';
+import jasper from '../assets/logos/jasper.png';
+import writesonic from '../assets/logos/writesonic.png';
+import copy from '../assets/logos/copy.svg';
+import rytr from '../assets/logos/rytr.png';
+import eleven from '../assets/logos/eleven.png';
+import descript from '../assets/logos/descript.png';
+import murf from '../assets/logos/murf.png';
+import suno from '../assets/logos/suno.png';
 
 interface Tool {
   id: string;
@@ -14,200 +34,189 @@ interface Tool {
 }
 
 const tools: Tool[] = [
-  // Lenguaje
+  {
+    id: 'adobefirefly',
+    name: 'Adobe Firefly',
+    description: 'Generador de imágenes con IA integrado en el ecosistema Adobe.',
+    category: 'Imágenes',
+    url: 'https://firefly.adobe.com',
+    icon: <Image size={24} />,
+    imageUrl: firefly,
+  },
+  {
+    id: 'blackbox',
+    name: 'Blackbox AI',
+    description: 'Herramienta de IA para búsqueda, autocompletado y generación de código.',
+    category: 'Programación',
+    url: 'https://www.blackbox.ai',
+    icon: <Code size={24} />,
+    imageUrl: blackbox,
+  },
+  {
+    id: 'bolt',
+    name: 'Bolt new',
+    description: 'Herramienta de desarrollo web full-stack con IA para crear sin código.',
+    category: 'Programación',
+    url: 'https://www.boltai.com',
+    icon: <Code size={24} />,
+    imageUrl: bolt,
+  },
   {
     id: 'chatgpt',
     name: 'ChatGPT',
-    description: 'Chatbot de IA avanzado capaz de mantener conversaciones, responder preguntas, generar contenido y más.',
-    category: 'Lenguaje',
+    description: 'Modelo avanzado de OpenAI para conversaciones y resolución de tareas.',
+    category: 'Chat',
     url: 'https://chat.openai.com',
     icon: <MessageSquare size={24} />,
-    imageUrl: 'https://images.pexels.com/photos/7775641/pexels-photo-7775641.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    imageUrl: gpt,
   },
   {
     id: 'claude',
     name: 'Claude',
-    description: 'Asistente de IA conversacional desarrollado por Anthropic, diseñado para ser útil, inofensivo y honesto.',
-    category: 'Lenguaje',
+    description: 'Asistente conversacional de Anthropic, diseñado para ser útil y confiable.',
+    category: 'Chat',
     url: 'https://claude.ai',
     icon: <MessageSquare size={24} />,
-    imageUrl: 'https://images.pexels.com/photos/7567535/pexels-photo-7567535.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    imageUrl: claude,
   },
-  {
-    id: 'gemini',
-    name: 'Gemini (ex Bard)',
-    description: 'Asistente conversacional de Google, integrado con productos y búsqueda avanzada.',
-    category: 'Lenguaje',
-    url: 'https://gemini.google.com',
-    icon: <MessageSquare size={24} />,
-    imageUrl: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-  },
-  {
-    id: 'perplexity',
-    name: 'Perplexity AI',
-    description: 'Buscador y asistente conversacional con respuestas basadas en fuentes.',
-    category: 'Lenguaje',
-    url: 'https://www.perplexity.ai',
-    icon: <MessageSquare size={24} />,
-    imageUrl: 'https://images.pexels.com/photos/267614/pexels-photo-267614.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-  },
-
-  // Imágenes
-  {
-    id: 'midjourney',
-    name: 'Midjourney',
-    description: 'Generador de imágenes por IA capaz de crear arte digital de alta calidad a partir de descripciones textuales.',
-    category: 'Imágenes',
-    url: 'https://www.midjourney.com',
-    icon: <Image size={24} />,
-    imageUrl: 'https://images.pexels.com/photos/7713189/pexels-photo-7713189.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-  },
-  {
-    id: 'dalle',
-    name: 'DALL-E',
-    description: 'Generador de imágenes de OpenAI que crea imágenes realistas y artísticas a partir de descripciones.',
-    category: 'Imágenes',
-    url: 'https://openai.com/dall-e-3',
-    icon: <Image size={24} />,
-    imageUrl: 'https://images.pexels.com/photos/4050346/pexels-photo-4050346.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-  },
-  {
-    id: 'stablediffusion',
-    name: 'Stable Diffusion',
-    description: 'Modelo open source para generación de imágenes a partir de texto.',
-    category: 'Imágenes',
-    url: 'https://stablediffusionweb.com',
-    icon: <Image size={24} />,
-    imageUrl: 'https://images.pexels.com/photos/1103970/pexels-photo-1103970.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-  },
-  {
-    id: 'adobefirefly',
-    name: 'Adobe Firefly',
-    description: 'Generador de imágenes IA integrado con el ecosistema Adobe.',
-    category: 'Imágenes',
-    url: 'https://firefly.adobe.com',
-    icon: <Image size={24} />,
-    imageUrl: 'https://images.pexels.com/photos/461077/pexels-photo-461077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-  },
-
-  // Código / Desarrollo
   {
     id: 'copilot',
     name: 'GitHub Copilot',
-    description: 'Asistente de programación que sugiere código completo o funciones basadas en comentarios y contexto.',
-    category: 'Código',
+    description: 'Asistente de programación que sugiere código en tiempo real.',
+    category: 'Programación',
     url: 'https://github.com/features/copilot',
     icon: <Code size={24} />,
-    imageUrl: 'https://images.pexels.com/photos/11035481/pexels-photo-11035481.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-  },
-  {
-    id: 'tabnine',
-    name: 'Tabnine',
-    description: 'Autocompletado de código impulsado por IA para múltiples lenguajes.',
-    category: 'Código',
-    url: 'https://www.tabnine.com',
-    icon: <Code size={24} />,
-    imageUrl: 'https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-  },
-  {
-    id: 'codewhisperer',
-    name: 'Amazon CodeWhisperer',
-    description: 'Herramienta de Amazon para sugerencias de código y productividad.',
-    category: 'Código',
-    url: 'https://aws.amazon.com/codewhisperer/',
-    icon: <Code size={24} />,
-    imageUrl: 'https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-  },
-
-  // Contenido
-  {
-    id: 'jasper',
-    name: 'Jasper AI',
-    description: 'Plataforma para generar contenido de marketing como posts, emails y anuncios con inteligencia artificial.',
-    category: 'Contenido',
-    url: 'https://www.jasper.ai',
-    icon: <FileText size={24} />,
-    imageUrl: 'https://images.pexels.com/photos/8369520/pexels-photo-8369520.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-  },
-  {
-    id: 'writesonic',
-    name: 'Writesonic',
-    description: 'Generador de contenido para blogs, anuncios y más.',
-    category: 'Contenido',
-    url: 'https://writesonic.com',
-    icon: <FileText size={24} />,
-    imageUrl: 'https://images.pexels.com/photos/261662/pexels-photo-261662.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    imageUrl: copilot,
   },
   {
     id: 'copyai',
     name: 'Copy.ai',
-    description: 'Herramienta de copywriting y marketing impulsada por IA.',
+    description: 'Herramienta de copywriting y marketing con IA.',
     category: 'Contenido',
     url: 'https://www.copy.ai',
     icon: <FileText size={24} />,
-    imageUrl: 'https://images.pexels.com/photos/267491/pexels-photo-267491.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-  },
-
-  // Audio
-  {
-    id: 'elevenlabs',
-    name: 'ElevenLabs',
-    description: 'Plataforma de síntesis de voz que genera voces humanas realistas en múltiples idiomas y con emociones.',
-    category: 'Audio',
-    url: 'https://elevenlabs.io',
-    icon: <Megaphone size={24} />,
-    imageUrl: 'https://images.pexels.com/photos/7656697/pexels-photo-7656697.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    imageUrl: copy,
   },
   {
     id: 'descript',
     name: 'Descript',
-    description: 'Edición de audio y video con IA, incluye síntesis de voz.',
+    description: 'Herramienta de edición de audio y video con IA.',
     category: 'Audio',
     url: 'https://www.descript.com',
     icon: <Megaphone size={24} />,
-    imageUrl: 'https://images.pexels.com/photos/1648538/pexels-photo-1648538.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    imageUrl: descript,
+  },
+  {
+    id: 'elevenlabs',
+    name: 'ElevenLabs',
+    description: 'Generador de voces realistas en múltiples idiomas con IA.',
+    category: 'Audio',
+    url: 'https://elevenlabs.io',
+    icon: <Megaphone size={24} />,
+    imageUrl: eleven,
+  },
+  {
+    id: 'gemini',
+    name: 'Gemini',
+    description: 'Asistente de IA de Google con búsqueda avanzada.',
+    category: 'Chat',
+    url: 'https://gemini.google.com',
+    icon: <MessageSquare size={24} />,
+    imageUrl: gemini,
+  },
+  {
+    id: 'google-imagefx',
+    name: 'ImageFX (Google Labs)',
+    description: 'Generador de imágenes con IA y controles intuitivos.',
+    category: 'Imágenes',
+    url: 'https://labs.google/imagefx',
+    icon: <Image size={24} />,
+    imageUrl: labs,
+  },
+  {
+    id: 'jasper',
+    name: 'Jasper AI',
+    description: 'Plataforma de generación de contenido con IA para marketing.',
+    category: 'Contenido',
+    url: 'https://www.jasper.ai',
+    icon: <FileText size={24} />,
+    imageUrl: jasper,
+  },
+  {
+    id: 'midjourney',
+    name: 'Midjourney',
+    description: 'Generador de imágenes por IA para crear arte digital.',
+    category: 'Imágenes',
+    url: 'https://www.midjourney.com',
+    icon: <Image size={24} />,
+    imageUrl: midjourney,
   },
   {
     id: 'murfai',
     name: 'Murf AI',
-    description: 'Generador de voces realistas y presentaciones con IA.',
+    description: 'Generador de voces realistas con IA para presentaciones.',
     category: 'Audio',
     url: 'https://murf.ai',
     icon: <Megaphone size={24} />,
-    imageUrl: 'https://images.pexels.com/photos/1648536/pexels-photo-1648536.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-  },
-
-  // Desarrollo (ML/Frameworks)
-  {
-    id: 'tensorflow',
-    name: 'TensorFlow',
-    description: 'Biblioteca de código abierto para machine learning y deep learning desarrollada por Google.',
-    category: 'Desarrollo',
-    url: 'https://www.tensorflow.org',
-    icon: <LineChart size={24} />,
-    imageUrl: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    imageUrl: murf,
   },
   {
-    id: 'pytorch',
-    name: 'PyTorch',
-    description: 'Framework de deep learning flexible y ampliamente usado.',
-    category: 'Desarrollo',
-    url: 'https://pytorch.org',
-    icon: <LineChart size={24} />,
-    imageUrl: 'https://images.pexels.com/photos/1181672/pexels-photo-1181672.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    id: 'perplexity',
+    name: 'Perplexity AI',
+    description: 'Buscador conversacional con respuestas basadas en fuentes.',
+    category: 'Chat',
+    url: 'https://www.perplexity.ai',
+    icon: <MessageSquare size={24} />,
+    imageUrl: perplexity,
   },
   {
-    id: 'huggingface',
-    name: 'Hugging Face',
-    description: 'Plataforma y librería para modelos de lenguaje y visión.',
-    category: 'Desarrollo',
-    url: 'https://huggingface.co',
-    icon: <LineChart size={24} />,
-    imageUrl: 'https://images.pexels.com/photos/1181670/pexels-photo-1181670.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    id: 'reve',
+    name: 'REVE',
+    description: 'Plataforma para crear y personalizar imágenes con IA.',
+    category: 'Imágenes',
+    url: 'https://preview.reve.art/app',
+    icon: <Image size={24} />,
+    imageUrl: reve,
+  },
+  {
+    id: 'rytr',
+    name: 'Rytr',
+    description: 'Asistente de escritura con IA para crear contenido rápido.',
+    category: 'Contenido',
+    url: 'https://rytr.me',
+    icon: <FileText size={24} />,
+    imageUrl: rytr,
+  },
+  {
+    id: 'suno',
+    name: 'Suno AI',
+    description: 'Generador de música con IA a partir de descripciones.',
+    category: 'Audio',
+    url: 'https://suno.com',
+    icon: <Megaphone size={24} />,
+    imageUrl: suno,
+  },
+  {
+    id: 'windsurf',
+    name: 'Windsurf',
+    description: 'Asistente de programación para código más rápido y preciso.',
+    category: 'Programación',
+    url: 'https://windsurf.ai',
+    icon: <Code size={24} />,
+    imageUrl: windsurf,
+  },
+  {
+    id: 'writesonic',
+    name: 'Writesonic',
+    description: 'Generador de contenido para blogs y publicidad con IA.',
+    category: 'Contenido',
+    url: 'https://writesonic.com',
+    icon: <FileText size={24} />,
+    imageUrl: writesonic,
   },
 ];
 
-const categories = ['Todos', 'Lenguaje', 'Imágenes', 'Código', 'Contenido', 'Audio', 'Desarrollo'];
+const categories = ['Todos', 'Chat', 'Imágenes', 'Programación', 'Contenido', 'Audio'];
 
 const AIToolsPage: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = React.useState('Todos');
@@ -299,7 +308,7 @@ const AIToolsPage: React.FC = () => {
           </div>
 
           {/* Grid de herramientas */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 text-center">
             {filteredTools.map((tool) => (
               <motion.div
                 key={tool.id}
@@ -310,29 +319,27 @@ const AIToolsPage: React.FC = () => {
                 whileHover={{ y: -5 }}
                 className="card h-full flex flex-col rounded-3xl"
               >
-                <div className="h-48 overflow-hidden">
+                <div className="flex items-center justify-between mt-3 mr-3">
+                  <span className="inline-block px-3 py-1 text-xs font-medium"></span>
+                  <div className="text-primary-600">
+                    {tool.icon}
+                  </div>
+                </div>
+                <div className="h-36 overflow-hidden">
                   <img
                     src={tool.imageUrl}
                     alt={tool.name}
-                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                    className="w-36 h-36 mx-auto rounded-3xl object-contain p-3 transition-transform duration-300 hover:scale-105"
                   />
                 </div>
-                <div className="p-6 flex-grow flex flex-col">
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="inline-block px-3 py-1 text-xs font-medium bg-gray-100 text-gray-800 rounded-full">
-                      {tool.category}
-                    </span>
-                    <div className="text-primary-600">
-                      {tool.icon}
-                    </div>
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2">{tool.name}</h3>
-                  <p className="text-gray-600 mb-4 flex-grow">{tool.description}</p>
+                <div className="p-6 flex-grow flex flex-col items-center text-center">
+                  <h3 className="text-xl font-semibold mb-2 w-full">{tool.name}</h3>
+                  <p className="text-gray-600 mb-4 flex-grow w-full">{tool.description}</p>
                   <a
                     href={tool.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center text-primary-600 font-medium hover:text-primary-700"
+                    className="flex justify-center items-center text-primary-600 font-medium hover:text-primary-700"
                   >
                     Visitar sitio web <ExternalLink size={16} className="ml-1" />
                   </a>

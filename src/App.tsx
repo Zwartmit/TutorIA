@@ -32,7 +32,7 @@ function App() {
           <Route path="ia" element={<AIExplanationPage />} />
           <Route path="herramientas" element={<AIToolsPage />} />
           <Route
-            path="guides"
+            path="guias"
             element={
               <ProtectedRoute>
                 <GuidesPage />
@@ -40,7 +40,7 @@ function App() {
             }
           />
           <Route
-            path="assessment"
+            path="tests"
             element={
               <ProtectedRoute>
                 <AssessmentPage />
@@ -48,7 +48,7 @@ function App() {
             }
           />
           <Route
-            path="profile"
+            path="perfil"
             element={
               <ProtectedRoute>
                 <ProfilePage />

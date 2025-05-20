@@ -428,7 +428,7 @@ const GuidesPage: React.FC = () => {
                 </div>
 
                 {/* Filtros de categoría */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Categoría
@@ -483,7 +483,7 @@ const GuidesPage: React.FC = () => {
           </section>
 
           {/* Grid de guías */}
-          <section className="section bg-gray-300">
+          <section className="section bg-gray-300 pt-0">
             <div className="container-custom">
               <div className="max-w-5xl mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -559,7 +559,7 @@ const GuidesPage: React.FC = () => {
                   ¿Quieres probar tus conocimientos?
                 </h2>
                 <a
-                  href="/assessment"
+                  href="/tests"
                   className="btn bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-600 inline-flex items-center transition-transform duration-300 hover:translate-x-2"
                 >
                   Realizar tests<ArrowRight size={16} className="ml-2" />

@@ -53,7 +53,7 @@ const TermsPage: React.FC = () => {
               </p>
               <ul className="list-disc pl-6 mt-2">
                 <li>Guías educativas</li>
-                <li>Evaluaciones</li>
+                <li>Tests</li>
                 <li>Foro de discusión</li>
                 <li>Recursos de aprendizaje</li>
               </ul>
