@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import { supabase } from '../supabaseClient';
-import { useUser } from '@clerk/clerk-react';
-
 interface PostFormProps {
   onPostCreated?: () => void;
 }
@@ -10,17 +8,14 @@ const PostForm: React.FC<PostFormProps> = ({ onPostCreated }) => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [loading, setLoading] = useState(false);
-  const { user } = useUser();
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!title || !content || !user) return;
+    if (!title || !content) return;
     setLoading(true);
     const { error } = await supabase.from('posts').insert([
       {
         title,
         content,
-        user_id: user.id,
       },
     ]);
     setLoading(false);
@@ -31,13 +26,13 @@ const PostForm: React.FC<PostFormProps> = ({ onPostCreated }) => {
         onPostCreated();
       }
     } else {
-      alert('Error al crear la discusión');
+      alert('Error al crear la publicación');
     }
   };
 
   return (
     <form onSubmit={handleSubmit} className="mb-8 p-4 bg-gray-100 rounded-3xl shadow">
-      <h2 className="text-lg font-semibold mb-2">Crear nueva discusión</h2>
+      <h2 className="text-lg font-semibold mb-2">Crear nueva publicación</h2>
       <input
         className="w-full border rounded px-3 py-2 mb-2"
         type="text"

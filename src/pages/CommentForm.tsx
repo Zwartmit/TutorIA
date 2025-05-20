@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import { supabase } from '../supabaseClient';
-import { useUser } from '@clerk/clerk-react';
-
 interface CommentFormProps {
   postId: string;
   parentId?: string | null;
@@ -11,18 +9,15 @@ interface CommentFormProps {
 const CommentForm: React.FC<CommentFormProps> = ({ postId, parentId = null, onCommentCreated }) => {
   const [content, setContent] = useState('');
   const [loading, setLoading] = useState(false);
-  const { user } = useUser();
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!content || !user) return;
+    if (!content) return;
     setLoading(true);
     const { error } = await supabase.from('comments').insert([
       {
         post_id: postId,
         parent_id: parentId,
         content,
-        user_id: user.id,
       },
     ]);
     setLoading(false);
