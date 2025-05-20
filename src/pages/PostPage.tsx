@@ -59,7 +59,7 @@ const PostPage: React.FC = () => {
       // Obtener perfil del usuario del post
       if (postData?.user_id) {
         try {
-          const res = await fetch(`/api/clerk-profile/${postData.user_id}`);
+          const res = await fetch(`/.netlify/functions/clerk-profile?id=${postData.user_id}`);
           if (res.ok) {
             const user = await res.json();
             setUserProfile({
@@ -81,7 +81,7 @@ const PostPage: React.FC = () => {
           const profiles: Record<string, UserProfile> = {};
           for (const id of userIds) {
             try {
-              const res = await fetch(`/api/clerk-profile/${id}`);
+              const res = await fetch(`/.netlify/functions/clerk-profile?id=${id}`);
               if (res.ok) {
                 const user = await res.json();
                 profiles[id] = {
@@ -162,7 +162,7 @@ const PostPage: React.FC = () => {
                     {userProfile?.firstName || 'Usuario'} {userProfile?.lastName || ''}
                   </span>
                   <span className="text-gray-500 text-sm ml-2">
-                    ({userProfile?.username || post.user_id?.slice(0, 6)})
+                    ({userProfile?.username || 'Usuario'})
                   </span>
                 </div>
               </div>

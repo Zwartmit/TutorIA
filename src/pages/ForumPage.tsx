@@ -43,11 +43,7 @@ const ForumPage: React.FC = () => {
           const profiles: Record<string, UserProfile> = {};
           for (const id of userIds) {
             try {
-              const res = await fetch(`https://api.clerk.dev/v1/users/${id}`, {
-                headers: {
-                  Authorization: `Bearer ${process.env.REACT_APP_CLERK_SECRET_KEY || ''}`,
-                },
-              });
+              const res = await fetch(`/.netlify/functions/clerk-profile?id=${id}`);
               if (res.ok) {
                 const user = await res.json();
                 profiles[id] = {
