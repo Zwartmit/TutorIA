@@ -11,7 +11,7 @@ TutorIA es una plataforma educativa diseñada para introducir a personas con poc
 - **Contenido educativo**: Explicaciones claras y concisas sobre conceptos de IA
 - **Herramientas IA**: Directorio curado de herramientas populares de IA
 - **Guías paso a paso**: Tutoriales prácticos para usar herramientas de IA
-
+- **Ejemplos prácticos**: Ejemplos de imágenes, videos, texto y mucho más generado por IA
 - **Tests**: Tests interactivos para medir el progreso
 - **Foro**: Espacio para interactuar con la comunidad
 - **Perfil de usuario**: Sistema de autenticación y perfiles personalizados
