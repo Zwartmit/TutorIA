@@ -53,10 +53,18 @@ TutorIA/
 
 ## 📸 Capturas de pantalla
 
-<img src="./src/assets/screenshots/screen1.png" alt="Inicio" width="400"/>
-<img src="./src/assets/screenshots/screen2.png" alt="¿Qué es la IA?" width="400"/>
-<img src="./src/assets/screenshots/screen3.png" alt="Herramientas IA" width="400"/>
-<img src="./src/assets/screenshots/screen4.png" alt="Guías" width="400"/>
-<img src="./src/assets/screenshots/screen5.png" alt="Tests" width="400"/>
-<img src="./src/assets/screenshots/screen6.png" alt="Foro" width="400"/>
-<img src="./src/assets/screenshots/screen7.png" alt="Perfil de usuario" width="400"/>
+<div>
+  <img src="./src/assets/screenshots/screen1.png" alt="Inicio" width="400" style="margin-right:10px; margin-bottom:10px;"/>
+  <img src="./src/assets/screenshots/screen2.png" alt="¿Qué es la IA?" width="400" style="margin-bottom:10px;"/>
+</div>
+<div>
+  <img src="./src/assets/screenshots/screen3.png" alt="Herramientas IA" width="400" style="margin-right:10px; margin-bottom:10px;"/>
+  <img src="./src/assets/screenshots/screen4.png" alt="Guías" width="400" style="margin-bottom:10px;"/>
+</div>
+<div>
+  <img src="./src/assets/screenshots/screen5.png" alt="Tests" width="400" style="margin-right:10px; margin-bottom:10px;"/>
+  <img src="./src/assets/screenshots/screen6.png" alt="Foro" width="400" style="margin-bottom:10px;"/>
+</div>
+<div>
+  <img src="./src/assets/screenshots/screen7.png" alt="Perfil de usuario" width="400" style="margin-bottom:10px;"/>
+</div>
