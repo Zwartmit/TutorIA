@@ -53,10 +53,10 @@ TutorIA/
 
 ## 📸 Capturas de pantalla
 
-![Inicio](./src/assets/screenshots/screen1.png)
-![¿Qué es la IA?](./src/assets/screenshots/screen2.png)
-![Herramientas IA](./src/assets/screenshots/screen3.png)
-![Guías](./src/assets/screenshots/screen4.png)
-![Tests](./src/assets/screenshots/screen5.png)
-![Foro](./src/assets/screenshots/screen6.png)
-![Perfil de usuario](./src/assets/screenshots/screen7.png)
+<img src="./src/assets/screenshots/screen1.png" alt="Inicio" width="400"/>
+<img src="./src/assets/screenshots/screen2.png" alt="¿Qué es la IA?" width="400"/>
+<img src="./src/assets/screenshots/screen3.png" alt="Herramientas IA" width="400"/>
+<img src="./src/assets/screenshots/screen4.png" alt="Guías" width="400"/>
+<img src="./src/assets/screenshots/screen5.png" alt="Tests" width="400"/>
+<img src="./src/assets/screenshots/screen6.png" alt="Foro" width="400"/>
+<img src="./src/assets/screenshots/screen7.png" alt="Perfil de usuario" width="400"/>
