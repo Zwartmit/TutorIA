@@ -66,11 +66,11 @@ TutorIA/
   <img src="./src/assets/screenshots/guides.png" alt="Guías" width="400" style="margin-bottom:10px;"/>
 </div>
 <div>
-  <img src="./src/assets/screenshots/profile.png" alt="Perfil de usuario" width="400" style="margin-bottom:10px;"/>
   <img src="./src/assets/screenshots/tests.png" alt="Tests" width="400" style="margin-bottom:10px;"/>
+  <img src="./src/assets/screenshots/profile.png" alt="Perfil de usuario" width="400" style="margin-bottom:10px;"/>
 </div>
 <div>
   <img src="./src/assets/screenshots/login.png" alt="Login" width="400" style="margin-bottom:10px;"/>
-  <img src="./src/assets/screenshots/profile.png" alt="Perfil de usuario" width="400" style="margin-bottom:10px;"/>
+  <img src="./src/assets/screenshots/register.png" alt="Registro" width="400" style="margin-bottom:10px;"/>
 </div>
   
