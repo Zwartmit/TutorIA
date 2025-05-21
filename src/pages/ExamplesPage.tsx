@@ -9,6 +9,7 @@ import maceta2 from '../assets/examples/maceta2.jpg';
 import maceta3 from '../assets/examples/maceta3.jpg';
 import zwart from '../assets/examples/zwart.png';
 import ryuk from '../assets/examples/ryuk.png';
+import { ArrowRight } from 'lucide-react';
 
 // Tipos para los ejemplos
 type Example = {
@@ -252,6 +253,23 @@ const ExamplesPage: React.FC = () => {
               ))}
             </div>
           )}
+        </section>
+        
+        {/* CTA Section */}
+        <section className="py-10 bg-gradient-to-t from-gray-300 via-gray to-gray-300">
+          <div className="container-custom text-center">
+            <div className="max-w-3xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                ¿Quieres aprender a crear contenido como este con IA?
+              </h2>
+              <a
+                href="/guias"
+                className="btn bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-600 inline-flex items-center transition-transform duration-300 hover:translate-x-2"
+              >
+                Explorar nuestras guías<ArrowRight size={16} className="ml-2" />
+              </a>
+            </div>
+          </div>
         </section>
       </div>
     </div>

@@ -13,7 +13,8 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
   }
 
   if (!isSignedIn) {
-    return <Navigate to="/sign-in" replace />;
+    const location = window.location.pathname + window.location.search;
+    return <Navigate to={`/sign-in?redirectTo=${encodeURIComponent(location)}`} replace />;
   }
 
   return <>{children}</>;

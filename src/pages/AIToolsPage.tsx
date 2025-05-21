@@ -445,13 +445,13 @@ const AIToolsPage: React.FC = () => {
         <div className="container-custom text-center">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              ¿Qué sigue?... <br />¡Aprender a usar estas herramientas!
+               ¿Quieres ver lo que puedes hacer con estas herramientas?
             </h2>
             <a
-              href="/guias"
+              href="/ejemplos"
               className="btn bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-600 inline-flex items-center transition-transform duration-300 hover:translate-x-2"
             >
-              Explorar guías<ArrowRight size={16} className="ml-2" />
+              Explora nuestros ejemplos<ArrowRight size={16} className="ml-2" />
             </a>
           </div>
         </div>

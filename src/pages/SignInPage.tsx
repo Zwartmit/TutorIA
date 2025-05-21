@@ -15,7 +15,9 @@ const SignInPage: React.FC = () => {
   }
 
   if (isSignedIn) {
-    return <Navigate to="/" replace />;
+    const params = new URLSearchParams(window.location.search);
+    const redirectTo = params.get('redirectTo');
+    return <Navigate to={redirectTo || "/"} replace />;
   }
 
   return (
@@ -33,7 +35,7 @@ const SignInPage: React.FC = () => {
                 path="/sign-in"
                 routing="path"
                 signUpUrl="/sign-up"
-                afterSignInUrl="/"
+                {...(new URLSearchParams(window.location.search).get('redirectTo') ? { redirectUrl: new URLSearchParams(window.location.search).get('redirectTo')! } : {})}
                 appearance={{
                   elements: {
                     rootBox: "mx-auto",
@@ -47,7 +49,6 @@ const SignInPage: React.FC = () => {
                     footerActionLink: "text-primary-600 hover:text-primary-700",
                   },
                 }}
-
               />
             </div>
           </div>

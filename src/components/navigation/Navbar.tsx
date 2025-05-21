@@ -130,18 +130,6 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                 Herramientas
               </NavLink>
               <NavLink
-                to="/foro"
-                className={({ isActive }) =>
-                  `font-medium transition-colors ${
-                    isActive
-                      ? 'text-primary-600'
-                      : 'text-gray-700 hover:text-primary-600'
-                  }`
-                }
-              >
-                Foro
-              </NavLink>
-              <NavLink
                 to="/ejemplos"
                 className={({ isActive }) =>
                   `font-medium transition-colors ${
@@ -152,6 +140,18 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                 }
               >
                 Ejemplos
+              </NavLink>
+              <NavLink
+                to="/foro"
+                className={({ isActive }) =>
+                  `font-medium transition-colors ${
+                    isActive
+                      ? 'text-primary-600'
+                      : 'text-gray-700 hover:text-primary-600'
+                  }`
+                }
+              >
+                Foro
               </NavLink>
               {isSignedIn && (
                 <>
@@ -324,17 +324,6 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
               <div className="flex flex-col space-y-2">
                 <div className="flex justify-between space-x-2">
                   <NavLink
-                    to="/foro"
-                    className={({ isActive }) =>
-                      `flex-1 text-center py-2 font-medium rounded-2xl transition-colors ${
-                        isActive ? 'text-primary-600 bg-primary-100' : 'text-gray-700 hover:bg-gray-100'
-                      }`
-                    }
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Foro
-                  </NavLink>
-                  <NavLink
                     to="/ejemplos"
                     className={({ isActive }) =>
                       `flex-1 text-center py-2 font-medium rounded-2xl transition-colors ${
@@ -344,6 +333,17 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                     onClick={() => setIsMenuOpen(false)}
                   >
                     Ejemplos
+                  </NavLink>
+                  <NavLink
+                    to="/foro"
+                    className={({ isActive }) =>
+                      `flex-1 text-center py-2 font-medium rounded-2xl transition-colors ${
+                        isActive ? 'text-primary-600 bg-primary-100' : 'text-gray-700 hover:bg-gray-100'
+                      }`
+                    }
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Foro
                   </NavLink>
                   {isSignedIn && (
                     <>
