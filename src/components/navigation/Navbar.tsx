@@ -141,6 +141,18 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
               >
                 Foro
               </NavLink>
+              <NavLink
+                to="/ejemplos"
+                className={({ isActive }) =>
+                  `font-medium transition-colors ${
+                    isActive
+                      ? 'text-primary-600'
+                      : 'text-gray-700 hover:text-primary-600'
+                  }`
+                }
+              >
+                Ejemplos
+              </NavLink>
               {isSignedIn && (
                 <>
                   <NavLink
@@ -310,43 +322,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                 </NavLink>
               </div>
               <div className="flex flex-col space-y-2">
-                {isSignedIn ? (
-                  <div className="flex justify-between space-x-2">
-                    <NavLink
-                      to="/foro"
-                      className={({ isActive }) =>
-                        `flex-1 text-center py-2 font-medium rounded-2xl transition-colors ${
-                          isActive ? 'text-primary-600 bg-primary-100' : 'text-gray-700 hover:bg-gray-100'
-                        }`
-                      }
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      Foro
-                    </NavLink>
-                    <NavLink
-                      to="/guias"
-                      className={({ isActive }) =>
-                        `flex-1 text-center py-2 font-medium rounded-2xl transition-colors ${
-                          isActive ? 'text-primary-600 bg-primary-100' : 'text-gray-700 hover:bg-gray-100'
-                        }`
-                      }
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      Guías
-                    </NavLink>
-                    <NavLink
-                      to="/tests"
-                      className={({ isActive }) =>
-                        `flex-1 text-center py-2 font-medium rounded-2xl transition-colors ${
-                          isActive ? 'text-primary-600 bg-primary-100' : 'text-gray-700 hover:bg-gray-100'
-                        }`
-                      }
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      Tests
-                    </NavLink>
-                  </div>
-                ) : (
+                <div className="flex justify-between space-x-2">
                   <NavLink
                     to="/foro"
                     className={({ isActive }) =>
@@ -358,7 +334,44 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                   >
                     Foro
                   </NavLink>
-                )}
+                  <NavLink
+                    to="/ejemplos"
+                    className={({ isActive }) =>
+                      `flex-1 text-center py-2 font-medium rounded-2xl transition-colors ${
+                        isActive ? 'text-primary-600 bg-primary-100' : 'text-gray-700 hover:bg-gray-100'
+                      }`
+                    }
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Ejemplos
+                  </NavLink>
+                  {isSignedIn && (
+                    <>
+                      <NavLink
+                        to="/guias"
+                        className={({ isActive }) =>
+                          `flex-1 text-center py-2 font-medium rounded-2xl transition-colors ${
+                            isActive ? 'text-primary-600 bg-primary-100' : 'text-gray-700 hover:bg-gray-100'
+                          }`
+                        }
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        Guías
+                      </NavLink>
+                      <NavLink
+                        to="/tests"
+                        className={({ isActive }) =>
+                          `flex-1 text-center py-2 font-medium rounded-2xl transition-colors ${
+                            isActive ? 'text-primary-600 bg-primary-100' : 'text-gray-700 hover:bg-gray-100'
+                          }`
+                        }
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        Tests
+                      </NavLink>
+                    </>
+                  )}
+                </div>
               </div>
               <div className="flex justify-between space-x-2">
                 {!isSignedIn && (

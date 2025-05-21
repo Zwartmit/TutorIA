@@ -319,7 +319,7 @@ const AssessmentPage: React.FC = () => {
 
   const handleCancelQuiz = async () => {
     const result = await Swal.fire({
-      text: '¿Deseas cancelar el test? Perderás todo tu progreso.',
+      text: '¿Deseas cancelar el test? Perderás todo tu progreso',
       showCancelButton: true,
       confirmButtonText: 'Sí, cancelar',
       cancelButtonText: 'No, continuar',
@@ -390,7 +390,10 @@ const AssessmentPage: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
               >
-                Pon a prueba lo que has aprendido sobre inteligencia artificial con nuestros tests interactivos.
+                Pon a prueba lo que has aprendido sobre la{' '}
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-secondary-600 font-bold">
+                    inteligencia artificial
+                  </span>
               </motion.p>
           </div>
         </div>
@@ -410,11 +413,6 @@ const AssessmentPage: React.FC = () => {
                 <div className="p-8">
                   <div className="text-center mb-8">
                     <Award size={48} className="mx-auto mb-4 text-primary-600" />
-                    <h2 className="text-2xl font-bold mb-4">Test de conceptos básicos de IA</h2>
-                    <p className="text-gray-700 text-center">
-                      Este test contiene {questions.length} preguntas sobre los conceptos fundamentales
-                      de la inteligencia artificial que hemos cubierto en nuestras lecciones
-                    </p>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">

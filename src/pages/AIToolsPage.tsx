@@ -37,7 +37,7 @@ const tools: Tool[] = [
   {
     id: 'adobefirefly',
     name: 'Adobe Firefly',
-    description: 'Generador de imágenes con IA integrado en el ecosistema Adobe.',
+    description: 'Generador de imágenes con IA integrado en el ecosistema Adobe',
     category: 'Imágenes',
     url: 'https://firefly.adobe.com',
     icon: <Image size={24} />,
@@ -46,7 +46,7 @@ const tools: Tool[] = [
   {
     id: 'blackbox',
     name: 'Blackbox AI',
-    description: 'Herramienta de IA para búsqueda, autocompletado y generación de código.',
+    description: 'Herramienta de IA para búsqueda, autocompletado y generación de código',
     category: 'Programación',
     url: 'https://www.blackbox.ai',
     icon: <Code size={24} />,
@@ -55,7 +55,7 @@ const tools: Tool[] = [
   {
     id: 'bolt',
     name: 'Bolt new',
-    description: 'Herramienta de desarrollo web full-stack con IA para crear sin código.',
+    description: 'Herramienta de desarrollo web full-stack con IA para crear sin código',
     category: 'Programación',
     url: 'https://www.boltai.com',
     icon: <Code size={24} />,
@@ -64,7 +64,7 @@ const tools: Tool[] = [
   {
     id: 'chatgpt',
     name: 'ChatGPT',
-    description: 'Modelo avanzado de OpenAI para conversaciones y resolución de tareas.',
+    description: 'Modelo avanzado de OpenAI para conversaciones y resolución de tareas',
     category: 'Chat',
     url: 'https://chat.openai.com',
     icon: <MessageSquare size={24} />,
@@ -73,7 +73,7 @@ const tools: Tool[] = [
   {
     id: 'claude',
     name: 'Claude',
-    description: 'Asistente conversacional de Anthropic, diseñado para ser útil y confiable.',
+    description: 'Asistente conversacional de Anthropic, diseñado para ser útil y confiable',
     category: 'Chat',
     url: 'https://claude.ai',
     icon: <MessageSquare size={24} />,
@@ -82,7 +82,7 @@ const tools: Tool[] = [
   {
     id: 'copilot',
     name: 'GitHub Copilot',
-    description: 'Asistente de programación que sugiere código en tiempo real.',
+    description: 'Asistente de programación que sugiere código en tiempo real',
     category: 'Programación',
     url: 'https://github.com/features/copilot',
     icon: <Code size={24} />,
@@ -91,7 +91,7 @@ const tools: Tool[] = [
   {
     id: 'copyai',
     name: 'Copy.ai',
-    description: 'Herramienta de copywriting y marketing con IA.',
+    description: 'Herramienta de copywriting y marketing con IA',
     category: 'Contenido',
     url: 'https://www.copy.ai',
     icon: <FileText size={24} />,
@@ -100,7 +100,7 @@ const tools: Tool[] = [
   {
     id: 'descript',
     name: 'Descript',
-    description: 'Herramienta de edición de audio y video con IA.',
+    description: 'Herramienta de edición de audio y video con IA',
     category: 'Audio',
     url: 'https://www.descript.com',
     icon: <Megaphone size={24} />,
@@ -109,7 +109,7 @@ const tools: Tool[] = [
   {
     id: 'elevenlabs',
     name: 'ElevenLabs',
-    description: 'Generador de voces realistas en múltiples idiomas con IA.',
+    description: 'Generador de voces realistas en múltiples idiomas con IA',
     category: 'Audio',
     url: 'https://elevenlabs.io',
     icon: <Megaphone size={24} />,
@@ -118,7 +118,7 @@ const tools: Tool[] = [
   {
     id: 'gemini',
     name: 'Gemini',
-    description: 'Asistente de IA de Google con búsqueda avanzada.',
+    description: 'Asistente de IA de Google con búsqueda avanzada',
     category: 'Chat',
     url: 'https://gemini.google.com',
     icon: <MessageSquare size={24} />,
@@ -127,7 +127,7 @@ const tools: Tool[] = [
   {
     id: 'google-imagefx',
     name: 'ImageFX (Google Labs)',
-    description: 'Generador de imágenes con IA y controles intuitivos.',
+    description: 'Generador de imágenes con IA y controles intuitivos',
     category: 'Imágenes',
     url: 'https://labs.google/imagefx',
     icon: <Image size={24} />,
@@ -136,7 +136,7 @@ const tools: Tool[] = [
   {
     id: 'jasper',
     name: 'Jasper AI',
-    description: 'Plataforma de generación de contenido con IA para marketing.',
+    description: 'Plataforma de generación de contenido con IA para marketing',
     category: 'Contenido',
     url: 'https://www.jasper.ai',
     icon: <FileText size={24} />,
@@ -145,7 +145,7 @@ const tools: Tool[] = [
   {
     id: 'midjourney',
     name: 'Midjourney',
-    description: 'Generador de imágenes por IA para crear arte digital.',
+    description: 'Generador de imágenes por IA para crear arte digital',
     category: 'Imágenes',
     url: 'https://www.midjourney.com',
     icon: <Image size={24} />,
@@ -154,7 +154,7 @@ const tools: Tool[] = [
   {
     id: 'murfai',
     name: 'Murf AI',
-    description: 'Generador de voces realistas con IA para presentaciones.',
+    description: 'Generador de voces realistas con IA para presentaciones',
     category: 'Audio',
     url: 'https://murf.ai',
     icon: <Megaphone size={24} />,
@@ -163,7 +163,7 @@ const tools: Tool[] = [
   {
     id: 'perplexity',
     name: 'Perplexity AI',
-    description: 'Buscador conversacional con respuestas basadas en fuentes.',
+    description: 'Buscador conversacional con respuestas basadas en fuentes',
     category: 'Chat',
     url: 'https://www.perplexity.ai',
     icon: <MessageSquare size={24} />,
@@ -172,7 +172,7 @@ const tools: Tool[] = [
   {
     id: 'reve',
     name: 'REVE',
-    description: 'Plataforma para crear y personalizar imágenes con IA.',
+    description: 'Plataforma para crear y personalizar imágenes con IA',
     category: 'Imágenes',
     url: 'https://preview.reve.art/app',
     icon: <Image size={24} />,
@@ -181,7 +181,7 @@ const tools: Tool[] = [
   {
     id: 'rytr',
     name: 'Rytr',
-    description: 'Asistente de escritura con IA para crear contenido rápido.',
+    description: 'Asistente de escritura con IA para crear contenido rápido',
     category: 'Contenido',
     url: 'https://rytr.me',
     icon: <FileText size={24} />,
@@ -190,7 +190,7 @@ const tools: Tool[] = [
   {
     id: 'suno',
     name: 'Suno AI',
-    description: 'Generador de música con IA a partir de descripciones.',
+    description: 'Generador de música con IA a partir de descripciones',
     category: 'Audio',
     url: 'https://suno.com',
     icon: <Megaphone size={24} />,
@@ -199,7 +199,7 @@ const tools: Tool[] = [
   {
     id: 'windsurf',
     name: 'Windsurf',
-    description: 'Asistente de programación para código más rápido y preciso.',
+    description: 'Asistente de programación para código más rápido y preciso',
     category: 'Programación',
     url: 'https://windsurf.ai',
     icon: <Code size={24} />,
@@ -208,7 +208,7 @@ const tools: Tool[] = [
   {
     id: 'writesonic',
     name: 'Writesonic',
-    description: 'Generador de contenido para blogs y publicidad con IA.',
+    description: 'Generador de contenido para blogs y publicidad con IA',
     category: 'Contenido',
     url: 'https://writesonic.com',
     icon: <FileText size={24} />,
@@ -448,7 +448,7 @@ const AIToolsPage: React.FC = () => {
               ¿Qué sigue?... <br />¡Aprender a usar estas herramientas!
             </h2>
             <a
-              href="/guides"
+              href="/guias"
               className="btn bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-600 inline-flex items-center transition-transform duration-300 hover:translate-x-2"
             >
               Explorar guías<ArrowRight size={16} className="ml-2" />

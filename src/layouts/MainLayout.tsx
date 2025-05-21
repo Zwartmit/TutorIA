@@ -11,6 +11,27 @@ const MainLayout: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
+    const script = document.createElement('script');
+    script.setAttribute('data-account', '1IuveDv232');
+    script.src = 'https://cdn.userway.org/widget.js';
+    script.async = true;
+    document.body.appendChild(script);
+
+    const interval = setInterval(() => {
+      const userwayBtn = document.querySelector('#userwayAccessibilityIcon, .userway-accessibility-widget-button');
+      if (userwayBtn && !userwayBtn.classList.contains('animate-bounce')) {
+        userwayBtn.classList.add('animate-bounce');
+        clearInterval(interval);
+      }
+    }, 500);
+
+    return () => {
+      document.body.removeChild(script);
+      clearInterval(interval);
+    };
+  }, []);
+
+  useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };

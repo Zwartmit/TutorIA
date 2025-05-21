@@ -1,6 +1,6 @@
 # TutorIA🤖🎓
 
-TutorIA es una plataforma educativa (en desarrollo) diseñada para introducir a personas con poca o ninguna experiencia en el mundo de la Inteligencia Artificial. El objetivo es crear una experiencia amigable, interactiva y motivadora, ofreciendo contenido actualizado, guías prácticas, evaluaciones y más a medida que la plataforma avanza.
+TutorIA es una plataforma educativa diseñada para introducir a personas con poca o ninguna experiencia en el mundo de la Inteligencia Artificial. El objetivo es crear una experiencia amigable, interactiva y motivadora, ofreciendo contenido actualizado, guías prácticas, evaluaciones y más a medida que la plataforma avanza.
 
 ## 🌐 Acceso a la plataforma
 
@@ -11,6 +11,7 @@ TutorIA es una plataforma educativa (en desarrollo) diseñada para introducir a 
 - **Contenido educativo**: Explicaciones claras y concisas sobre conceptos de IA
 - **Herramientas IA**: Directorio curado de herramientas populares de IA
 - **Guías paso a paso**: Tutoriales prácticos para usar herramientas de IA
+
 - **Tests**: Tests interactivos para medir el progreso
 - **Foro**: Espacio para interactuar con la comunidad
 - **Perfil de usuario**: Sistema de autenticación y perfiles personalizados
@@ -20,10 +21,12 @@ TutorIA es una plataforma educativa (en desarrollo) diseñada para introducir a 
 - **Frontend**: React, TypeScript, Vite
 - **Estilos**: Tailwind CSS
 - **Enrutamiento**: React Router DOM
-- **Autenticación**: Clerk
 - **Animaciones**: Framer Motion
-- **Iconos**: Lucide React, React Icons
+- **Base de datos**: Supabase
+- **Autenticación**: Clerk
 - **Alertas**: SweetAlert2
+- **Iconos**: Lucide React, React Icons
+- **Accesibilidad**: UserWay
 
 ## 📁 Estructura del proyecto
 

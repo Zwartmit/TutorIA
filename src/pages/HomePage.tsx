@@ -3,11 +3,12 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { BookOpen, Lightbulb, Compass, Award, ArrowRight } from 'lucide-react';
 import hero from '../assets/hero3.mp4';
-import sec1 from '../assets/sec1.png';
-import sec2 from '../assets/sec2.png';
-import sec3 from '../assets/sec3.png';
-import sec4 from '../assets/sec4.png';
-import sec5 from '../assets/sec5.png';
+import sec1 from '../assets/home/sec1.png';
+import sec2 from '../assets/home/sec2.png';
+import sec3 from '../assets/home/sec3.png';
+import sec4 from '../assets/home/sec4.png';
+import sec5 from '../assets/home/sec5.png';
+import sec6 from '../assets/home/sec6.png';
 
 const HomePage: React.FC = () => {
   
@@ -133,7 +134,6 @@ const HomePage: React.FC = () => {
           </div>
 
           <div className="space-y-16">
-            {/* Sección 1: ¿Qué es la IA? */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
@@ -171,7 +171,6 @@ const HomePage: React.FC = () => {
               </motion.div>
             </div>
 
-            {/* Sección 2: Herramientas de IA */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
@@ -204,7 +203,70 @@ const HomePage: React.FC = () => {
               </motion.div>
             </div>
 
-            {/* Sección 3: Guías */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="order-2 lg:order-1"
+              >
+                <h3 className="text-2xl md:text-3xl font-bold mb-6">Foro de la comunidad</h3>
+                <p className="text-gray-700 mb-6 text-justify">
+                  Únete a nuestra comunidad, comparte tus dudas, experiencias y aprende junto a otros entusiastas de la inteligencia artificial.
+                  El foro es el lugar ideal para crecer y colaborar.
+                </p>
+                <Link to="/foro" className="inline-flex items-center text-primary-600 font-medium hover:text-primary-700 transition-transform duration-300 hover:translate-x-2">
+                  Ir al foro <ArrowRight size={16} className="ml-1" />
+                </Link>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="order-1 lg:order-2"
+              >
+                <img
+                  src={sec5}
+                  alt="Foro"
+                  className="rounded-3xl shadow-md w-full h-64 md:h-80 object-cover"
+                />
+              </motion.div>
+            </div> 
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="order-1"
+              >
+                <img
+                  src={sec6}
+                  alt="Tests de IA"
+                  className="rounded-3xl shadow-md w-full h-64 md:h-80 object-cover"
+                />
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="order-2"
+              >
+                <h3 className="text-2xl md:text-3xl font-bold mb-6">Ejemplos prácticos</h3>
+                <p className="text-gray-700 mb-6 text-justify">
+                  Descubre imágenes, vídeos, textos y muchas más cosas que puedes hacer con la IA. Además,
+                  te mostraremos el prompt utilizado para generarlos.
+                </p>
+                <Link to="/ejemplos" className="inline-flex items-center text-primary-600 font-medium hover:text-primary-700 transition-transform duration-300 hover:translate-x-2">
+                  Ver ejemplos <ArrowRight size={16} className="ml-1" />
+                </Link>
+              </motion.div>
+            </div>
+
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
@@ -238,7 +300,6 @@ const HomePage: React.FC = () => {
               </motion.div>
             </div>
 
-            {/* Sección 4: Tests */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
@@ -270,39 +331,6 @@ const HomePage: React.FC = () => {
                 </Link>
               </motion.div>
             </div>
-
-            {/* Sección 5: Foro */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className="order-2 lg:order-1"
-              >
-                <h3 className="text-2xl md:text-3xl font-bold mb-6">Foro de la comunidad</h3>
-                <p className="text-gray-700 mb-6 text-justify">
-                  Únete a nuestra comunidad, comparte tus dudas, experiencias y aprende junto a otros entusiastas de la inteligencia artificial.
-                  El foro es el lugar ideal para crecer y colaborar.
-                </p>
-                <Link to="/foro" className="inline-flex items-center text-primary-600 font-medium hover:text-primary-700 transition-transform duration-300 hover:translate-x-2">
-                  Ir al foro <ArrowRight size={16} className="ml-1" />
-                </Link>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className="order-1 lg:order-2"
-              >
-                <img
-                  src={sec5}
-                  alt="Foro de la comunidad"
-                  className="rounded-3xl shadow-md w-full h-64 md:h-80 object-cover"
-                />
-              </motion.div>
-            </div> 
           </div>
         </div>
       </section>

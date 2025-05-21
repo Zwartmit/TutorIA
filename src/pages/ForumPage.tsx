@@ -4,6 +4,7 @@ import { useUser } from '@clerk/clerk-react';
 import PostForm from './PostForm';
 import { Link } from 'react-router-dom';
 import { LiaUsersSolid } from 'react-icons/lia';
+import { motion } from 'framer-motion';
 
 interface Post {
   id: string;
@@ -44,12 +45,22 @@ const ForumPage: React.FC = () => {
           <div className="max-w-4xl mx-auto">
             <div className="mb-4 text-center">
               <div className="flex flex-col items-center">
-                <LiaUsersSolid size={42} className="text-primary-600 mb-2 transition animate-bounce" />
-                <h1 className="text-4xl font-extrabold text-gray-900 mb-2 tracking-tight">Foro</h1>
-                <p className="text-lg text-gray-600 mb-2 font-medium">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="flex flex-col items-center mb-4"
+                >
+                  <LiaUsersSolid size={42} className="text-primary-600 mb-2 transition animate-bounce" />
+                  <h1 className="text-4xl font-extrabold text-gray-900 mb-2 tracking-tight">Foro de la comunidad</h1>
+                </motion.div>
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                 >
                   Comparte tus dudas, ideas e interactúa con la comunidad
-                </p>
-                <div className="w-20 h-1 mx-auto bg-primary-600 rounded-full mb-6" />
+                </motion.p>
               </div>
             </div>
             {isSignedIn ? (

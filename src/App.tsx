@@ -9,6 +9,7 @@ import HomePage from './pages/HomePage';
 import AIExplanationPage from './pages/AIExplanationPage';
 import AIToolsPage from './pages/AIToolsPage';
 import GuidesPage from './pages/GuidesPage';
+import ExamplesPage from './pages/ExamplesPage';
 import AssessmentPage from './pages/AssessmentPage';
 import SignInPage from './pages/SignInPage';
 import SignUpPage from './pages/SignUpPage';
@@ -60,6 +61,7 @@ function App() {
           <Route path="cookies" element={<CookiesPage />} />
           <Route path="/foro" element={<ForumPage />} />
           <Route path="/foro/:id" element={<PostPage />} />
+          <Route path="ejemplos" element={<ExamplesPage />} />
         </Route>
         <Route path="/sign-in/*" element={<SignInPage />} />
         <Route path="/sign-up/*" element={<SignUpPage />} />

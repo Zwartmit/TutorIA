@@ -16,67 +16,71 @@ import iaEsIcon from '../assets/youtube/iaes.jpg';
 const glossaryItems = [
   {
     term: 'Algoritmo',
-    definition: 'Conjunto de reglas o instrucciones que siguen los sistemas para resolver un problema o realizar una tarea'
+    definition: 'Secuencia ordenada de pasos o reglas que siguen los sistemas para resolver un problema o realizar una tarea específica'
   },
   {
     term: 'Aprendizaje Automático (Machine Learning)',
-    definition: 'Subcampo de la IA que permite a las máquinas aprender de datos y mejorar su desempeño sin ser programadas explícitamente'
+    definition: 'Subcampo de la inteligencia artificial que permite a los sistemas aprender y mejorar a partir de datos, sin ser programados de forma explícita'
   },
   {
     term: 'Datos (Data)',
-    definition: 'Información que se utiliza para entrenar y probar modelos de IA. Puede ser estructurada (tablas) o no estructurada (imágenes, texto)'
+    definition: 'Información utilizada para entrenar y evaluar modelos de IA; pueden ser estructurados como tablas o no estructurados como imágenes o texto'
   },
   {
     term: 'Deep Learning (Aprendizaje Profundo)',
-    definition: 'Tipo de aprendizaje automático basado en redes neuronales con muchas capas (profundas), ideal para procesamiento de imágenes, voz y texto'
+    definition: 'Tipo de aprendizaje automático basado en redes neuronales profundas, especialmente útil para procesar imágenes, texto y voz'
   },
   {
     term: 'Entrenamiento',
-    definition: 'Proceso mediante el cual un modelo de IA aprende a partir de los datos'
+    definition: 'Proceso en el que un modelo de IA aprende patrones y relaciones a partir de los datos proporcionados para realizar tareas específicas'
   },
   {
     term: 'Ética en IA',
-    definition: 'Disciplina que estudia las implicaciones morales y sociales del uso de IA'
+    definition: 'Disciplina que analiza las consideraciones morales y sociales relacionadas con el desarrollo y uso de la inteligencia artificial'
   },
   {
     term: 'Inteligencia Artificial (IA)',
-    definition: 'Rama de la informática que busca crear sistemas capaces de realizar tareas que requieren inteligencia humana'
+    definition: 'Rama de la informática que desarrolla sistemas capaces de realizar tareas que requieren inteligencia similar a la humana'
   },
   {
     term: 'Modelo',
-    definition: 'Herramientas y algoritmos utilizados para entrenar a los ordenadores a procesar y analizar datos'
+    definition: 'Estructura matemática o algoritmo entrenado que procesa y analiza datos para realizar predicciones, clasificaciones u otras tareas'  
   },
   {
     term: 'Procesamiento de Lenguaje Natural (PLN / NLP)',
-    definition: 'Rama de la IA que permite a las máquinas entender, interpretar y generar lenguaje humano'
+    definition: 'Rama de la IA que permite a las máquinas comprender, interpretar y generar lenguaje humano de manera eficiente'
+  },
+  {
+    term: 'Prompt',
+    definition: 'Instrucción o entrada que se da a un modelo de IA para que genere una respuesta, texto, imagen u otro resultado deseado'
   },
   {
     term: 'Red Neuronal',
-    definition: 'Modelo inspirado en el cerebro humano que se utiliza para reconocer patrones y aprender de datos'
+    definition: 'Modelo computacional inspirado en el cerebro humano, utilizado para reconocer patrones y aprender de grandes volúmenes de datos'
   },
   {
     term: 'Regresión',
-    definition: 'Técnica de aprendizaje automático que se utiliza para predecir valores numéricos continuos a partir de un conjunto de datos'
+    definition: 'Técnica de aprendizaje automático empleada para predecir valores numéricos continuos a partir de un conjunto de datos'
   },
   {
     term: 'Sesgo Algorítmico',
-    definition: 'Tendencia de un sistema de IA a tomar decisiones injustas debido a datos de entrenamiento sesgados (Suposiciones)'
+    definition: 'Tendencia de un sistema de IA a tomar decisiones injustas debido a datos de entrenamiento parcializados o representaciones erróneas'
   },
   {
     term: 'Sobreajuste (Overfitting)',
-    definition: 'Se produce cuando un modelo aprende demasiado bien las peculiaridades de los datos de entrenamiento, hasta el punto de que pierde su capacidad de generalizar con nuevos datos'
+    definition: 'Situación en la que un modelo aprende demasiado bien los datos de entrenamiento y no logra generalizar con datos nuevos'
   },
   {
     term: 'Subajuste (Underfitting)',
-    definition: 'Cuando un modelo no aprende lo suficiente de los datos de entrenamiento y tiene bajo rendimiento'
+    definition: 'Ocurre cuando un modelo no logra captar los patrones relevantes de los datos de entrenamiento y tiene bajo rendimiento'
   },
   {
     term: 'Token',
-    definition: 'Se refiere a una unidad mínima de procesamiento de datos, como una palabra o una subpalabra, utilizada por los modelos de IA para entender y generar lenguaje o información'
+    definition: 'Unidad mínima de procesamiento, como una palabra o subpalabra, que utilizan los modelos de IA para analizar o generar información'
   },
   {
     term: 'Visión por Computadora (Computer Vision)',
-    definition: 'Área que permite a las máquinas interpretar imágenes y videos'
+    definition: 'Área de la IA que permite a los sistemas interpretar, analizar y comprender imágenes y videos de su entorno'
   }
 ];
 
@@ -148,7 +152,7 @@ const AIExplanationPage: React.FC = () => {
             <div className="p-3 border-b border-gray-200 flex justify-between items-center">
               <div className="w-full flex flex-col items-center justify-center">
                 <h3 className="text-2xl font-bold text-gray-800 text-center">Glosario de términos básicos</h3>
-                <img src={midugato} className="w-20 h-20" alt="midugato" />
+                <img src={midugato} className="w-auto h-24" alt="midugato" />
               </div>
               <button
                 onClick={() => {
@@ -161,21 +165,12 @@ const AIExplanationPage: React.FC = () => {
                 <MdClose size={24} />
               </button>
             </div>
-            <div className="p-4 border-b border-gray-200">
-              <input
-                type="text"
-                placeholder="Buscar..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full p-2 border border-gray-300 rounded-3xl focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-              />
-            </div>
             <div className="overflow-y-auto flex-1 p-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {filteredGlossaryItems.map((item, index) => (
                   <div key={index} className="bg-gray-50 p-4 rounded-3xl hover:shadow-md transition-shadow">
-                    <h4 className="font-semibold text-primary-700 mb-2">{item.term}</h4>
-                    <p className="text-gray-700 text-sm">{item.definition}</p>
+                    <h5 className="font-semibold text-primary-700 mb-2">{item.term}</h5>
+                    <p className="text-gray-700 text-xs">{item.definition}</p>
                   </div>
                 ))}
               </div>
@@ -386,7 +381,7 @@ const AIExplanationPage: React.FC = () => {
                     <FaSearchPlus size={42} className="text-primary-600 mb-2 animate-bounce" />
                   </div>
                   <h2 className="text-3xl md:text-4xl font-bold mb-4">¿Quieres saber más?</h2>
-                  <h3 className="text-2xl font-semibold text-gray-700">Te recomendamos estos canales de YouTube</h3>
+                  <p className="text-gray-700">Te recomendamos estos canales de YouTube</p>
                 </div>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -423,7 +418,7 @@ const AIExplanationPage: React.FC = () => {
                       <h4 className="text-xl font-semibold text-primary-600">Dot CSV</h4>
                       <FaExternalLinkAlt size={14} className="text-primary-600 transition animate-bounce" />
                     </a>
-                    <p className="text-gray-600">Divulgación sobre Inteligencia Artificial para que entiendas cómo funciona la próxima revolución industrial.</p>
+                    <p className="text-gray-600">Divulgación sobre Inteligencia Artificial para que entiendas cómo funciona la próxima revolución industrial</p>
                   </div>
 
                   <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col items-center text-center">
@@ -501,7 +496,7 @@ const AIExplanationPage: React.FC = () => {
 
                 <div className="mt-10 text-center">
                   <a 
-                    href="https://www.youtube.com/results?search_query=inteligencia+artificial+espa%C3%B1ol" 
+                    href="https://www.youtube.com/results?search_query=inteligencia+artificial" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="inline-flex items-center text-primary-600 font-medium hover:text-primary-700"
