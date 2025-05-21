@@ -54,17 +54,23 @@ TutorIA/
 ## 📸 Capturas de pantalla
 
 <div>
-  <img src="./src/assets/screenshots/screen1.png" alt="Inicio" width="400" style="margin-right:10px; margin-bottom:10px;"/>
-  <img src="./src/assets/screenshots/screen2.png" alt="¿Qué es la IA?" width="400" style="margin-bottom:10px;"/>
+  <img src="./src/assets/screenshots/home.png" alt="Inicio" width="400" style="margin-right:10px; margin-bottom:10px;"/>
+  <img src="./src/assets/screenshots/ia.png" alt="¿Qué es la IA?" width="400" style="margin-bottom:10px;"/>
 </div>
 <div>
-  <img src="./src/assets/screenshots/screen3.png" alt="Herramientas IA" width="400" style="margin-right:10px; margin-bottom:10px;"/>
-  <img src="./src/assets/screenshots/screen4.png" alt="Guías" width="400" style="margin-bottom:10px;"/>
+  <img src="./src/assets/screenshots/tools.png" alt="Herramientas IA" width="400" style="margin-right:10px margin-bottom:10px;"/>
+  <img src="./src/assets/screenshots/examples.png" alt="Ejemplos" width="400" style="margin-bottom:10px;"/>
 </div>
 <div>
-  <img src="./src/assets/screenshots/screen5.png" alt="Tests" width="400" style="margin-right:10px; margin-bottom:10px;"/>
-  <img src="./src/assets/screenshots/screen6.png" alt="Foro" width="400" style="margin-bottom:10px;"/>
+  <img src="./src/assets/screenshots/forum.png" alt="Foro" width="400" style="margin-right:10px; margin-bottom:10px;"/>
+  <img src="./src/assets/screenshots/guides.png" alt="Guías" width="400" style="margin-bottom:10px;"/>
 </div>
 <div>
-  <img src="./src/assets/screenshots/screen7.png" alt="Perfil de usuario" width="400" style="margin-bottom:10px;"/>
+  <img src="./src/assets/screenshots/profile.png" alt="Perfil de usuario" width="400" style="margin-bottom:10px;"/>
+  <img src="./src/assets/screenshots/tests.png" alt="Tests" width="400" style="margin-bottom:10px;"/>
 </div>
+<div>
+  <img src="./src/assets/screenshots/login.png" alt="Login" width="400" style="margin-bottom:10px;"/>
+  <img src="./src/assets/screenshots/profile.png" alt="Perfil de usuario" width="400" style="margin-bottom:10px;"/>
+</div>
+  

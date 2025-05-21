@@ -517,7 +517,7 @@ const AIExplanationPage: React.FC = () => {
                 Ahora que sabes cómo funciona la IA, conoce las herramientas que puedes usar
               </h2>
               <a
-                href="/tools"
+                href="/herramientas"
                 className="btn bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-600 inline-flex items-center transition-transform duration-300 hover:translate-x-2"
               >
                 Ver herramientas<ArrowRight size={16} className="ml-2" />
