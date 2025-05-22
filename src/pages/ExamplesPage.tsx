@@ -3,15 +3,15 @@ import { motion } from 'framer-motion';
 import { RiAiGenerate2, RiImage2Line, RiMovie2Line, RiFileTextLine, RiCodeSSlashLine } from 'react-icons/ri';
 import { FiSearch } from 'react-icons/fi';
 
-// Importar assets
 import maceta1 from '../assets/examples/maceta1.jpg';
 import maceta2 from '../assets/examples/maceta2.jpg';
 import maceta3 from '../assets/examples/maceta3.jpg';
 import zwart from '../assets/examples/zwart.png';
 import ryuk from '../assets/examples/ryuk.png';
+import zwartVideo from '../assets/examples/zwart.mp4';
+import ryukVideo from '../assets/examples/ryuk.mp4';
 import { ArrowRight } from 'lucide-react';
 
-// Tipos para los ejemplos
 type Example = {
   id: number;
   src: string;
@@ -19,7 +19,6 @@ type Example = {
   type: 'image' | 'video' | 'text' | 'code';
 };
 
-// Categorías de ejemplos
 const categories = [
   { id: 'all', name: 'Todos', icon: RiAiGenerate2 },
   { id: 'image', name: 'Imágenes', icon: RiImage2Line },
@@ -63,12 +62,18 @@ const examples: Example[] = [
     type: 'image'
   },
   // Videos
-  // {
-  //   id: 6,
-  //   src: maceta3,
-  //   prompt: 'Animación de una ciudad futurista, estilo Blade Runner',
-  //   type: 'video'
-  // },
+  {
+    id: 6,
+    src: zwartVideo,
+    prompt: 'Una figura de acción coleccionable de un joven. La escena comienza con un primer plano de la caja, similar a la de la imagen, que se muestra en un estante en la habitación de un coleccionista. De repente, el frente de plástico de la caja parpadea o desaparece con un efecto de ciencia ficción, y El personaje sale sin problemas del empaque, luego camina con confianza a la derecha donde se estaciona la motocicleta. El joven monta la motocicleta, comienza la bicicleta y se apaga dejando un sendero o chispas de luz. La cámara lo sigue por detrás y luego cambia a un tiro hacia adelante de ángulo bajo mientras continúa llegando a la distancia. Incluye iluminación realista, sombras suaves, movimiento dinámico de la cámara.',
+    type: 'video'
+  },
+  {
+    id: 7,
+    src: ryukVideo,
+    prompt: 'Un muñeco de acción caricaturesco de Ryuk (inspirado en Death Note) está dentro de una caja de colección negra con ventana transparente. De repente, sus ojos brillan con un resplandor siniestro. Rompe la caja desde dentro con fuerza, haciendo que pedazos de cartón y plástico salten por los aires. Luego, Ryuk despliega sus alas de murciélago y sale volando rápidamente, dejando un rastro oscuro. La cámara lo sigue mientras atraviesa el cielo nocturno y se adentra en un bosque oscuro y gótico, con árboles retorcidos, neblina espesa y una atmósfera lúgubre. La escena finaliza con Ryuk aterrizando en una rama, riendo con una sonrisa macabra mientras una luna llena ilumina su silueta',
+    type: 'video'
+  },
   // Texto
   // {
   //   id: 7,
@@ -255,7 +260,7 @@ const ExamplesPage: React.FC = () => {
           )}
         </section>
 
-        {selectedCategory === 'all' && (
+        {filteredExamples.length > 0 && (
           <p className="text-center text-gray-600 mt-6">Pronto agregaremos más contenido...</p>
         )}
         
