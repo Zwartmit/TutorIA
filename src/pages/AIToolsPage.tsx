@@ -247,7 +247,7 @@ const AIToolsPage: React.FC = () => {
                 transition={{ duration: 0.5 }}
                 className="flex flex-col items-center mb-6"
               >
-                <LuBoxes size={42} className="text-primary-600 mb-2 transition animate-bounce" />
+                <LuBoxes size={42} className="text-primary-600 mb-2" />
                 <h1 className="text-3xl md:text-4xl font-bold text-gray-900">
                   Herramientas de{' '}
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-secondary-600 font-bold">
@@ -268,10 +268,10 @@ const AIToolsPage: React.FC = () => {
       </div>
 
       {/* Sección de herramientas */}
-      <section className="section bg-gradient-to-t from-gray-300 via-gray to-gray-300 pb-16 pt-10">
+      <section className="section bg-gradient-to-t from-gray-300 via-gray to-gray-300 pb-16 pt-6">
         <div className="container-custom">
           {/* Buscador y filtro */}
-          <div className="max-w-5xl mx-auto mb-12">
+          <div className="max-w-5xl mx-auto mb-8">
             <div className="flex flex-col gap-6 items-center">
               <div className="relative w-full md:w-96">
                 <input
@@ -445,13 +445,13 @@ const AIToolsPage: React.FC = () => {
         <div className="container-custom text-center">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-               ¿Quieres ver lo que puedes hacer con estas herramientas?
+               ¿Quieres aprender a usar estas herramientas?
             </h2>
             <a
-              href="/ejemplos"
+              href="/guias"
               className="btn bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-600 inline-flex items-center transition-transform duration-300 hover:translate-x-2"
             >
-              Explora nuestros ejemplos<ArrowRight size={16} className="ml-2" />
+              Explora nuestras guías<ArrowRight size={16} className="ml-2" />
             </a>
           </div>
         </div>

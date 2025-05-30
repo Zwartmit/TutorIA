@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import { Github, Twitter, Linkedin } from 'lucide-react';
 import icon from '../../../public/icon.png';
-import devmitLogo from '../../assets/DevMit.png';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -19,17 +17,6 @@ const Footer: React.FC = () => {
             <p className="text-gray-400 text-sm max-w-xs">
               Aprende los conceptos fundamentales de la IA, cómo funciona y empieza a explorar el futuro de la tecnología
             </p>
-            {/* <div className="flex space-x-4 pt-2">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Twitter size={20} />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Github size={20} />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Linkedin size={20} />
-              </a>
-            </div> */}
           </div>
 
           <div className="flex flex-col items-center justify-center text-center"></div>
@@ -57,21 +44,16 @@ const Footer: React.FC = () => {
             </div>
 
             <div>
-              <h3 className="text-white font-medium text-lg mb-2">Desarrollado por</h3>
+              <h3 className="text-white font-medium text-lg mb-2">¿Tienes alguna duda?</h3>
               <div className="flex flex-col items-center">
                 <a
-                  href="https://dev-mit.com"
+                  href="https://www.instagram.com/devmit.tech"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:opacity-80 hover:scale-105 transition cursor-pointer animate-pulse"
-                  title="Visitar dev-mit.com"
+                  className="bg-gradient-to-r from-primary-600 via-secondary-600 to-primary-600 animated-gradient text-white font-semibold px-4 py-2 rounded-full shadow hover:scale-105 hover:from-primary-700 hover:to-secondary-700 transition-transform duration-300"
+                  title="Contactanos"
                 >
-                  <img
-                    src={devmitLogo}
-                    alt="Logo DEVMIT"
-                    style={{ width: '90px', height: 'auto' }}
-                    className="mx-auto"
-                  />
+                  Contactanos
                 </a>
               </div>
             </div>

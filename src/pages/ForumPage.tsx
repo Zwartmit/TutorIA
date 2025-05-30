@@ -51,7 +51,7 @@ const ForumPage: React.FC = () => {
                   transition={{ duration: 0.5 }}
                   className="flex flex-col items-center mb-4"
                 >
-                  <LiaUsersSolid size={42} className="text-primary-600 mb-2 transition animate-bounce" />
+                  <LiaUsersSolid size={42} className="text-primary-600 mb-2" />
                   <h1 className="text-4xl font-extrabold text-gray-900 mb-2 tracking-tight">Foro de la comunidad</h1>
                 </motion.div>
                 <motion.p

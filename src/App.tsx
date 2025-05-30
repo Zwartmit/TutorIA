@@ -31,26 +31,24 @@ function App() {
         <Route path="/" element={<MainLayout />}>
           <Route index element={<HomePage />} />
           <Route path="ia" element={<AIExplanationPage />} />
-          <Route path="herramientas" element={<AIToolsPage />} />
-          <Route
-            path="guias"
-            element={
+          <Route path="herramientas" element={
+              <ProtectedRoute>
+                <AIToolsPage />
+              </ProtectedRoute>
+            } />
+          <Route path="guias" element={
               <ProtectedRoute>
                 <GuidesPage />
               </ProtectedRoute>
             }
           />
-          <Route
-            path="tests"
-            element={
+          <Route path="tests" element={
               <ProtectedRoute>
                 <AssessmentPage />
               </ProtectedRoute>
             }
           />
-          <Route
-            path="perfil"
-            element={
+          <Route path="perfil" element={
               <ProtectedRoute>
                 <ProfilePage />
               </ProtectedRoute>
@@ -59,8 +57,16 @@ function App() {
           <Route path="terms" element={<TermsPage />} />
           <Route path="privacy" element={<PrivacyPage />} />
           <Route path="cookies" element={<CookiesPage />} />
-          <Route path="/foro" element={<ForumPage />} />
-          <Route path="/foro/:id" element={<PostPage />} />
+          <Route path="/foro" element={
+            <ProtectedRoute>
+              <ForumPage />
+            </ProtectedRoute>
+          } />
+          <Route path="/foro/:id" element={
+            <ProtectedRoute>
+              <PostPage />
+            </ProtectedRoute>
+          } />
           <Route path="ejemplos" element={<ExamplesPage />} />
         </Route>
         <Route path="/sign-in/*" element={<SignInPage />} />

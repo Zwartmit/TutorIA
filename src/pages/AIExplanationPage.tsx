@@ -5,7 +5,7 @@ import { MdWifi, MdWifi2Bar, MdClose } from 'react-icons/md';
 import { FaSearchPlus, FaExternalLinkAlt } from 'react-icons/fa';
 import { RiGlobalFill } from 'react-icons/ri';
 import redes from '../assets/redes.png';
-import midugato from '../assets/midugato.png';
+// import midugato from '../assets/midugato.png';
 import miduIcon from '../assets/youtube/midu.jpg';
 import dotIcon from '../assets/youtube/dot.jpg';
 import gustavoIcon from '../assets/youtube/gustavo.jpg';
@@ -152,7 +152,7 @@ const AIExplanationPage: React.FC = () => {
             <div className="p-3 border-b border-gray-200 flex justify-between items-center">
               <div className="w-full flex flex-col items-center justify-center">
                 <h3 className="text-2xl font-bold text-gray-800 text-center">Glosario de términos básicos</h3>
-                <img src={midugato} className="w-auto h-24" alt="midugato" />
+                {/* <img src={midugato} className="w-auto h-24" alt="midugato" /> */}
               </div>
               <button
                 onClick={() => {
@@ -193,7 +193,7 @@ const AIExplanationPage: React.FC = () => {
               <div className="max-w-4xl mx-auto">
                 <div className="mb-4 text-center">
                   <div className="flex flex-col items-center">
-                    <BrainCircuit size={42} className="text-primary-600 mb-2 transition animate-bounce" />
+                    <BrainCircuit size={42} className="text-primary-600 mb-2" />
                     <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Introducción a la IA</h1>
                   </div>
                 </div>
@@ -215,7 +215,7 @@ const AIExplanationPage: React.FC = () => {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-center">
                     <div className="bg-gray-50 p-6 rounded-3xl flex flex-col items-center">
-                      <Bot className="text-secondary-600 mb-3 transition animate-bounce" size={32} />
+                      <Bot className="text-secondary-600 mb-3" size={32} />
                       <h4 className="font-semibold text-lg mb-2">Asistentes virtuales</h4>
                       <p className="text-gray-700">
                         Siri, Alexa y Google Assistant utilizan IA para entender tus comandos de voz y
@@ -223,7 +223,7 @@ const AIExplanationPage: React.FC = () => {
                       </p>
                     </div>
                     <div className="bg-gray-50 p-6 rounded-3xl flex flex-col items-center">
-                      <ListFilter className="text-blue-600 mb-3 transition animate-bounce" size={32} />
+                      <ListFilter className="text-blue-600 mb-3" size={32} />
                       <h4 className="font-semibold text-lg mb-2">Recomendaciones</h4>
                       <p className="text-gray-700">
                         Servicios como Netflix y Spotify utilizan IA para recomendarte películas o
@@ -231,7 +231,7 @@ const AIExplanationPage: React.FC = () => {
                       </p>
                     </div>
                     <div className="bg-gray-50 p-6 rounded-3xl flex flex-col items-center">
-                      <Languages className="text-blue-600 mb-3 transition animate-bounce" size={32} />
+                      <Languages className="text-blue-600 mb-3" size={32} />
                       <h4 className="font-semibold text-lg mb-2">Traducción automática</h4>
                       <p className="text-gray-700">
                         Google Translate y otros servicios similares utilizan IA para traducir texto de
@@ -239,7 +239,7 @@ const AIExplanationPage: React.FC = () => {
                       </p>
                     </div>
                     <div className="bg-gray-50 p-6 rounded-3xl flex flex-col items-center">
-                      <ShieldPlus className="text-secondary-600 mb-3 transition animate-bounce" size={32} />
+                      <ShieldPlus className="text-secondary-600 mb-3" size={32} />
                       <h4 className="font-semibold text-lg mb-2">Filtros de spam</h4>
                       <p className="text-gray-700">
                         Tu correo electrónico utiliza IA para distinguir entre mensajes legítimos y spam
@@ -259,7 +259,7 @@ const AIExplanationPage: React.FC = () => {
               <div className="max-w-5xl mx-auto px-4">
                 <div className="mb-10 text-center">
                   <div className="flex flex-col items-center">
-                    <GiArtificialIntelligence size={48} className="text-primary-600 mb-3 animate-bounce" />
+                    <GiArtificialIntelligence size={48} className="text-primary-600 mb-3" />
                     <h2 className="text-4xl font-bold text-gray-800">Clasificación de la IA según sus capacidades y aplicaciones</h2>
                   </div>
                 </div>
@@ -268,7 +268,7 @@ const AIExplanationPage: React.FC = () => {
                   <div className="p-8 border-b md:border-b-0 md:border-r border-gray-100">
                     <div className="space-y-6">
                       <div className="text-center flex flex-col items-center">
-                        <MdWifi2Bar size={32} className="mb-2 text-secondary-600 transition animate-bounce" />
+                        <MdWifi2Bar size={32} className="mb-2 text-secondary-600" />
                         <h4 className="text-lg font-semibold mb-2">
                           IA Estrecha
                         </h4>
@@ -277,7 +277,7 @@ const AIExplanationPage: React.FC = () => {
                         </p>
                       </div>
                       <div className="text-center flex flex-col items-center">
-                        <MdWifi size={32} className="mb-2 text-blue-600 transition animate-bounce" />
+                        <MdWifi size={32} className="mb-2 text-blue-600" />
                         <h4 className="text-lg font-semibold mb-2">
                           IA Fuerte
                         </h4>
@@ -291,7 +291,7 @@ const AIExplanationPage: React.FC = () => {
                   <div className="p-8">
                     <div className="space-y-6">
                       <div className="text-center flex flex-col items-center">
-                        <GiBrainstorm size={32} className="mb-2 text-blue-600 transition animate-bounce" />
+                        <GiBrainstorm size={32} className="mb-2 text-blue-600" />
                         <h4 className="text-lg font-semibold mb-2">
                           IA Especializada
                         </h4>
@@ -300,7 +300,7 @@ const AIExplanationPage: React.FC = () => {
                         </p>
                       </div>
                       <div className="text-center flex flex-col items-center">
-                        <RiGlobalFill size={32} className="mb-2 text-secondary-600 transition animate-bounce" />
+                        <RiGlobalFill size={32} className="mb-2 text-secondary-600" />
                         <h4 className="text-lg font-semibold mb-2">
                           IA General
                         </h4>
@@ -323,7 +323,7 @@ const AIExplanationPage: React.FC = () => {
               <div className="max-w-4xl mx-auto">
                 <div className="mb-10 text-center">
                   <div className="flex flex-col items-center mb-4">
-                    <GiTechnoHeart size={42} className="text-primary-600 mb-2 transition animate-bounce" />
+                    <GiTechnoHeart size={42} className="text-primary-600 mb-2" />
                   </div>
                   <h2 className="text-3xl md:text-4xl font-bold mb-4">Cómo funciona la IA</h2>
                 </div>
@@ -378,7 +378,7 @@ const AIExplanationPage: React.FC = () => {
               <div className="max-w-4xl mx-auto">
                 <div className="mb-10 text-center">
                   <div className="flex flex-col items-center mb-4">
-                    <FaSearchPlus size={42} className="text-primary-600 mb-2 animate-bounce" />
+                    <FaSearchPlus size={42} className="text-primary-600 mb-2" />
                   </div>
                   <h2 className="text-3xl md:text-4xl font-bold mb-4">¿Quieres saber más?</h2>
                   <p className="text-gray-700">Te recomendamos estos canales de YouTube</p>
@@ -398,7 +398,7 @@ const AIExplanationPage: React.FC = () => {
                       className="flex items-center justify-center gap-2 mb-2 group"
                     >
                       <h4 className="text-xl font-semibold text-primary-600">MiduDev</h4>
-                      <FaExternalLinkAlt size={14} className="text-primary-600 transition animate-bounce" />
+                      <FaExternalLinkAlt size={14} className="text-primary-600" />
                     </a>
                     <p className="text-gray-600">Desarrollo web y programación con un enfoque práctico, incluyendo IA aplicada y las últimas tecnologías</p>
                   </div>
@@ -416,7 +416,7 @@ const AIExplanationPage: React.FC = () => {
                       className="flex items-center justify-center gap-2 mb-2 group"
                     >
                       <h4 className="text-xl font-semibold text-primary-600">Dot CSV</h4>
-                      <FaExternalLinkAlt size={14} className="text-primary-600 transition animate-bounce" />
+                      <FaExternalLinkAlt size={14} className="text-primary-600" />
                     </a>
                     <p className="text-gray-600">Divulgación sobre Inteligencia Artificial para que entiendas cómo funciona la próxima revolución industrial</p>
                   </div>
@@ -434,7 +434,7 @@ const AIExplanationPage: React.FC = () => {
                       className="flex items-center justify-center gap-2 mb-2 group"
                     >
                       <h4 className="text-xl font-semibold text-primary-600">Gustavo Entrala</h4>
-                      <FaExternalLinkAlt size={14} className="text-primary-600 transition animate-bounce" />
+                      <FaExternalLinkAlt size={14} className="text-primary-600" />
                     </a>
                     <p className="text-gray-600">Análisis y reflexiones sobre el impacto de la IA en la sociedad, el entorno laboral y la vida cotidiana</p>
                   </div>
@@ -452,7 +452,7 @@ const AIExplanationPage: React.FC = () => {
                       className="flex items-center justify-center gap-2 mb-2 group"
                     >
                       <h4 className="text-xl font-semibold text-primary-600">Platzi</h4>
-                      <FaExternalLinkAlt size={14} className="text-primary-600 transition animate-bounce" />
+                      <FaExternalLinkAlt size={14} className="text-primary-600" />
                     </a>
                     <p className="text-gray-600">Ofrece cursos completos sobre IA, machine learning y ciencia de datos, con contenido para todos los niveles</p>
                   </div>
@@ -470,7 +470,7 @@ const AIExplanationPage: React.FC = () => {
                       className="flex items-center justify-center gap-2 mb-2 group"
                     >
                       <h4 className="text-xl font-semibold text-primary-600">Inteligencia Artificial</h4>
-                      <FaExternalLinkAlt size={14} className="text-primary-600 transition animate-bounce" />
+                      <FaExternalLinkAlt size={14} className="text-primary-600" />
                     </a>
                     <p className="text-gray-600">Canal dedicado a explicar conceptos de IA de manera accesible, con tutoriales y análisis de herramientas</p>
                   </div>
@@ -488,7 +488,7 @@ const AIExplanationPage: React.FC = () => {
                       className="flex items-center justify-center gap-2 mb-2 group"
                     >
                       <h4 className="text-xl font-semibold text-primary-600">IA en Español</h4>
-                      <FaExternalLinkAlt size={14} className="text-primary-600 transition animate-bounce" />
+                      <FaExternalLinkAlt size={14} className="text-primary-600" />
                     </a>
                     <p className="text-gray-600">Canal educativo que cubre temas de inteligencia artificial, machine learning y tecnologías emergentes</p>
                   </div>
@@ -501,7 +501,7 @@ const AIExplanationPage: React.FC = () => {
                     rel="noopener noreferrer"
                     className="inline-flex items-center text-primary-600 font-medium hover:text-primary-700"
                   >
-                    Explora más en YouTube <ExternalLink size={16} className="ml-1 transition animate-bounce" />
+                    Explora más en YouTube <ExternalLink size={16} className="ml-1" />
                   </a>
                 </div>
               </div>
@@ -514,13 +514,12 @@ const AIExplanationPage: React.FC = () => {
           <div className="container-custom text-center">
             <div className="max-w-3xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Ahora que sabes cómo funciona la IA, conoce las herramientas que puedes usar
-              </h2>
+                Ahora que sabes cómo funciona la IA, mira lo que puedes hacer con ella...</h2>
               <a
-                href="/herramientas"
+                href="/ejemplos"
                 className="btn bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-600 inline-flex items-center transition-transform duration-300 hover:translate-x-2"
               >
-                Ver herramientas<ArrowRight size={16} className="ml-2" />
+                Ver ejemplos<ArrowRight size={16} className="ml-2" />
               </a>
             </div>
           </div>

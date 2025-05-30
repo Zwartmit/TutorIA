@@ -382,7 +382,7 @@ const AssessmentPage: React.FC = () => {
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
             <div className="flex flex-col items-center">
-                <PiExam size={42} className="text-primary-600 mb-2 transition animate-bounce" />
+                <PiExam size={42} className="text-primary-600 mb-2" />
                 <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Tests de conocimientos</h1>
               </div>
               <motion.p

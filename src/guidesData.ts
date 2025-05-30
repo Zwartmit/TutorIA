@@ -225,61 +225,61 @@ export const guides: Guide[] = [
         },
       ],
     },
-    {
-      id: 'web-bolt-new',
-      title: 'Cómo crear una web en Bolt new',
-      description: 'Crea una página web profesional en minutos usando la IA de Bolt.new, sin necesidad de programar. Incluye ejemplos, advertencias y buenas prácticas.',
-      category: 'Programación',
-          tool: 'Bolt.new',
-      imageUrl: 'https://images.pexels.com/photos/11035471/pexels-photo-11035471.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      steps: [
-        {
-          title: 'Accede a Bolt.new',
-          content: 'Visita https://bolt.new/ y haz clic en “Comenzar” para iniciar un nuevo proyecto. No necesitas experiencia previa en programación.',
-          imageUrl: 'https://i.imgur.com/9m3Yy9W.png', // Inicio Bolt.new
-        },
-        {
-          title: 'Describe tu web a la IA',
-          content: 'Explica claramente el propósito de tu web y los elementos que deseas incluir (ejemplo: “Quiero una web para mi portafolio de diseño con una galería y formulario de contacto”). Sé específico para mejores resultados.',
-          imageUrl: 'https://i.imgur.com/2y4Xj4K.png', // Prompt Bolt.new
-        },
-        {
-          title: 'Revisa la propuesta inicial',
-          content: 'La IA generará una estructura y diseño básico. Examina las secciones sugeridas y elige las que se adapten a tus necesidades.',
-          imageUrl: 'https://i.imgur.com/6k3Tg4Q.png', // Propuesta inicial
-        },
-        {
-          title: 'Personaliza el diseño y contenido',
-          content: 'Modifica textos, imágenes, colores y disposición de las secciones desde el editor visual. Puedes agregar, eliminar o reorganizar bloques fácilmente.',
-          imageUrl: 'https://i.imgur.com/7h6Pj9L.png', // Editor visual
-        },
-        {
-          title: 'Configura la navegación y opciones avanzadas',
-          content: 'Ajusta el menú de navegación, enlaces, estilos de botones y opciones de accesibilidad. Prueba el modo oscuro o claro según prefieras.',
-          imageUrl: 'https://i.imgur.com/5q8Yk2R.png', // Opciones avanzadas
-        },
-        {
-          title: 'Previsualiza tu sitio',
-          content: 'Utiliza la opción de previsualización para ver cómo se verá tu web en computadoras y móviles antes de publicarla.',
-          imageUrl: 'https://i.imgur.com/1p7Yl7Q.png', // Previsualización
-        },
-        {
-          title: 'Publica tu web',
-          content: 'Cuando estés satisfecho, haz clic en “Publicar”. Bolt.new se encarga del hosting y te proporciona un enlace para compartir.',
-          imageUrl: 'https://i.imgur.com/3k8Yp5N.png', // Publicar web
-        },
-        {
-          title: 'Consejos y advertencias',
-          content: 'Revisa ortografía y enlaces antes de publicar. No incluyas información sensible. Consulta los términos de uso si tu web será comercial.',
-          imageUrl: 'https://i.imgur.com/9s8Qh5W.png', // Advertencia
-        },
-        {
-          title: 'Mejora y actualiza tu web',
-          content: 'Puedes volver a editar tu sitio en cualquier momento para agregar nuevas secciones, actualizar información o cambiar el diseño.',
-          imageUrl: 'https://i.imgur.com/8t3y2dK.png', // Actualizar web
-        },
-      ],
-    },
+    // {
+    //   id: 'web-bolt-new',
+    //   title: 'Cómo crear una web en Bolt new',
+    //   description: 'Crea una página web profesional en minutos usando la IA de Bolt.new, sin necesidad de programar. Incluye ejemplos, advertencias y buenas prácticas.',
+    //   category: 'Programación',
+    //       tool: 'Bolt.new',
+    //   imageUrl: 'https://images.pexels.com/photos/11035471/pexels-photo-11035471.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    //   steps: [
+    //     {
+    //       title: 'Accede a Bolt.new',
+    //       content: 'Visita https://bolt.new/ y haz clic en “Comenzar” para iniciar un nuevo proyecto. No necesitas experiencia previa en programación.',
+    //       imageUrl: 'https://i.imgur.com/9m3Yy9W.png', // Inicio Bolt.new
+    //     },
+    //     {
+    //       title: 'Describe tu web a la IA',
+    //       content: 'Explica claramente el propósito de tu web y los elementos que deseas incluir (ejemplo: “Quiero una web para mi portafolio de diseño con una galería y formulario de contacto”). Sé específico para mejores resultados.',
+    //       imageUrl: 'https://i.imgur.com/2y4Xj4K.png', // Prompt Bolt.new
+    //     },
+    //     {
+    //       title: 'Revisa la propuesta inicial',
+    //       content: 'La IA generará una estructura y diseño básico. Examina las secciones sugeridas y elige las que se adapten a tus necesidades.',
+    //       imageUrl: 'https://i.imgur.com/6k3Tg4Q.png', // Propuesta inicial
+    //     },
+    //     {
+    //       title: 'Personaliza el diseño y contenido',
+    //       content: 'Modifica textos, imágenes, colores y disposición de las secciones desde el editor visual. Puedes agregar, eliminar o reorganizar bloques fácilmente.',
+    //       imageUrl: 'https://i.imgur.com/7h6Pj9L.png', // Editor visual
+    //     },
+    //     {
+    //       title: 'Configura la navegación y opciones avanzadas',
+    //       content: 'Ajusta el menú de navegación, enlaces, estilos de botones y opciones de accesibilidad. Prueba el modo oscuro o claro según prefieras.',
+    //       imageUrl: 'https://i.imgur.com/5q8Yk2R.png', // Opciones avanzadas
+    //     },
+    //     {
+    //       title: 'Previsualiza tu sitio',
+    //       content: 'Utiliza la opción de previsualización para ver cómo se verá tu web en computadoras y móviles antes de publicarla.',
+    //       imageUrl: 'https://i.imgur.com/1p7Yl7Q.png', // Previsualización
+    //     },
+    //     {
+    //       title: 'Publica tu web',
+    //       content: 'Cuando estés satisfecho, haz clic en “Publicar”. Bolt.new se encarga del hosting y te proporciona un enlace para compartir.',
+    //       imageUrl: 'https://i.imgur.com/3k8Yp5N.png', // Publicar web
+    //     },
+    //     {
+    //       title: 'Consejos y advertencias',
+    //       content: 'Revisa ortografía y enlaces antes de publicar. No incluyas información sensible. Consulta los términos de uso si tu web será comercial.',
+    //       imageUrl: 'https://i.imgur.com/9s8Qh5W.png', // Advertencia
+    //     },
+    //     {
+    //       title: 'Mejora y actualiza tu web',
+    //       content: 'Puedes volver a editar tu sitio en cualquier momento para agregar nuevas secciones, actualizar información o cambiar el diseño.',
+    //       imageUrl: 'https://i.imgur.com/8t3y2dK.png', // Actualizar web
+    //     },
+    //   ],
+    // },
     {
       id: 'copilot-vscode',
       title: 'Cómo usar Copilot en VSCode',

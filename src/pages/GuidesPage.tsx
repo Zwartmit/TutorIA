@@ -71,7 +71,6 @@ const GuidesPage: React.FC = () => {
   return (
     <div className="pt-14 bg-gray-300">
       {selectedGuide ? (
-        
         <div className="min-h-screen">
           {/* Encabezado de la guía */}
           <section className="w-full bg-gradient-to-t from-gray-300 via-gray to-gray-300 pt-7">
@@ -239,7 +238,7 @@ const GuidesPage: React.FC = () => {
             <div className="container-custom">
               <div className="max-w-3xl mx-auto text-center">
                 <div className="flex flex-col items-center">
-                    <IoLibrary size={42} className="text-primary-600 mb-2 transition animate-bounce" />
+                    <IoLibrary size={42} className="text-primary-600 mb-2" />
                     <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Guías</h1>
                   </div>
                   <motion.p
@@ -386,6 +385,9 @@ const GuidesPage: React.FC = () => {
               </div>
             </div>
           </section>
+          <div className="py-12">
+          <p className="text-center text-gray-600">Pronto agregaremos más guías...</p>
+          </div>
         </>
       )}
     </div>

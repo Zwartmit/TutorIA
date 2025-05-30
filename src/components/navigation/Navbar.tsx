@@ -118,18 +118,6 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                 ¿Qué es la IA?
               </NavLink>
               <NavLink
-                to="/herramientas"
-                className={({ isActive }) =>
-                  `font-medium transition-colors ${
-                    isActive
-                      ? 'text-primary-600'
-                      : 'text-gray-700 hover:text-primary-600'
-                  }`
-                }
-              >
-                Herramientas
-              </NavLink>
-              <NavLink
                 to="/ejemplos"
                 className={({ isActive }) =>
                   `font-medium transition-colors ${
@@ -141,20 +129,21 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
               >
                 Ejemplos
               </NavLink>
-              <NavLink
-                to="/foro"
-                className={({ isActive }) =>
-                  `font-medium transition-colors ${
-                    isActive
-                      ? 'text-primary-600'
-                      : 'text-gray-700 hover:text-primary-600'
-                  }`
-                }
-              >
-                Foro
-              </NavLink>
+              
               {isSignedIn && (
                 <>
+                  <NavLink
+                    to="/herramientas"
+                    className={({ isActive }) =>
+                      `font-medium transition-colors ${
+                        isActive
+                          ? 'text-primary-600'
+                          : 'text-gray-700 hover:text-primary-600'
+                      }`
+                    }
+                  >
+                    Herramientas
+                  </NavLink>
                   <NavLink
                     to="/guias"
                     className={({ isActive }) =>
@@ -178,6 +167,18 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                     }
                   >
                     Tests
+                  </NavLink>
+                  <NavLink
+                    to="/foro"
+                    className={({ isActive }) =>
+                      `font-medium transition-colors ${
+                        isActive
+                          ? 'text-primary-600'
+                          : 'text-gray-700 hover:text-primary-600'
+                      }`
+                    }
+                  >
+                    Foro
                   </NavLink>
                 </>
               )}
@@ -310,7 +311,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                   ¿Qué es IA?
                 </NavLink>
                 <NavLink
-                  to="/herramientas"
+                  to="/ejemplos"
                   className={({ isActive }) =>
                     `flex-1 text-center py-2 font-medium rounded-2xl transition-colors ${
                       isActive ? 'text-primary-600 bg-primary-100' : 'text-gray-700 hover:bg-gray-100'
@@ -318,59 +319,60 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                   }
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Herramientas
+                  Ejemplos
                 </NavLink>
               </div>
               <div className="flex flex-col space-y-2">
                 <div className="flex justify-between space-x-2">
-                  <NavLink
-                    to="/ejemplos"
-                    className={({ isActive }) =>
-                      `flex-1 text-center py-2 font-medium rounded-2xl transition-colors ${
-                        isActive ? 'text-primary-600 bg-primary-100' : 'text-gray-700 hover:bg-gray-100'
-                      }`
-                    }
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Ejemplos
-                  </NavLink>
-                  <NavLink
-                    to="/foro"
-                    className={({ isActive }) =>
-                      `flex-1 text-center py-2 font-medium rounded-2xl transition-colors ${
-                        isActive ? 'text-primary-600 bg-primary-100' : 'text-gray-700 hover:bg-gray-100'
-                      }`
-                    }
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Foro
-                  </NavLink>
-                  {isSignedIn && (
-                    <>
-                      <NavLink
-                        to="/guias"
-                        className={({ isActive }) =>
-                          `flex-1 text-center py-2 font-medium rounded-2xl transition-colors ${
-                            isActive ? 'text-primary-600 bg-primary-100' : 'text-gray-700 hover:bg-gray-100'
-                          }`
-                        }
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        Guías
-                      </NavLink>
-                      <NavLink
-                        to="/tests"
-                        className={({ isActive }) =>
-                          `flex-1 text-center py-2 font-medium rounded-2xl transition-colors ${
-                            isActive ? 'text-primary-600 bg-primary-100' : 'text-gray-700 hover:bg-gray-100'
-                          }`
-                        }
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        Tests
-                      </NavLink>
-                    </>
-                  )}
+                
+                {isSignedIn && (
+                   <>
+                     <NavLink
+                       to="/herramientas"
+                       className={({ isActive }) =>
+                         `flex-1 text-center py-2 font-medium rounded-2xl transition-colors ${
+                           isActive ? 'text-primary-600 bg-primary-100' : 'text-gray-700 hover:bg-gray-100'
+                         }`
+                       }
+                       onClick={() => setIsMenuOpen(false)}
+                     >
+                       Herramientas
+                     </NavLink>
+                     <NavLink
+                       to="/guias"
+                       className={({ isActive }) =>
+                         `flex-1 text-center py-2 font-medium rounded-2xl transition-colors ${
+                           isActive ? 'text-primary-600 bg-primary-100' : 'text-gray-700 hover:bg-gray-100'
+                         }`
+                       }
+                       onClick={() => setIsMenuOpen(false)}
+                     >
+                       Guías
+                     </NavLink>
+                     <NavLink
+                       to="/tests"
+                       className={({ isActive }) =>
+                         `flex-1 text-center py-2 font-medium rounded-2xl transition-colors ${
+                           isActive ? 'text-primary-600 bg-primary-100' : 'text-gray-700 hover:bg-gray-100'
+                         }`
+                       }
+                       onClick={() => setIsMenuOpen(false)}
+                     >
+                       Tests
+                     </NavLink>
+                     <NavLink
+                       to="/foro"
+                       className={({ isActive }) =>
+                         `flex-1 text-center py-2 font-medium rounded-2xl transition-colors ${
+                           isActive ? 'text-primary-600 bg-primary-100' : 'text-gray-700 hover:bg-gray-100'
+                         }`
+                       }
+                       onClick={() => setIsMenuOpen(false)}
+                     >
+                       Foro
+                     </NavLink>
+                   </>
+                 )}
                 </div>
               </div>
               <div className="flex justify-between space-x-2">

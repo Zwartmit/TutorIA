@@ -155,7 +155,7 @@ const ExamplesPage: React.FC = () => {
                 transition={{ duration: 0.5 }}
                 className="flex flex-col items-center mb-6"
               >
-                <RiAiGenerate2 size={42} className="text-primary-600 mb-2 transition animate-bounce" />
+                <RiAiGenerate2 size={42} className="text-primary-600 mb-2" />
                 <h1 className="text-3xl md:text-4xl font-bold text-gray-900">
                   Ejemplos prácticos
                 </h1>
@@ -164,7 +164,6 @@ const ExamplesPage: React.FC = () => {
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-secondary-600 font-bold">
                     IA
                   </span>
-                  . Ademas, puedes ver los prompts que se usaron para generarlos
                 </p>
               </motion.div>
               <motion.div
@@ -270,13 +269,13 @@ const ExamplesPage: React.FC = () => {
             <div className="container-custom text-center">
               <div className="max-w-3xl mx-auto">
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                  ¿Quieres aprender a crear contenido como este con IA?
+                  ¿Quieres saber cúales son las herramientas capaces de generar contenido como este?
                 </h2>
                 <a
-                  href="/guias"
+                  href="/herramientas"
                   className="btn bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-600 inline-flex items-center transition-transform duration-300 hover:translate-x-2"
                 >
-                  Explorar nuestras guías<ArrowRight size={16} className="ml-2" />
+                  Ver herramientas<ArrowRight size={16} className="ml-2" />
                 </a>
               </div>
             </div>
