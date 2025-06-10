@@ -551,4 +551,50 @@ export const guides: Guide[] = [
         },
       ],
     },
+    {
+      id: 'suno',
+      title: 'Cómo generar videos realistas con calidad cinematográfica',
+      description: 'Crea videos realistas a partir de texto integrando sonidos, efectos, música e incluso diálogos en espanol.',
+      category: 'Generación de Video',
+          tool: 'Veo 3',
+      imageUrl: 'https://images.pexels.com/photos/7713192/pexels-photo-7713192.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      steps: [
+        {
+          title: 'Instala la extensión SetupVPN',
+          content: 'Para Chrome; https://chromewebstore.google.com/detail/setupvpn-lifetime-free-vp/oofgbpoabipfcfjapgnbbjjaenockbdp?utm.',
+        },
+        {
+          title: 'Familiarízate con la interfaz',
+          content: 'Explora las opciones de estilos musicales, historial de canciones generadas y herramientas de edición.',
+        },
+        {
+          title: 'Elige el tipo de canción o estilo musical',
+          content: 'Selecciona el género, ritmo o ambiente que deseas generar (pop, rock, instrumental, etc.). Esto influye en el resultado final.',
+        },
+        {
+          title: 'Describe tu canción o tema',
+          content: 'Introduce una descripción, tema o letra en el cuadro de texto. Ejemplo: “Canción alegre sobre la amistad para niños, estilo pop, con estribillo pegadizo”.',
+        },
+        {
+          title: 'Personaliza parámetros avanzados',
+          content: 'Ajusta tempo, duración, instrumentos y otros parámetros si la plataforma lo permite. Prueba diferentes combinaciones para resultados variados.',
+        },
+        {
+          title: 'Genera la canción y revisa las opciones',
+          content: 'Haz clic en “Crear”, espera unos segundos y escucha las opciones generadas. Puedes comparar varias versiones antes de elegir la mejor.',
+        },
+        {
+          title: 'Descarga o comparte tu canción',
+          content: 'Cuando estés satisfecho, descarga la canción en formato MP3 o compártela desde la plataforma. Consulta derechos de uso si la canción será publicada.',
+        },
+        {
+          title: 'Consejos y advertencias',
+          content: 'No generes canciones con contenido ofensivo o que infrinja derechos de autor. Verifica la originalidad antes de publicar y cita la herramienta si es necesario.',
+        },
+        {
+          title: 'Experimenta y aprende',
+          content: 'Prueba diferentes estilos y temáticas para descubrir el potencial creativo de la IA musical. Escucha ejemplos de la comunidad para inspirarte.',
+        },
+      ],
+    },
   ];

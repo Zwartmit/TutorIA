@@ -21,6 +21,9 @@ import CookiesPage from './pages/CookiesPage';
 import ForumPage from './pages/ForumPage';
 import PostPage from './pages/PostPage';
 
+// Guides
+import GuideVeo3 from './pages/guides/guideVeo3';
+
 // Components
 import ProtectedRoute from './components/auth/ProtectedRoute';
 
@@ -51,6 +54,12 @@ function App() {
           <Route path="perfil" element={
               <ProtectedRoute>
                 <ProfilePage />
+              </ProtectedRoute>
+            }
+          />
+          <Route path="guias/veo3" element={
+              <ProtectedRoute>
+                <GuideVeo3 />
               </ProtectedRoute>
             }
           />
