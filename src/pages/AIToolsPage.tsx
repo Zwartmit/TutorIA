@@ -9,6 +9,7 @@ import perplexity from '../assets/logos/perplexity.png';
 import midjourney from '../assets/logos/midjourney.png';
 import firefly from '../assets/logos/firefly.png';
 import labs from '../assets/logos/labs.png';
+import flux from '../assets/logos/flux.png';
 import reve from '../assets/logos/reve.png';
 import copilot from '../assets/logos/copilot.png';
 import windsurf from '../assets/logos/windsurf.png';
@@ -132,6 +133,15 @@ const tools: Tool[] = [
     url: 'https://labs.google/imagefx',
     icon: <Image size={24} />,
     imageUrl: labs,
+  },
+  {
+    id: 'flux',
+    name: 'Flux',
+    description: 'Genera, edita y restaura imágenes con el poder de la IA',
+    category: 'Imágenes',
+    url: 'https://playground.bfl.ai/image/edit',
+    icon: <Image size={24} />,
+    imageUrl: flux,
   },
   {
     id: 'jasper',
