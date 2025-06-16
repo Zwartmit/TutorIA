@@ -11,6 +11,7 @@ import firefly from '../assets/logos/firefly.png';
 import labs from '../assets/logos/labs.png';
 import flux from '../assets/logos/flux.png';
 import reve from '../assets/logos/reve.png';
+import hunyuan from '../assets/logos/hunyuan.png';
 import copilot from '../assets/logos/copilot.png';
 import windsurf from '../assets/logos/windsurf.png';
 import blackbox from '../assets/logos/blackbox.png';
@@ -189,6 +190,15 @@ const tools: Tool[] = [
     imageUrl: reve,
   },
   {
+    id: '3d',
+    name: 'Hunyuan 3D',
+    description: 'Crea modelos 3D a partir de una imagen',
+    category: 'Diseño',
+    url: 'https://3d.hunyuan.tencent.com/apply?sid=9fd64164-3852-4409-b10f-524683dd4c56',
+    icon: <Image size={24} />,
+    imageUrl: hunyuan,
+  },
+  {
     id: 'rytr',
     name: 'Rytr',
     description: 'Asistente de escritura con IA para crear contenido rápido',
@@ -226,7 +236,7 @@ const tools: Tool[] = [
   },
 ];
 
-const categories = ['Todos', 'Chat', 'Imágenes', 'Programación', 'Contenido', 'Audio'];
+const categories = ['Todos', 'Audio', 'Chat', 'Contenido', 'Diseño', 'Imágenes', 'Programación'];
 
 const AIToolsPage: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = React.useState('Todos');
