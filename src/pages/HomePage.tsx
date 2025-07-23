@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
-import hero from '../assets/hero3.mp4';
+import hero from '../assets/hero4.mp4';
 import sec1 from '../assets/home/sec1.png';
 import sec2 from '../assets/home/sec2.png';
 import sec3 from '../assets/home/sec3.png';
@@ -21,16 +21,20 @@ const HomePage: React.FC = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative pt-24 pb-0 md:pt-32 md:pb-0 bg-gradient-to-b from-gray-300 via-gray to-gray-300 overflow-hidden">
-        <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <section className="relative flex items-center justify-center text-white min-h-[85vh] md:min-h-[85vh] lg:min-h-[85vh] py-12 md:py-20 lg:py-28 overflow-hidden">
+        {/* Video de fondo */}
+        <video src={hero} autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover object-center z-0" />
+        {/* Overlay para contraste */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/30 to-white/10 z-10" />
+         <div className="container-custom relative z-20">
+          <div className="flex flex-col items-center justify-center w-full">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="text-center lg:text-left"
+              className="text-center px-2 md:px-8"
             >
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-secondary-600">
                   TutorIA
                 </span>
@@ -39,35 +43,25 @@ const HomePage: React.FC = () => {
                   Tu introducción a la inteligencia artificial
                 </span>
               </h1>
-              <p className="text-xl text-gray-700 mb-8 md:max-w-xl mx-auto lg:mx-0">
+              <p className="text-xl text-white mb-8">
                 Aprende los conceptos fundamentales de la IA, cómo funciona y empieza a explorar el futuro de la tecnología
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link to="/ia" className="btn-primary transition-transform duration-300 hover:translate-x-2">
                   Empieza ahora
                 </Link>
               </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="relative flex flex-col items-center"
-            >
-              <video src={hero} autoPlay loop muted className="w-full rounded-full"></video>
-              <div className="absolute inset-0 bg-gradient-to-tr from-primary-900/20 to-transparent rounded-full" />
             </motion.div>
           </div>
         </div>
       </section>
 
       {/* Sección de Beneficios */}
-      <section className="section w-full bg-gradient-to-t from-gray-300 via-gray to-gray-300 mt-8">
+      <section className="section w-full bg-black mt-8">
         <div className="container-custom">
           <div className="text-justify md:text-center max-w-7xl mb-10 mx-auto">
             {/* <h2 className="section-title">Lo que aprenderás...</h2> */}
-            <p className="section-subtitle max-w-7xl mx-auto w-full">
+            <p className="section-subtitle max-w-7xl mx-auto w-full text-white">
               Nuestra plataforma está diseñada para guiarte paso a paso
               con guías claras, herramientas prácticas y un enfoque amigable.
               Descubre los conceptos fundamentales de la inteligencia artificial,
@@ -83,10 +77,10 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* Secciones destacadas */}
-      <section className="section bg-gradient-to-b from-gray-300 via-gray to-gray-300 pt-0">
+      <section className="section bg-black pt-0">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <h2 className="section-title">Explora nuestras secciones...</h2>
+            <h2 className="section-title text-white">Explora nuestras secciones...</h2>
           </div>
 
           <div className="space-y-16">
@@ -98,8 +92,8 @@ const HomePage: React.FC = () => {
                 transition={{ duration: 0.5 }}
                 className="order-2 lg:order-1"
               >
-                <h3 className="text-2xl md:text-3xl font-bold mb-6">¿Qué es la Inteligencia Artificial?</h3>
-                <p className="text-gray-700 mb-6 text-justify">
+                <h3 className="text-2xl md:text-3xl font-bold mb-6 text-white">¿Qué es la Inteligencia Artificial?</h3>
+                <p className="mb-6 text-justify text-white">
                   Comprende qué es la {' '}
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-secondary-600 font-bold">
                     IA,{' '}
@@ -135,8 +129,8 @@ const HomePage: React.FC = () => {
                 transition={{ duration: 0.5 }}
                 className="order-2"
               >
-                <h3 className="text-2xl md:text-3xl font-bold mb-6">Ejemplos prácticos</h3>
-                <p className="text-gray-700 mb-6 text-justify">
+                <h3 className="text-2xl md:text-3xl font-bold mb-6 text-white">Ejemplos prácticos</h3>
+                <p className="mb-6 text-justify text-white">
                   Descubre imágenes, vídeos, textos y muchas más cosas que puedes hacer con la IA. Además,
                   te mostraremos el prompt utilizado para generar cada ejemplo y puedas editarlos a tu gusto.
                 </p>
@@ -167,8 +161,8 @@ const HomePage: React.FC = () => {
                 transition={{ duration: 0.5 }}
                 className="order-2 lg:order-1"
               >
-                <h3 className="text-2xl md:text-3xl font-bold mb-6">Herramientas de IA</h3>
-                <p className="text-gray-700 mb-6 text-justify">
+                <h3 className="text-2xl md:text-3xl font-bold mb-6 text-white">Herramientas de IA</h3>
+                <p className="mb-6 text-justify text-white">
                   Conoce las herramientas de IA que están transformando el mundo, desde generadores de texto e imágenes hasta agentes inteligentes que pueden hacer el trabajo por ti.
                 </p>
                 <Link to="/herramientas" className="inline-flex items-center text-primary-600 font-medium hover:text-primary-700 transition-transform duration-300 hover:translate-x-2">
@@ -211,8 +205,8 @@ const HomePage: React.FC = () => {
                 transition={{ duration: 0.5 }}
                 className="order-2 lg:order-2"
               >
-                <h3 className="text-2xl md:text-3xl font-bold mb-6">Guías paso a paso</h3>
-                <p className="text-gray-700 mb-6 text-justify">
+                <h3 className="text-2xl md:text-3xl font-bold mb-6 text-white">Guías paso a paso</h3>
+                <p className="mb-6 text-justify text-white">
                   Sigue tutoriales detallados sobre cómo utilizar diferentes herramientas de IA para realizar
                   tareas específicas. Cada guía incluye explicaciones claras y pasos sencillos para que puedas
                   aprender a usarlas de manera eficiente.
@@ -231,8 +225,8 @@ const HomePage: React.FC = () => {
                 transition={{ duration: 0.5 }}
                 className="order-2 lg:order-1"
               >
-                <h3 className="text-2xl md:text-3xl font-bold mb-6">Evalúa tus conocimientos</h3>
-                <p className="text-gray-700 mb-6 text-justify">
+                <h3 className="text-2xl md:text-3xl font-bold mb-6 text-white">Evalúa tus conocimientos</h3>
+                <p className="mb-6 text-justify text-white">
                   Pon a prueba lo que has aprendido sobre inteligencia artificial con nuestros tests interactivos.
                   Descubre tus fortalezas y áreas de mejora para seguir avanzando en tu aprendizaje.
                 </p>
@@ -276,8 +270,8 @@ const HomePage: React.FC = () => {
                 transition={{ duration: 0.5 }}
                 className="order-2 lg:order-2"
               >
-                <h3 className="text-2xl md:text-3xl font-bold mb-6">Foro de la comunidad</h3>
-                <p className="text-gray-700 mb-6 text-justify">
+                <h3 className="text-2xl md:text-3xl font-bold mb-6 text-white">Foro de la comunidad</h3>
+                <p className="mb-6 text-justify text-white">
                   Únete a la comunidad, comparte tus dudas, experiencias y aprende junto a otros entusiastas de la inteligencia artificial.
                   El foro es el lugar ideal para crecer y colaborar.
                 </p>

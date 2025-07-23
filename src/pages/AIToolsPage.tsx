@@ -257,7 +257,7 @@ const AIToolsPage: React.FC = () => {
 
   return (
     <div className="min-h-screen">
-      <div className="w-full bg-gradient-to-b mt-14 from-gray-300 via-gray to-gray-300">
+      <div className="w-full bg-black mt-14">
         <section className="min-h-full pt-12">
           <div className="container-custom">
             <div className="max-w-3xl mx-auto text-center">
@@ -268,7 +268,7 @@ const AIToolsPage: React.FC = () => {
                 className="flex flex-col items-center mb-6"
               >
                 <LuBoxes size={42} className="text-primary-600 mb-2" />
-                <h1 className="text-3xl md:text-4xl font-bold text-gray-900">
+                <h1 className="text-3xl md:text-4xl font-bold text-white">
                   Herramientas de{' '}
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-secondary-600 font-bold">
                     Inteligencia Artificial
@@ -279,6 +279,7 @@ const AIToolsPage: React.FC = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
+                className="text-white"
               >
                 Descubre algunas de las IA más populares, para qué sirven y comienza a utilizarlas en tus proyectos
               </motion.p>
@@ -288,7 +289,7 @@ const AIToolsPage: React.FC = () => {
       </div>
 
       {/* Sección de herramientas */}
-      <section className="section bg-gradient-to-t from-gray-300 via-gray to-gray-300 pb-16 pt-6">
+      <section className="section bg-black pb-16 pt-6">
         <div className="container-custom">
           {/* Buscador y filtro */}
           <div className="max-w-5xl mx-auto mb-8">
@@ -386,11 +387,11 @@ const AIToolsPage: React.FC = () => {
           )}
         </div>
       </section>
-      <section className="section bg-gradient-to-b from-gray-300 via-gray to-gray-300 pt-0 pb-0">
+      <section className="section bg-black pt-0 pb-0">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
             <div className="text-center">
-              <h2 className="section-title">
+              <h2 className="section-title text-white">
                 ¿Cómo elegir la{' '}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-secondary-600 font-bold">
                   IA
@@ -401,6 +402,7 @@ const AIToolsPage: React.FC = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
+                className="text-white"
               >
                 Con tantas opciones disponibles, puede ser difícil saber por dónde empezar.
                 Aquí hay algunos consejos para ayudarte a elegir la herramienta de IA más 
@@ -461,10 +463,10 @@ const AIToolsPage: React.FC = () => {
       </section>
       
       {/* CTA Section */}
-      <section className="py-10 bg-gradient-to-t from-gray-300 via-gray to-gray-300">
+      <section className="py-10 bg-black">
         <div className="container-custom text-center">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
                ¿Quieres aprender a usar estas herramientas?
             </h2>
             <a

@@ -187,19 +187,19 @@ const AIExplanationPage: React.FC = () => {
       {/* Contenido principal */}
       <div>
         {/* Introducción a la IA */}
-        <div className="w-full bg-gradient-to-b mt-14 from-gray-300 via-gray to-gray-300">
+        <div className="w-full bg-black mt-14">
           <section className="min-h-full py-12">
             <div className="container-custom">
               <div className="max-w-4xl mx-auto">
                 <div className="mb-4 text-center">
                   <div className="flex flex-col items-center">
                     <BrainCircuit size={42} className="text-primary-600 mb-2" />
-                    <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Introducción a la IA</h1>
+                    <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">Introducción a la IA</h1>
                   </div>
                 </div>
 
                 <div className="prose prose-lg max-w-none">
-                  <p className='text-justify'>
+                  <p className='text-justify text-white'>
                     La {' '}
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-secondary-600 font-bold">
                       Inteligencia Artificial{' '}
@@ -211,7 +211,7 @@ const AIExplanationPage: React.FC = () => {
                     Quien aprende IA hoy, diseña el futuro del mañana.
                   </p>
 
-                  <h3 className="text-2xl font-semibold mt-6 mb-6 text-center">Ejemplos cotidianos</h3>
+                  <h3 className="text-2xl font-semibold mt-6 mb-6 text-center text-white">Ejemplos cotidianos</h3>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-center">
                     <div className="bg-gray-50 p-6 rounded-3xl flex flex-col items-center">
@@ -253,14 +253,14 @@ const AIExplanationPage: React.FC = () => {
         </div>
 
         {/* Tipos de IA */}
-        <div className="w-full bg-gradient-to-t from-gray-300 via-gray to-gray-300">
+        <div className="w-full bg-black">
           <section className="min-h-full py-12">
             <div className="container-custom">
               <div className="max-w-5xl mx-auto px-4">
                 <div className="mb-10 text-center">
                   <div className="flex flex-col items-center">
                     <GiArtificialIntelligence size={48} className="text-primary-600 mb-3" />
-                    <h2 className="text-4xl font-bold text-gray-800">Clasificación de la IA según sus capacidades y aplicaciones</h2>
+                    <h2 className="text-4xl font-bold text-white">Clasificación de la IA según sus capacidades y aplicaciones</h2>
                   </div>
                 </div>
 
@@ -317,7 +317,7 @@ const AIExplanationPage: React.FC = () => {
         </div>
 
         {/* ¿Cómo funciona la IA? */}
-        <div className="w-full bg-gradient-to-b from-gray-300 via-gray to-gray-300">
+        <div className="w-full bg-black">
           <section className="min-h-full py-12">
             <div className="container-custom">
               <div className="max-w-4xl mx-auto">
@@ -325,12 +325,12 @@ const AIExplanationPage: React.FC = () => {
                   <div className="flex flex-col items-center mb-4">
                     <GiTechnoHeart size={42} className="text-primary-600 mb-2" />
                   </div>
-                  <h2 className="text-3xl md:text-4xl font-bold mb-4">Cómo funciona la IA</h2>
+                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Cómo funciona la IA</h2>
                 </div>
 
                 <div className="prose prose-lg max-w-none">
-                  <h3 className="text-2xl font-semibold mb-4">Aprendizaje automático</h3>
-                  <p className='text-justify'>
+                  <h3 className="text-2xl font-semibold mb-4 text-white">Aprendizaje automático</h3>
+                  <p className='text-justify text-white'>
                     En el corazón de muchos sistemas de IA modernos se encuentra el{' '}
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-secondary-600 font-bold">
                       aprendizaje automático
@@ -340,8 +340,8 @@ const AIExplanationPage: React.FC = () => {
                     relaciones en los datos para hacer predicciones o tomar decisiones.
                   </p>
 
-                  <h3 className="text-2xl font-semibold mt-8 mb-4 text-end">Redes neuronales</h3>
-                  <p className='text-justify'>
+                  <h3 className="text-2xl font-semibold mt-8 mb-4 text-white">Redes neuronales</h3>
+                  <p className='text-justify text-white'>
                     Las{' '}
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-secondary-600 font-bold">
                       redes neuronales artificiales{' '}
@@ -360,7 +360,7 @@ const AIExplanationPage: React.FC = () => {
                     />
                   </div>
 
-                  <p className='text-justify mt-10'>
+                  <p className='text-justify mt-10 text-white'>
                     Es importante destacar que, aunque estos sistemas pueden parecer "inteligentes", realmente están
                     identificando patrones estadísticos en los datos. No "comprenden" el mundo como lo hacen los humanos,
                     aunque sus capacidades continúan evolucionando rápidamente.
@@ -372,7 +372,7 @@ const AIExplanationPage: React.FC = () => {
         </div>
 
         {/* Canales de YouTube recomendados */}
-        <div className="w-full bg-gradient-to-t from-gray-300 via-gray to-gray-300">
+        <div className="w-full bg-black">
           <section className="min-h-full py-12">
             <div className="container-custom">
               <div className="max-w-4xl mx-auto">
@@ -380,8 +380,8 @@ const AIExplanationPage: React.FC = () => {
                   <div className="flex flex-col items-center mb-4">
                     <FaSearchPlus size={42} className="text-primary-600 mb-2" />
                   </div>
-                  <h2 className="text-3xl md:text-4xl font-bold mb-4">¿Quieres saber más?</h2>
-                  <p className="text-gray-700">Te recomendamos estos canales de YouTube</p>
+                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">¿Quieres saber más?</h2>
+                  <p className="text-gray-700 text-white">Te recomendamos estos canales de YouTube</p>
                 </div>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -510,10 +510,10 @@ const AIExplanationPage: React.FC = () => {
         </div>
 
         {/* CTA Section */}
-        <section className="py-10 bg-gradient-to-b from-gray-300 via-gray to-gray-300">
+        <section className="py-10 bg-black">
           <div className="container-custom text-center">
             <div className="max-w-3xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
                 Ahora que sabes cómo funciona la IA, mira lo que puedes hacer con ella...</h2>
               <a
                 href="/ejemplos"

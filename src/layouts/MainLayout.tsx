@@ -6,9 +6,23 @@ import Navbar from '../components/navigation/Navbar';
 import Footer from '../components/navigation/Footer';
 import ScrollToTop from '../components/common/ScrollToTop';
 
+import Loader from '../components/Loader';
+
 const MainLayout: React.FC = () => {
   const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [zoomingOut, setZoomingOut] = useState(false);
+
+  useEffect(() => {
+    // Lanzar zoom 350ms antes de terminar el loading
+    const zoomTimeout = setTimeout(() => setZoomingOut(true), 650);
+    const timer = setTimeout(() => setLoading(false), 1000);
+    return () => {
+      clearTimeout(timer);
+      clearTimeout(zoomTimeout);
+    };
+  }, []);
 
   useEffect(() => {
     const script = document.createElement('script');
@@ -40,6 +54,7 @@ const MainLayout: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  if (loading) return <Loader zoomingOut={zoomingOut} />;
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar isScrolled={isScrolled} />

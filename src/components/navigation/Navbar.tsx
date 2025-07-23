@@ -80,14 +80,14 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
     <>
       <header
         className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-          isScrolled ? 'bg-white shadow-md rounded-b-3xl' : 'bg-gray-300'
+          isScrolled ? 'bg-black shadow-md rounded-b-3xl' : 'bg-transparent'
         }`}
       >
         <div className="container-custom">
           <div className="flex items-center justify-between h-16 md:h-20">
             <Link to="/" className="flex items-center space-x-2">
               <img src={icon} alt="" style={{ width: '45px', height: 'auto' }}/>
-              <span className="text-xl font-bold text-gray-900">TutorIA</span>
+              <span className="text-xl font-bold text-white">TutorIA</span>
             </Link>
 
             {/* Navegación en escritorio */}
@@ -98,8 +98,8 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                 className={({ isActive }) =>
                   `font-medium transition-colors ${
                     isActive
-                      ? 'text-primary-600'
-                      : 'text-gray-700 hover:text-primary-600'
+                      ? 'text-gradient-animated'
+                      : 'text-white hover:text-gradient-animated'
                   }`
                 }
               >
@@ -110,8 +110,8 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                 className={({ isActive }) =>
                   `font-medium transition-colors ${
                     isActive
-                      ? 'text-primary-600'
-                      : 'text-gray-700 hover:text-primary-600'
+                      ? 'text-gradient-animated'
+                      : 'text-white hover:text-gradient-animated'
                   }`
                 }
               >
@@ -122,8 +122,8 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                 className={({ isActive }) =>
                   `font-medium transition-colors ${
                     isActive
-                      ? 'text-primary-600'
-                      : 'text-gray-700 hover:text-primary-600'
+                      ? 'text-gradient-animated'
+                      : 'text-white hover:text-gradient-animated'
                   }`
                 }
               >
@@ -138,7 +138,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                       `font-medium transition-colors ${
                         isActive
                           ? 'text-primary-600'
-                          : 'text-gray-700 hover:text-primary-600'
+                          : 'text-white hover:text-primary-600'
                       }`
                     }
                   >
@@ -150,7 +150,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                       `font-medium transition-colors ${
                         isActive
                           ? 'text-primary-600'
-                          : 'text-gray-700 hover:text-primary-600'
+                          : 'text-white hover:text-primary-600'
                       }`
                     }
                   >
@@ -162,7 +162,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                       `font-medium transition-colors ${
                         isActive
                           ? 'text-primary-600'
-                          : 'text-gray-700 hover:text-primary-600'
+                          : 'text-white hover:text-primary-600'
                       }`
                     }
                   >
@@ -174,7 +174,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                       `font-medium transition-colors ${
                         isActive
                           ? 'text-primary-600'
-                          : 'text-gray-700 hover:text-primary-600'
+                          : 'text-white hover:text-primary-600'
                       }`
                     }
                   >
@@ -189,7 +189,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                 <div className="flex items-center space-x-4">
                   {/* <button
                     onClick={() => setIsStatsOpen(true)}
-                    className="text-gray-700 hover:text-primary-600 transition-colors"
+                    className="text-white hover:text-primary-600 transition-colors"
                     title="Ver estadísticas"
                   >
                     <BarChart2 size={20} />
@@ -206,15 +206,15 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                           className="w-8 h-8 rounded-full object-cover"
                         />
                       ) : (
-                        <UserCircle size={20} className="text-gray-700" />
+                        <UserCircle size={20} className="text-white" />
                       )}
-                      <span className="text-sm font-medium text-gray-700">
+                      <span className="text-sm font-medium text-white">
                         {user.firstName || user.username}
                       </span>
                     </div>
                     {isStatsOpen && (
                     <div
-                      className="absolute right-0 mt-2 w-44 bg-white border rounded-3xl shadow-lg z-50 flex flex-col items-center"
+                      className="absolute right-0 mt-2 w-44 bg-black border rounded-3xl shadow-lg z-50 flex flex-col items-center"
                       tabIndex={-1}
                       ref={menuRef}
                     >
@@ -226,7 +226,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                             setIsStatsOpen(false);
                             handleEditProfile();
                           }}
-                          className="w-full rounded-t-3xl flex items-center justify-center px-4 py-1 text-gray-700 hover:bg-gray-100"
+                          className="w-full rounded-t-3xl flex items-center justify-center px-4 py-1 text-white hover:bg-gray-100"
                         >
                           <UserCircle size={18} className="mr-2" />
                           <span>Mi perfil</span>
@@ -240,7 +240,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                             setIsStatsOpen(false);
                             handleSignOut();
                           }}
-                          className="w-full rounded-b-3xl flex items-center justify-center px-4 py-1 text-gray-700 hover:bg-gray-100"
+                          className="w-full rounded-b-3xl flex items-center justify-center px-4 py-1 text-white hover:bg-gray-100"
                         >
                           <LogOut size={18} className="mr-2" />
                           <span>Cerrar sesión</span>
@@ -254,7 +254,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                 <div className="flex items-center space-x-3">
                   <Link
                     to="/sign-in"
-                    className="flex items-center space-x-1 text-gray-700 hover:text-primary-600 transition-colors"
+                    className="flex items-center space-x-1 text-white hover:text-primary-600 transition-colors"
                   >
                     <LogIn size={18} />
                     <span>Iniciar sesión</span>
@@ -268,7 +268,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
 
             {/* Botón de menú móvil */}
             <button
-              className="md:hidden text-gray-700 focus:outline-none"
+              className="md:hidden text-white focus:outline-none"
               onClick={toggleMenu}
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -292,7 +292,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                   end
                   className={({ isActive }) =>
                     `flex-1 text-center py-2 font-medium rounded-2xl transition-colors ${
-                      isActive ? 'text-primary-600 bg-primary-100' : 'text-gray-700 hover:bg-gray-100'
+                      isActive ? 'text-primary-600 bg-primary-100' : 'text-black hover:bg-gray-100'
                     }`
                   }
                   onClick={() => setIsMenuOpen(false)}
@@ -303,7 +303,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                   to="/ia"
                   className={({ isActive }) =>
                     `flex-1 text-center py-2 font-medium rounded-2xl transition-colors ${
-                      isActive ? 'text-primary-600 bg-primary-100' : 'text-gray-700 hover:bg-gray-100'
+                      isActive ? 'text-primary-600 bg-primary-100' : 'text-black hover:bg-gray-100'
                     }`
                   }
                   onClick={() => setIsMenuOpen(false)}
@@ -314,7 +314,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                   to="/ejemplos"
                   className={({ isActive }) =>
                     `flex-1 text-center py-2 font-medium rounded-2xl transition-colors ${
-                      isActive ? 'text-primary-600 bg-primary-100' : 'text-gray-700 hover:bg-gray-100'
+                      isActive ? 'text-primary-600 bg-primary-100' : 'text-black hover:bg-gray-100'
                     }`
                   }
                   onClick={() => setIsMenuOpen(false)}
@@ -331,7 +331,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                        to="/herramientas"
                        className={({ isActive }) =>
                          `flex-1 text-center py-2 font-medium rounded-2xl transition-colors ${
-                           isActive ? 'text-primary-600 bg-primary-100' : 'text-gray-700 hover:bg-gray-100'
+                           isActive ? 'text-primary-600 bg-primary-100' : 'text-black hover:bg-gray-100'
                          }`
                        }
                        onClick={() => setIsMenuOpen(false)}
@@ -342,7 +342,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                        to="/guias"
                        className={({ isActive }) =>
                          `flex-1 text-center py-2 font-medium rounded-2xl transition-colors ${
-                           isActive ? 'text-primary-600 bg-primary-100' : 'text-gray-700 hover:bg-gray-100'
+                           isActive ? 'text-primary-600 bg-primary-100' : 'text-black hover:bg-gray-100'
                          }`
                        }
                        onClick={() => setIsMenuOpen(false)}
@@ -353,7 +353,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                        to="/tests"
                        className={({ isActive }) =>
                          `flex-1 text-center py-2 font-medium rounded-2xl transition-colors ${
-                           isActive ? 'text-primary-600 bg-primary-100' : 'text-gray-700 hover:bg-gray-100'
+                           isActive ? 'text-primary-600 bg-primary-100' : 'text-black hover:bg-gray-100'
                          }`
                        }
                        onClick={() => setIsMenuOpen(false)}
@@ -364,7 +364,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                        to="/foro"
                        className={({ isActive }) =>
                          `flex-1 text-center py-2 font-medium rounded-2xl transition-colors ${
-                           isActive ? 'text-primary-600 bg-primary-100' : 'text-gray-700 hover:bg-gray-100'
+                           isActive ? 'text-primary-600 bg-primary-100' : 'text-black hover:bg-gray-100'
                          }`
                        }
                        onClick={() => setIsMenuOpen(false)}
@@ -380,7 +380,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                   <>
                     <Link
                       to="/sign-in"
-                      className="flex-1 text-center py-2 font-medium rounded-2xl text-gray-700 hover:bg-gray-100 transition-colors"
+                      className="flex-1 text-center py-2 font-medium rounded-2xl text-white hover:bg-gray-100 transition-colors"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       Iniciar sesión
@@ -406,9 +406,9 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                       className="w-8 h-8 rounded-full object-cover"
                     />
                   ) : (
-                    <UserCircle size={20} className="text-gray-700" />
+                    <UserCircle size={20} className="text-white" />
                   )}
-                  <span className="text-sm font-medium text-gray-700">
+                  <span className="text-sm font-medium text-white">
                     {user.firstName || user.username}
                   </span>
                 </div>
@@ -418,14 +418,14 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                       handleEditProfile();
                       setIsMenuOpen(false);
                     }}
-                    className="flex items-center space-x-1 text-gray-700"
+                    className="flex items-center space-x-1 text-white"
                   >
                     <Settings size={18} />
                     <span>Editar perfil</span>
                   </button>
                   <button
                     onClick={handleSignOut}
-                    className="flex items-center space-x-1 text-gray-700"
+                    className="flex items-center space-x-1 text-white"
                   >
                     <LogOut size={18} />
                     <span>Salir</span>

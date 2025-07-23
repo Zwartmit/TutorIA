@@ -39,7 +39,7 @@ const ForumPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="w-full bg-gradient-to-b mt-14 from-gray-300 via-gray to-gray-300">
+    <div className="w-full bg-black mt-14">
       <section className="min-h-full py-12">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
@@ -52,12 +52,13 @@ const ForumPage: React.FC = () => {
                   className="flex flex-col items-center mb-4"
                 >
                   <LiaUsersSolid size={42} className="text-primary-600 mb-2" />
-                  <h1 className="text-4xl font-extrabold text-gray-900 mb-2 tracking-tight">Foro de la comunidad</h1>
+                  <h1 className="text-4xl font-extrabold text-white mb-2 tracking-tight">Foro de la comunidad</h1>
                 </motion.div>
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.1 }}
+                  className="text-white"
                  >
                   Comparte tus dudas, ideas e interactúa con la comunidad
                 </motion.p>

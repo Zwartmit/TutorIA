@@ -145,7 +145,7 @@ const ExamplesPage: React.FC = () => {
           </div>
         </div>
       )}
-      <div className="w-full bg-gradient-to-b mt-14 bg-gray-300 mb-3">
+      <div className="w-full bg-gradient-to-b mt-14 bg-black mb-3">
         <section className="min-h-full pt-12">
           <div className="container-custom">
             <div className="max-w-3xl mx-auto text-center">
@@ -156,10 +156,10 @@ const ExamplesPage: React.FC = () => {
                 className="flex flex-col items-center mb-6"
               >
                 <RiAiGenerate2 size={42} className="text-primary-600 mb-2" />
-                <h1 className="text-3xl md:text-4xl font-bold text-gray-900">
+                <h1 className="text-3xl md:text-4xl font-bold text-white">
                   Ejemplos prácticos
                 </h1>
-                <p className="text-gray-600 mt-6">
+                <p className="text-white mt-6">
                   Aquí encontrarás ejemplos de imágenes, videos, texto y mucho más generado por{' '}
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-secondary-600 font-bold">
                     IA
@@ -260,15 +260,15 @@ const ExamplesPage: React.FC = () => {
         </section>
 
         {filteredExamples.length > 0 && (
-          <p className="text-center text-gray-600 mt-6">Pronto agregaremos más contenido...</p>
+          <p className="text-center text-white mt-6">Pronto agregaremos más contenido...</p>
         )}
         
         {/* CTA Section */}
         {filteredExamples.length > 0 && (
-          <section className="py-10 bg-gradient-to-t from-gray-300 via-gray to-gray-300">
+          <section className="py-10 bg-black">
             <div className="container-custom text-center">
               <div className="max-w-3xl mx-auto">
-                <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
                   ¿Quieres saber cúales son las herramientas capaces de generar contenido como este?
                 </h2>
                 <a

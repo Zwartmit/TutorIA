@@ -378,17 +378,18 @@ const AssessmentPage: React.FC = () => {
   return (
     <div className="pt-2">
       {/* Hero Section */}
-      <section className="pt-16 md:pt-24 bg-gradient-to-b from-gray-300 via-gray to-gray-300">
+      <section className="pt-16 md:pt-24 bg-black">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
             <div className="flex flex-col items-center">
-                <PiExam size={42} className="text-primary-600 mb-2" />
-                <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Tests de conocimientos</h1>
+                <PiExam size={42} className="text-primary-600 mb-2 text-white" />
+                <h1 className="text-3xl md:text-4xl font-bold text-white mb-6">Tests de conocimientos</h1>
               </div>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
+                className="text-white"
               >
                 Pon a prueba lo que has aprendido sobre la{' '}
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-secondary-600 font-bold">
@@ -400,7 +401,7 @@ const AssessmentPage: React.FC = () => {
       </section>
 
       {/* Sección de evaluación */}
-      <section className="section bg-gradient-to-t from-gray-300 via-gray to-gray-300 pt-8 pb-14">
+      <section className="section bg-black pt-8 pb-14">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto">
             {quizState === QuizState.NOT_STARTED && (

@@ -11,20 +11,21 @@ const GuidesPage: React.FC = () => {
   }, []);
       
   return (
-    <div className="pt-14 bg-gray-300">
+    <div className="pt-14 bg-black">
         <>
           {/* Hero Section */}
-          <section className="w-full bg-gradient-to-b mt-12 from-gray-300 via-gray to-gray-300">
+          <section className="w-full bg-black mt-12">
             <div className="container-custom">
               <div className="max-w-3xl mx-auto text-center">
                 <div className="flex flex-col items-center">
                     <IoLibrary size={42} className="text-primary-600 mb-2" />
-                    <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Guías</h1>
+                    <h1 className="text-3xl md:text-4xl font-bold text-white mb-6">Guías</h1>
                   </div>
                   <motion.p
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.1 }}
+                    className="text-white"
                   >
                     Aprende a utilizar herramientas{' '}
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-secondary-600 font-bold">
@@ -36,7 +37,7 @@ const GuidesPage: React.FC = () => {
             </div>
           </section>
 
-          <section className="w-full mt-12">
+          <section className="w-full mt-12 bg-black">
             <div className="container-custom">
               <div className="max-w-3xl mx-auto text-center">
                 <div className="flex flex-col items-center">
@@ -50,8 +51,8 @@ const GuidesPage: React.FC = () => {
             </div>
           </section>
           
-          <div className="py-12">
-          <p className="text-center text-gray-600">Iremos agregando más guías...</p>
+          <div className="py-12 bg-black">
+            <p className="text-center text-white">Iremos agregando más guías...</p>
           </div>
         </>
     </div>
