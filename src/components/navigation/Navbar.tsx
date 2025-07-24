@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { Menu, X, LogIn, LogOut, UserCircle, Settings } from 'lucide-react';
 import Swal from 'sweetalert2';
 // import UserStats from '../user/UserStats';
-import icon from '../../../src/assets/Logo.png';
+import icon from '../../../src/assets/logo.png';
 
 interface NavbarProps {
   isScrolled: boolean;
