@@ -11,7 +11,7 @@ const PrivacyPage: React.FC = () => {
   }, []);
       
   return (
-    <div className="pt-8 min-h-screen bg-gradient-to-br from-gray-300 via-gray to-gray-300">
+    <div className="pt-8 min-h-screen bg-gradient-to-br from-[#141414] to-[#050505]">
       <section className="pt-16">
         <div className="container-custom">
           <div className="max-w-2xl mx-auto text-center">
@@ -21,10 +21,10 @@ const PrivacyPage: React.FC = () => {
               transition={{ duration: 0.5 }}
             >
               <div className="flex items-center justify-center mb-2">
-                <Lock size={56} className="text-primary-600 drop-shadow-lg animate-bounce" />
+                <Lock size={56} className="text-primary-600 drop-shadow-lg" />
               </div>
-              <h1 className="text-4xl font-extrabold text-gray-900 mb-2 tracking-tight">Política de Privacidad</h1>
-              <p className="text-lg text-gray-600 mb-2 font-medium">Última actualización: {new Date().toLocaleDateString('es-ES')}</p>
+              <h1 className="text-4xl font-extrabold text-[#EFF3F8] mb-2 tracking-tight">Política de Privacidad</h1>
+              <p className="text-lg text-[#EFF3F8] mb-2 font-medium">Última actualización: 24/7/2025</p>
               <div className="w-20 h-1 mx-auto bg-primary-600 rounded-full mb-6" />
             </motion.div>
           </div>
@@ -34,7 +34,7 @@ const PrivacyPage: React.FC = () => {
       <section className="py-2 pb-12 text-justify">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto space-y-4">
-            <div className="bg-white/90 rounded-2xl shadow-lg p-8 border border-gray-200">
+            <div className="bg-[#EFF3F8]/90 rounded-2xl shadow-lg p-8 border border-gray-200">
               <div className="flex items-center gap-3 mb-2">
                 <Lock size={28} className="text-primary-600" />
                 <h2 className="text-2xl font-bold text-gray-900">Información que recopilamos</h2>
@@ -51,7 +51,7 @@ const PrivacyPage: React.FC = () => {
                 </li>
               </ul>
             </div>
-            <div className="bg-white/90 rounded-2xl shadow-lg p-8 border border-gray-200">
+            <div className="bg-[#EFF3F8]/90 rounded-2xl shadow-lg p-8 border border-gray-200">
               <div className="flex items-center gap-3 mb-2">
                 <Lock size={28} className="text-primary-600" />
                 <h2 className="text-2xl font-bold text-gray-900">Cómo utilizamos la información</h2>
@@ -61,10 +61,9 @@ const PrivacyPage: React.FC = () => {
                 <li>Proporcionar y mantener nuestros servicios</li>
                 <li>Personalizar tu experiencia de aprendizaje</li>
                 <li>Mejorar nuestros servicios y contenidos</li>
-                <li>Detectar y prevenir actividades fraudulentas</li>
               </ul>
             </div>
-            <div className="bg-white/90 rounded-2xl shadow-lg p-8 border border-gray-200">
+            <div className="bg-[#EFF3F8]/90 rounded-2xl shadow-lg p-8 border border-gray-200">
               <div className="flex items-center gap-3 mb-2">
                 <Lock size={28} className="text-primary-600" />
                 <h2 className="text-2xl font-bold text-gray-900">Compartir información</h2>
@@ -75,7 +74,7 @@ const PrivacyPage: React.FC = () => {
                 <li>Cuando sea requerido por ley</li>
               </ul>
             </div>
-            <div className="bg-white/90 rounded-2xl shadow-lg p-8 border border-gray-200">
+            <div className="bg-[#EFF3F8]/90 rounded-2xl shadow-lg p-8 border border-gray-200">
               <div className="flex items-center gap-3 mb-2">
                 <Lock size={28} className="text-primary-600" />
                 <h2 className="text-2xl font-bold text-gray-900">Seguridad de datos</h2>
@@ -84,10 +83,10 @@ const PrivacyPage: React.FC = () => {
               <ul className="list-disc pl-6 mt-2">
                 <li>Encriptación de datos en tránsito y en reposo</li>
                 <li>Acceso restringido a datos personales</li>
-                <li>Monitoreo regular de sistemas de seguridad</li>
+                <li>Autenticación de usuarios</li>
               </ul>
             </div>
-            <div className="bg-white/90 rounded-2xl shadow-lg p-8 border border-gray-200">
+            <div className="bg-[#EFF3F8]/90 rounded-2xl shadow-lg p-8 border border-gray-200">
               <div className="flex items-center gap-3 mb-2">
                 <Lock size={28} className="text-primary-600" />
                 <h2 className="text-2xl font-bold text-gray-900">Tus derechos</h2>
@@ -100,22 +99,13 @@ const PrivacyPage: React.FC = () => {
                 <li>Oponerte al procesamiento de tus datos</li>
               </ul>
             </div>
-            <div className="bg-white/90 rounded-2xl shadow-lg p-8 border border-gray-200">
+            <div className="bg-[#EFF3F8]/90 rounded-2xl shadow-lg p-8 border border-gray-200">
               <div className="flex items-center gap-3 mb-2">
                 <Lock size={28} className="text-primary-600" />
                 <h2 className="text-2xl font-bold text-gray-900">Cookies y tecnologías similares</h2>
               </div>
               <p>
-                Utilizamos cookies y tecnologías similares para mejorar tu experiencia y recopilar datos de uso. Puedes controlar el uso de cookies a través de la configuración de tu navegador.
-              </p>
-            </div>
-            <div className="bg-white/90 rounded-2xl shadow-lg p-8 border border-gray-200">
-              <div className="flex items-center gap-3 mb-2">
-                <Lock size={28} className="text-primary-600" />
-                <h2 className="text-2xl font-bold text-gray-900">Cambios en esta política</h2>
-              </div>
-              <p>
-                Podemos actualizar esta política de privacidad ocasionalmente. Te notificaremos cualquier cambio material publicando la nueva política en esta página.
+                Utilizamos cookies y tecnologías similares para mejorar tu experiencia y recopilar datos de uso.
               </p>
             </div>
           </div>

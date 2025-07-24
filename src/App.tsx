@@ -63,8 +63,8 @@ function App() {
               </ProtectedRoute>
             }
           />
-          <Route path="terms" element={<TermsPage />} />
-          <Route path="privacy" element={<PrivacyPage />} />
+          <Route path="tyc" element={<TermsPage />} />
+          <Route path="privacidad" element={<PrivacyPage />} />
           <Route path="cookies" element={<CookiesPage />} />
           <Route path="/foro" element={
             <ProtectedRoute>

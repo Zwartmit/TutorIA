@@ -39,7 +39,7 @@ const ForumPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="w-full bg-black mt-14">
+    <div className="w-full bg-gradient-to-b from-[#141414] to-[#050505] mt-14">
       <section className="min-h-full py-12">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
@@ -52,13 +52,13 @@ const ForumPage: React.FC = () => {
                   className="flex flex-col items-center mb-4"
                 >
                   <LiaUsersSolid size={42} className="text-primary-600 mb-2" />
-                  <h1 className="text-4xl font-extrabold text-white mb-2 tracking-tight">Foro de la comunidad</h1>
+                  <h1 className="text-4xl font-extrabold text-[#EFF3F8] mb-2 tracking-tight">Foro de la comunidad</h1>
                 </motion.div>
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.1 }}
-                  className="text-white"
+                  className="text-[#EFF3F8]"
                  >
                   Comparte tus dudas, ideas e interactúa con la comunidad
                 </motion.p>
@@ -77,7 +77,7 @@ const ForumPage: React.FC = () => {
             )}
             <ul className="space-y-6">
               {posts.map((post) => (
-                <li key={post.id} className="rounded-3xl bg-white shadow-lg border border-gray-200 p-6 hover:shadow-xl transition">
+                <li key={post.id} className="rounded-3xl bg-[#EFF3F8] shadow-lg border border-gray-200 p-6 hover:shadow-xl transition">
                   <div className="flex flex-col h-full">
                     <span className="text-sm text-gray-500 mb-4">Publicado el {new Date(post.created_at).toLocaleString()}</span>
                     <Link to={`/foro/${post.id}`} className="text-2xl font-bold text-primary-600 hover:underline">
@@ -87,7 +87,7 @@ const ForumPage: React.FC = () => {
                     <div className="mt-auto flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3">
                       <Link 
                         to={`/foro/${post.id}`}
-                        className="w-full sm:w-auto px-4 py-2 bg-primary-600 text-white rounded-full hover:bg-primary-700 transition-colors text-sm font-medium transition-transform duration-300 hover:translate-x-2 text-center sm:ml-auto"
+                        className="w-full sm:w-auto px-4 py-2 bg-primary-600 text-[#EFF3F8] rounded-full hover:bg-primary-700 transition-colors text-sm font-medium transition-transform duration-300 hover:translate-x-2 text-center sm:ml-auto"
                       >
                         Ver detalles →
                       </Link>

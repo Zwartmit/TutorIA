@@ -50,7 +50,7 @@ const PostForm: React.FC<PostFormProps> = ({ onPostCreated }) => {
       />
       <button
         type="submit"
-        className="bg-primary-600 text-white px-4 py-2 rounded-3xl disabled:opacity-50"
+        className="bg-primary-600 text-[#EFF3F8] px-4 py-2 rounded-3xl disabled:opacity-50"
         disabled={loading}
       >
         {loading ? 'Publicando...' : 'Publicar'}

@@ -123,11 +123,11 @@ const ExamplesPage: React.FC = () => {
     <div className="min-h-screen">
       {modalOpen && modalContent && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-[#050505] bg-opacity-50"
           onClick={closeModal}
         >
           <div
-            className="bg-white rounded-3xl shadow-2xl max-w-3xl w-full max-h-[90vh] flex flex-col items-center justify-center p-4 relative"
+            className="bg-[#EFF3F8] rounded-3xl shadow-2xl max-w-3xl w-full max-h-[90vh] flex flex-col items-center justify-center p-4 relative"
             onClick={e => e.stopPropagation()}
           >
             <button
@@ -145,7 +145,7 @@ const ExamplesPage: React.FC = () => {
           </div>
         </div>
       )}
-      <div className="w-full bg-gradient-to-b mt-14 bg-black mb-3">
+      <div className="w-full bg-gradient-to-b from-[#141414] to-[#050505] mt-14 mb-3">
         <section className="min-h-full pt-12">
           <div className="container-custom">
             <div className="max-w-3xl mx-auto text-center">
@@ -156,12 +156,12 @@ const ExamplesPage: React.FC = () => {
                 className="flex flex-col items-center mb-6"
               >
                 <RiAiGenerate2 size={42} className="text-primary-600 mb-2" />
-                <h1 className="text-3xl md:text-4xl font-bold text-white">
+                <h1 className="text-3xl md:text-4xl font-bold text-[#EFF3F8]">
                   Ejemplos prácticos
                 </h1>
-                <p className="text-white mt-6">
+                <p className="text-[#EFF3F8] mt-6">
                   Aquí encontrarás ejemplos de imágenes, videos, texto y mucho más generado por{' '}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-secondary-600 font-bold">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-secondary-600 animated-gradient font-bold">
                     IA
                   </span>
                 </p>
@@ -181,8 +181,8 @@ const ExamplesPage: React.FC = () => {
                         onClick={() => handleCategoryChange(category.id)}
                         className={`flex items-center px-5 py-2.5 rounded-full text-sm font-medium transition-colors ${
                           selectedCategory === category.id
-                            ? 'bg-primary-600 text-white shadow-md'
-                            : 'bg-white text-gray-700 hover:bg-gray-100 shadow-sm'
+                            ? 'bg-primary-600 text-[#EFF3F8] shadow-md'
+                            : 'bg-[#EFF3F8] text-gray-700 hover:bg-gray-100 shadow-sm'
                         }`}
                       >
                         <Icon className="mr-2" />
@@ -199,7 +199,7 @@ const ExamplesPage: React.FC = () => {
         <section className="container-custom py-10">
           {filteredExamples.length === 0 ? (
             <div className="text-center py-16">
-              <div className="bg-gray-50 p-8 rounded-3xl max-w-2xl mx-auto">
+              <div className="bg-[#EFF3F8] p-8 rounded-3xl max-w-2xl mx-auto">
                 <div className="text-gray-400 mb-4">
                   <svg className="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -224,7 +224,7 @@ const ExamplesPage: React.FC = () => {
                 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4 }}
-                className="card bg-white rounded-3xl shadow-md hover:shadow-xl overflow-hidden flex flex-col transition-all duration-300 ease-out"
+                className="card bg-[#EFF3F8] rounded-3xl shadow-md hover:shadow-xl overflow-hidden flex flex-col transition-all duration-300 ease-out"
               >
                 <div className="relative w-full h-64 bg-gray-100 flex items-center justify-center overflow-hidden">
                   {typeof example.src === 'string' && example.src.endsWith('.mp4') ? (
@@ -242,7 +242,7 @@ const ExamplesPage: React.FC = () => {
                   )}
                   <button
                     type="button"
-                    className="absolute bottom-2 right-2 bg-white rounded-full shadow-md p-2 hover:bg-primary-600 hover:text-white transition-colors"
+                    className="absolute bottom-2 right-2 bg-[#EFF3F8] rounded-full shadow-md p-2 hover:bg-primary-600 hover:text-[#EFF3F8] transition-colors"
                     onClick={() => openModal(example.src, typeof example.src === 'string' && example.src.endsWith('.mp4') ? 'video' : 'image')}
                     aria-label="Ver archivo completo"
                   >
@@ -260,20 +260,20 @@ const ExamplesPage: React.FC = () => {
         </section>
 
         {filteredExamples.length > 0 && (
-          <p className="text-center text-white mt-6">Pronto agregaremos más contenido...</p>
+          <p className="text-center text-[#EFF3F8] mt-6">Pronto agregaremos más contenido...</p>
         )}
         
         {/* CTA Section */}
         {filteredExamples.length > 0 && (
-          <section className="py-10 bg-black">
+          <section className="py-10">
             <div className="container-custom text-center">
               <div className="max-w-3xl mx-auto">
-                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#EFF3F8]">
                   ¿Quieres saber cúales son las herramientas capaces de generar contenido como este?
                 </h2>
                 <a
                   href="/herramientas"
-                  className="btn bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-600 inline-flex items-center transition-transform duration-300 hover:translate-x-2"
+                  className="btn bg-primary-600 text-[#EFF3F8] hover:bg-primary-700 focus:ring-primary-600 inline-flex items-center transition-transform duration-300 hover:translate-x-2"
                 >
                   Ver herramientas<ArrowRight size={16} className="ml-2" />
                 </a>

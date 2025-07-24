@@ -32,7 +32,7 @@ const CookiesPage: React.FC = () => {
       <section className="py-2 pb-12 text-justify">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto space-y-4">
-            <div className="bg-white/90 rounded-2xl shadow-lg p-8 border border-gray-200">
+            <div className="bg-[#EFF3F8]/90 rounded-2xl shadow-lg p-8 border border-gray-200">
               <div className="flex items-center gap-3 mb-2">
                 <Cookie size={28} className="text-primary-600" />
                 <h2 className="text-2xl font-bold text-gray-900">¿Qué son las cookies?</h2>
@@ -41,7 +41,7 @@ const CookiesPage: React.FC = () => {
                 Las cookies son pequeños archivos de texto que se almacenan en tu dispositivo cuando visitas un sitio web. Permiten recordar tus preferencias y mejorar tu experiencia de usuario.
               </p>
             </div>
-            <div className="bg-white/90 rounded-2xl shadow-lg p-8 border border-gray-200">
+            <div className="bg-[#EFF3F8]/90 rounded-2xl shadow-lg p-8 border border-gray-200">
               <div className="flex items-center gap-3 mb-2">
                 <Cookie size={28} className="text-primary-600" />
                 <h2 className="text-2xl font-bold text-gray-900">¿Qué tipos de cookies utilizamos?</h2>
@@ -51,7 +51,7 @@ const CookiesPage: React.FC = () => {
                 <li><strong>Cookies de preferencias:</strong> Permiten recordar tus configuraciones y preferencias.</li>
               </ul>
             </div>
-            <div className="bg-white/90 rounded-2xl shadow-lg p-8 border border-gray-200">
+            <div className="bg-[#EFF3F8]/90 rounded-2xl shadow-lg p-8 border border-gray-200">
               <div className="flex items-center gap-3 mb-2">
                 <Cookie size={28} className="text-primary-600" />
                 <h2 className="text-2xl font-bold text-gray-900">¿Cómo puedes gestionar las cookies?</h2>
@@ -60,7 +60,7 @@ const CookiesPage: React.FC = () => {
                 Puedes configurar tu navegador para aceptar o rechazar cookies, así como para eliminarlas en cualquier momento. Ten en cuenta que deshabilitar cookies puede afectar el funcionamiento de algunas partes de la plataforma.
               </p>
             </div>
-            <div className="bg-white/90 rounded-2xl shadow-lg p-8 border border-gray-200">
+            <div className="bg-[#EFF3F8]/90 rounded-2xl shadow-lg p-8 border border-gray-200">
               <div className="flex items-center gap-3 mb-2">
                 <Cookie size={28} className="text-primary-600" />
                 <h2 className="text-2xl font-bold text-gray-900">Cambios en la política de cookies</h2>

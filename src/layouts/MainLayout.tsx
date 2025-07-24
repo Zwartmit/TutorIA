@@ -3,8 +3,8 @@ import { Outlet, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 import Navbar from '../components/navigation/Navbar';
-import Footer from '../components/navigation/Footer';
 import ScrollToTop from '../components/common/ScrollToTop';
+import FloatingHelpButton from '../components/common/FloatingHelpButton';
 
 import Loader from '../components/Loader';
 
@@ -58,7 +58,7 @@ const MainLayout: React.FC = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar isScrolled={isScrolled} />
-      <main className="flex-grow bg-gray-300">
+      <main className="flex-grow bg-gradient-to-b from-[#141414] via-[#050505] to-[#050505]">
         <motion.div
           key={location.pathname}
           initial={{ opacity: 0, y: 20 }}
@@ -69,7 +69,7 @@ const MainLayout: React.FC = () => {
           <Outlet />
         </motion.div>
       </main>
-      <Footer />
+      <FloatingHelpButton />
       <ScrollToTop />
     </div>
   );

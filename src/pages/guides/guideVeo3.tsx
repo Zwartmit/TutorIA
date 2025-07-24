@@ -1,6 +1,5 @@
 import React from 'react';
 import Navbar from '../../components/navigation/Navbar';
-import Footer from '../../components/navigation/Footer';
 import { RiVideoOnAiFill } from "react-icons/ri";
 import { FaInstagram } from "react-icons/fa";
 import { TbBulbFilled } from "react-icons/tb";
@@ -12,12 +11,12 @@ const titulo = 'Genera videos realistas con Veo 3';
 
 const GuideVeo3: React.FC = () => {
   return (
-    <div className="bg-gray-300 min-h-screen flex flex-col">
+    <div className="bg-gradient-to-b from-[#141414] to-[#050505] min-h-screen flex flex-col">
       <Navbar isScrolled={false} />
       <main className="flex-1 pt-24 pb-12">
-        <div className="container-custom max-w-3xl mx-auto bg-white rounded-3xl shadow-lg p-8">
+        <div className="container-custom max-w-3xl mx-auto bg-[#EFF3F8] rounded-3xl shadow-lg p-8">
           <div className="flex items-center justify-center mb-2">
-            <RiVideoOnAiFill size={56} className="text-primary-600 drop-shadow-lg animate-bounce" />
+            <RiVideoOnAiFill size={56} className="text-primary-600 drop-shadow-lg" />
           </div>
           <h1 className="text-3xl text-center font-bold mb-4 text-primary-700">{titulo}</h1>
           <p className="text-gray-700 text-lg text-justify mb-6">
@@ -35,7 +34,7 @@ const GuideVeo3: React.FC = () => {
             Para que puedas acceder a Google One para estudiantes y tener acceso a Veo 3 durante 15 meses totalmente gratis, necesitarás:</p>
           <ol className="space-y-8">
             <li className="border-l-4 border-primary-600 pl-6 relative">
-                <span className="absolute -left-7 top-0 bg-primary-600 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold">1</span>
+                <span className="absolute -left-7 top-0 bg-primary-600 text-[#EFF3F8] rounded-full w-7 h-7 flex items-center justify-center font-bold">1</span>
                 <h2 className="text-xl font-semibold mb-2">Descargar e instalar SetupVPN</h2>
                 <p className="text-gray-600 mb-2">
                   Este servicio nos permitirá cambiar nuestra dirección IP y "trasladarnos" virtualmente a Estados Unidos, ya que Google One para
@@ -45,38 +44,38 @@ const GuideVeo3: React.FC = () => {
                 </p>
             </li>
             <li className="border-l-4 border-primary-600 pl-6 relative">
-                <span className="absolute -left-7 top-0 bg-primary-600 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold">2</span>
+                <span className="absolute -left-7 top-0 bg-primary-600 text-[#EFF3F8] rounded-full w-7 h-7 flex items-center justify-center font-bold">2</span>
                 <h2 className="text-xl font-semibold mb-2">Generar correo electrónico temporal</h2>
                 <p className="text-gray-600">Necesitarás este correo para que puedas verificar tu "estatus de estudiante" en Google One. Puedes usar{' '}
                 <a href="https://tempumail.com" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:underline">TempuMail</a></p>
             </li>
             <li className="border-l-4 border-primary-600 pl-6 relative">
-                <span className="absolute -left-7 top-0 bg-primary-600 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold">3</span>
+                <span className="absolute -left-7 top-0 bg-primary-600 text-[#EFF3F8] rounded-full w-7 h-7 flex items-center justify-center font-bold">3</span>
                 <h2 className="text-xl font-semibold mb-2">Crear cuenta de Google</h2>
                 <p className="text-gray-600">Luego, debes crear una cuenta de Google (pueden ser datos falsos) para que sea tu correo electrónico principal en Google One. Acá puedes hacerlo:{' '}
                 <a href="https://accounts.google.com/signup" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:underline">Google</a></p>
             </li>
             <li className="border-l-4 border-primary-600 pl-6 relative">
-                <span className="absolute -left-7 top-0 bg-primary-600 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold">4</span>
+                <span className="absolute -left-7 top-0 bg-primary-600 text-[#EFF3F8] rounded-full w-7 h-7 flex items-center justify-center font-bold">4</span>
                 <h2 className="text-xl font-semibold mb-2">Solicitar acceso a Google One para estudiantes</h2>
                 <p className="text-gray-600">Cuando hayas realizado los pasos anteriores, podrás solicitar el acceso desde el siguiente enlace:{' '}
                 <a href="https://one.google.com/join/ai-student" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:underline">Google One para estudiantes</a></p>
             </li>
             <li className="border-l-4 border-primary-600 pl-6 relative">
-                <span className="absolute -left-7 top-0 bg-primary-600 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold">5</span>
+                <span className="absolute -left-7 top-0 bg-primary-600 text-[#EFF3F8] rounded-full w-7 h-7 flex items-center justify-center font-bold">5</span>
                 <h2 className="text-xl font-semibold mb-2">Crear tarjeta de crédito temportal</h2>
                 <p className="text-gray-600">Puedes obtenerla creando una cuenta en Nubank (no tiene costo), sigue estos pasos y obten la tuya: {" "}
                 <a href="https://blog.nu.com.co/tarjeta-virtual-nu/" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:underline">Nubank (ver sección "Una tarjeta virtual fantasma...")</a></p>
             </li>
             <li className="border-l-4 border-primary-600 pl-6 relative">
-                <span className="absolute -left-7 top-0 bg-primary-600 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold">6</span>
+                <span className="absolute -left-7 top-0 bg-primary-600 text-[#EFF3F8] rounded-full w-7 h-7 flex items-center justify-center font-bold">6</span>
                 <h2 className="text-xl font-semibold mb-2">Darle rienda suelta a tu creatividad</h2>
                 <p className="text-gray-600">Ya puedes disfrutar de {' '}
                 <a href="https://labs.google/fx/es/tools/flow" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:underline">Veo 3</a></p>
             </li>
           </ol>
           <div className="flex items-center justify-center mt-5">
-            <TbBulbFilled size={40} className="text-yellow-400 text-center" />
+            <TbBulbFilled size={60} className="text-yellow-400 text-center animate-pulse" />
           </div>
           <p className="text-gray-600 mt-2 mb-5 text-center">Recuerda que para obtener mejores resultados, debes usar prompts en inglés, claros y específicos. Aquí tienes algunos ejemplos:</p>
           <hr className="my-3" />
@@ -127,7 +126,6 @@ const GuideVeo3: React.FC = () => {
           <hr className="my-3" />
         </div>
       </main>
-      <Footer />
     </div>
   );
 };

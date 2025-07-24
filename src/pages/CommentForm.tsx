@@ -40,7 +40,7 @@ const CommentForm: React.FC<CommentFormProps> = ({ postId, parentId = null, onCo
       />
       <button
         type="submit"
-        className="bg-primary-600 text-white px-4 py-2 rounded-3xl disabled:opacity-50"
+        className="bg-primary-600 text-[#EFF3F8] px-4 py-2 rounded-3xl disabled:opacity-50"
         disabled={loading}
       >
         {loading ? 'Comentando...' : 'Comentar'}

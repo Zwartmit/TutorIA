@@ -21,7 +21,7 @@ const SignInPage: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-300 via-gray to-gray-300 flex flex-col">
+    <div className="min-h-screen bg-gradient-to-b from-[#141414] to-[#050505] flex flex-col">
       <div className="flex-grow flex items-center justify-center py-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { Menu, X, LogIn, LogOut, UserCircle, Settings } from 'lucide-react';
 import Swal from 'sweetalert2';
 // import UserStats from '../user/UserStats';
-import icon from '../../../public/icon.png';
+import icon from '../../../src/assets/Logo.png';
 
 interface NavbarProps {
   isScrolled: boolean;
@@ -59,7 +59,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
       customClass: {
         confirmButton: 'btn-primary text-sm',
         cancelButton: 'btn-red text-sm',
-        popup: 'rounded-3xl p-6',
+        popup: 'rounded-3xl p-6 bg-[#EFF3F8]',
       },
     });
     if (!result.isConfirmed) return;
@@ -79,15 +79,14 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
   return (
     <>
       <header
-        className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-          isScrolled ? 'bg-black shadow-md rounded-b-3xl' : 'bg-transparent'
+        className={`fixed top-0 w-full z-50 transition-all duration-300 text-base ${
+          isScrolled ? 'bg-[#000000] rounded-b-3xl shadow-md' : 'bg-[#000000] rounded-b-3xl'
         }`}
       >
         <div className="container-custom">
-          <div className="flex items-center justify-between h-16 md:h-20">
+          <div className="flex items-center justify-between h-20 md:h-20">
             <Link to="/" className="flex items-center space-x-2">
-              <img src={icon} alt="" style={{ width: '45px', height: 'auto' }}/>
-              <span className="text-xl font-bold text-white">TutorIA</span>
+              <img src={icon} alt="" style={{ width: '65px', height: 'auto' }}/>
             </Link>
 
             {/* Navegación en escritorio */}
@@ -99,7 +98,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                   `font-medium transition-colors ${
                     isActive
                       ? 'text-gradient-animated'
-                      : 'text-white hover:text-gradient-animated'
+                      : 'text-[#EFF3F8] hover:text-gradient-animated'
                   }`
                 }
               >
@@ -111,7 +110,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                   `font-medium transition-colors ${
                     isActive
                       ? 'text-gradient-animated'
-                      : 'text-white hover:text-gradient-animated'
+                      : 'text-[#EFF3F8] hover:text-gradient-animated'
                   }`
                 }
               >
@@ -123,7 +122,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                   `font-medium transition-colors ${
                     isActive
                       ? 'text-gradient-animated'
-                      : 'text-white hover:text-gradient-animated'
+                      : 'text-[#EFF3F8] hover:text-gradient-animated'
                   }`
                 }
               >
@@ -138,7 +137,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                       `font-medium transition-colors ${
                         isActive
                           ? 'text-primary-600'
-                          : 'text-white hover:text-primary-600'
+                          : 'text-[#EFF3F8] hover:text-primary-600'
                       }`
                     }
                   >
@@ -150,7 +149,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                       `font-medium transition-colors ${
                         isActive
                           ? 'text-primary-600'
-                          : 'text-white hover:text-primary-600'
+                          : 'text-[#EFF3F8] hover:text-primary-600'
                       }`
                     }
                   >
@@ -162,24 +161,24 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                       `font-medium transition-colors ${
                         isActive
                           ? 'text-primary-600'
-                          : 'text-white hover:text-primary-600'
+                          : 'text-[#EFF3F8] hover:text-primary-600'
                       }`
                     }
                   >
                     Tests
                   </NavLink>
-                  <NavLink
+                  {/* <NavLink
                     to="/foro"
                     className={({ isActive }) =>
                       `font-medium transition-colors ${
                         isActive
                           ? 'text-primary-600'
-                          : 'text-white hover:text-primary-600'
+                          : 'text-[#EFF3F8] hover:text-primary-600'
                       }`
                     }
                   >
                     Foro
-                  </NavLink>
+                  </NavLink> */}
                 </>
               )}
             </nav>
@@ -189,7 +188,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                 <div className="flex items-center space-x-4">
                   {/* <button
                     onClick={() => setIsStatsOpen(true)}
-                    className="text-white hover:text-primary-600 transition-colors"
+                    className="text-[#EFF3F8] hover:text-primary-600 transition-colors"
                     title="Ver estadísticas"
                   >
                     <BarChart2 size={20} />
@@ -206,15 +205,15 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                           className="w-8 h-8 rounded-full object-cover"
                         />
                       ) : (
-                        <UserCircle size={20} className="text-white" />
+                        <UserCircle size={20} className="text-[#EFF3F8]" />
                       )}
-                      <span className="text-sm font-medium text-white">
+                      <span className="text-sm font-medium text-[#EFF3F8]">
                         {user.firstName || user.username}
                       </span>
                     </div>
                     {isStatsOpen && (
                     <div
-                      className="absolute right-0 mt-2 w-44 bg-black border rounded-3xl shadow-lg z-50 flex flex-col items-center"
+                      className="absolute right-0 mt-2 w-44 bg-[#181a20] border border-gray-700 rounded-3xl shadow-lg z-50 flex flex-col items-center"
                       tabIndex={-1}
                       ref={menuRef}
                     >
@@ -226,8 +225,8 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                             setIsStatsOpen(false);
                             handleEditProfile();
                           }}
-                          className="w-full rounded-t-3xl flex items-center justify-center px-4 py-1 text-white hover:bg-gray-100"
-                        >
+                          className="w-full rounded-t-3xl flex items-center justify-center px-4 py-1 text-[#EFF3F8] hover:bg-primary-700/20"
+                        > 
                           <UserCircle size={18} className="mr-2" />
                           <span>Mi perfil</span>
                         </button>
@@ -240,7 +239,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                             setIsStatsOpen(false);
                             handleSignOut();
                           }}
-                          className="w-full rounded-b-3xl flex items-center justify-center px-4 py-1 text-white hover:bg-gray-100"
+                          className="w-full rounded-b-3xl flex items-center justify-center px-4 py-1 text-[#EFF3F8] hover:bg-primary-700/20"
                         >
                           <LogOut size={18} className="mr-2" />
                           <span>Cerrar sesión</span>
@@ -254,7 +253,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                 <div className="flex items-center space-x-3">
                   <Link
                     to="/sign-in"
-                    className="flex items-center space-x-1 text-white hover:text-primary-600 transition-colors"
+                    className="flex items-center space-x-1 text-[#EFF3F8] hover:text-primary-600 transition-colors"
                   >
                     <LogIn size={18} />
                     <span>Iniciar sesión</span>
@@ -268,7 +267,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
 
             {/* Botón de menú móvil */}
             <button
-              className="md:hidden text-white focus:outline-none"
+              className="md:hidden text-[#EFF3F8] focus:outline-none"
               onClick={toggleMenu}
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -282,7 +281,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
           initial={false}
           animate={isMenuOpen ? { height: 'auto', opacity: 1 } : { height: 0, opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="md:hidden overflow-hidden bg-white shadow-lg rounded-3xl"
+          className="md:hidden overflow-hidden bg-[#EFF3F8] shadow-lg rounded-3xl"
         >
           <div className="container-custom py-2 space-y-2">
             <div className="flex flex-col space-y-2">
@@ -360,7 +359,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                      >
                        Tests
                      </NavLink>
-                     <NavLink
+                     {/* <NavLink
                        to="/foro"
                        className={({ isActive }) =>
                          `flex-1 text-center py-2 font-medium rounded-2xl transition-colors ${
@@ -370,7 +369,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                        onClick={() => setIsMenuOpen(false)}
                      >
                        Foro
-                     </NavLink>
+                     </NavLink> */}
                    </>
                  )}
                 </div>
@@ -380,7 +379,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                   <>
                     <Link
                       to="/sign-in"
-                      className="flex-1 text-center py-2 font-medium rounded-2xl text-white hover:bg-gray-100 transition-colors"
+                      className="flex-1 text-center py-2 font-medium rounded-2xl text-[#EFF3F8] hover:bg-[#EFF3F8]/10 transition-colors"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       Iniciar sesión
@@ -397,7 +396,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
               </div>
             </div>
             {isSignedIn && (
-              <div className="pt-2 border-t border-gray-200 flex flex-col items-center">
+              <div className="pt-1 border-t border-gray-400 flex flex-col items-center">
                 <div className="flex flex-row items-center space-x-2 py-3">
                   {user.imageUrl ? (
                     <img
@@ -406,9 +405,9 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                       className="w-8 h-8 rounded-full object-cover"
                     />
                   ) : (
-                    <UserCircle size={20} className="text-white" />
+                    <UserCircle size={20} className="text-black" />
                   )}
-                  <span className="text-sm font-medium text-white">
+                  <span className="text-base font-medium text-black">
                     {user.firstName || user.username}
                   </span>
                 </div>
@@ -418,17 +417,17 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                       handleEditProfile();
                       setIsMenuOpen(false);
                     }}
-                    className="flex items-center space-x-1 text-white"
+                    className="flex items-center space-x-1 text-black"
                   >
                     <Settings size={18} />
-                    <span>Editar perfil</span>
+                    <span>Mi perfil</span>
                   </button>
                   <button
                     onClick={handleSignOut}
-                    className="flex items-center space-x-1 text-white"
+                    className="flex items-center space-x-1 text-black"
                   >
                     <LogOut size={18} />
-                    <span>Salir</span>
+                    <span>Cerrar sesión</span>
                   </button>
                 </div>
               </div>

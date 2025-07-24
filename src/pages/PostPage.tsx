@@ -67,7 +67,7 @@ const PostPage: React.FC = () => {
         <div className="container-custom">
           <div className="max-w-3xl mx-auto">
             <Link to="/foro" className="text-primary-600 hover:underline">← Volver al foro</Link>
-            <div className="rounded-3xl bg-white shadow-lg border border-gray-200 p-8 mt-4 mb-8">
+            <div className="rounded-3xl bg-[#EFF3F8] shadow-lg border border-gray-200 p-8 mt-4 mb-8">
 
               <div className="flex justify-between items-center text-xs text-gray-400 mb-4">
                 <span>Publicado el {new Date(post.created_at).toLocaleString()}</span>
@@ -89,7 +89,7 @@ const PostPage: React.FC = () => {
             )}
             <ul className="space-y-4">
               {comments.map((comment) => (
-                <li key={comment.id} className="border rounded-3xl p-3 bg-gray-50">
+                <li key={comment.id} className="border rounded-3xl p-3 bg-[#EFF3F8]">
                   <p>{comment.content}</p>
                   <div className="flex justify-between items-center text-xs text-gray-500 mt-1">
                     <span>{new Date(comment.created_at).toLocaleString()}</span>

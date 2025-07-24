@@ -256,8 +256,8 @@ const AIToolsPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen">
-      <div className="w-full bg-black mt-14">
+    <div className="min-h-screen bg-gradient-to-b from-[#141414] to-[#050505]">
+      <div className="w-full mt-14">
         <section className="min-h-full pt-12">
           <div className="container-custom">
             <div className="max-w-3xl mx-auto text-center">
@@ -268,9 +268,9 @@ const AIToolsPage: React.FC = () => {
                 className="flex flex-col items-center mb-6"
               >
                 <LuBoxes size={42} className="text-primary-600 mb-2" />
-                <h1 className="text-3xl md:text-4xl font-bold text-white">
+                <h1 className="text-3xl md:text-4xl font-bold text-[#EFF3F8]">
                   Herramientas de{' '}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-secondary-600 font-bold">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-secondary-600 animated-gradient font-bold">
                     Inteligencia Artificial
                   </span>
                 </h1>
@@ -279,7 +279,7 @@ const AIToolsPage: React.FC = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="text-white"
+                className="text-[#EFF3F8]"
               >
                 Descubre algunas de las IA más populares, para qué sirven y comienza a utilizarlas en tus proyectos
               </motion.p>
@@ -289,7 +289,7 @@ const AIToolsPage: React.FC = () => {
       </div>
 
       {/* Sección de herramientas */}
-      <section className="section bg-black pb-16 pt-6">
+      <section className="section pb-16 pt-6">
         <div className="container-custom">
           {/* Buscador y filtro */}
           <div className="max-w-5xl mx-auto mb-8">
@@ -315,7 +315,7 @@ const AIToolsPage: React.FC = () => {
                     key={category}
                     className={`h-10 min-w-[100px] px-4 py-2 flex items-center justify-center rounded-full text-sm font-medium transition-colors ${
                       selectedCategory === category
-                        ? 'bg-primary-600 text-white'
+                        ? 'bg-primary-600 text-[#EFF3F8]'
                         : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                     }`}
                     style={{ boxSizing: 'border-box' }}
@@ -387,13 +387,13 @@ const AIToolsPage: React.FC = () => {
           )}
         </div>
       </section>
-      <section className="section bg-black pt-0 pb-0">
+      <section className="section pt-0 pb-0">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
             <div className="text-center">
-              <h2 className="section-title text-white">
+              <h2 className="section-title text-[#EFF3F8]">
                 ¿Cómo elegir la{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-secondary-600 font-bold">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-secondary-600 animated-gradient font-bold">
                   IA
                 </span>{' '}
                 adecuada?
@@ -402,7 +402,7 @@ const AIToolsPage: React.FC = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="text-white"
+                className="text-[#EFF3F8]"
               >
                 Con tantas opciones disponibles, puede ser difícil saber por dónde empezar.
                 Aquí hay algunos consejos para ayudarte a elegir la herramienta de IA más 
@@ -411,10 +411,10 @@ const AIToolsPage: React.FC = () => {
             </div>
 
             <div className="p-8 flex flex-col items-center">
-              <div className="flex flex-col gap-8 w-full max-w-xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-3xl mx-auto">
                 {/* Paso 1 */}
-                <div className="flex flex-col items-center text-center bg-gray-50 rounded-3xl shadow p-6">
-                  <span className="bg-primary-600 text-white rounded-full px-3 py-0.5 text-sm font-bold mr-2 mb-2">1</span>
+                <div className="flex flex-col items-center text-center bg-[#EFF3F8] rounded-3xl shadow p-6">
+                  <span className="bg-primary-600 text-[#EFF3F8] rounded-full px-3 py-0.5 text-sm font-bold mr-2 mb-2">1</span>
                   <h3 className="text-xl font-semibold mb-2 flex items-center justify-center">
                     Identifica tu necesidad específica
                   </h3>
@@ -424,19 +424,19 @@ const AIToolsPage: React.FC = () => {
                   </p>
                 </div>
                 {/* Paso 2 */}
-                <div className="flex flex-col items-center text-center bg-gray-50 rounded-3xl shadow p-6">
-                  <span className="bg-primary-600 text-white rounded-full px-3 py-0.5 text-sm font-bold mr-2 mb-2">2</span>
+                <div className="flex flex-col items-center text-center bg-[#EFF3F8] rounded-3xl shadow p-6">
+                  <span className="bg-primary-600 text-[#EFF3F8] rounded-full px-3 py-0.5 text-sm font-bold mr-2 mb-2">2</span>
                   <h3 className="text-xl font-semibold mb-2 flex items-center justify-center">
                     Considera el nivel de especialización
                   </h3>
                   <p className="text-gray-700">
                     Algunas herramientas son de propósito general (como ChatGPT), mientras que otras
-                    están especializadas en tareas específicas (como Midjourney para imágenes, Whisper para transcripción de audio, HeyGen para crear videos con avatares, etc)
+                    están especializadas en tareas específicas.
                   </p>
                 </div>
                 {/* Paso 3 */}
-                <div className="flex flex-col items-center text-center bg-gray-50 rounded-3xl shadow p-6">
-                  <span className="bg-primary-600 text-white rounded-full px-3 py-0.5 text-sm font-bold mr-2 mb-2">3</span>
+                <div className="flex flex-col items-center text-center bg-[#EFF3F8] rounded-3xl shadow p-6">
+                  <span className="bg-primary-600 text-[#EFF3F8] rounded-full px-3 py-0.5 text-sm font-bold mr-2 mb-2">3</span>
                   <h3 className="text-xl font-semibold mb-2 flex items-center justify-center">
                     Evalúa la facilidad de uso
                   </h3>
@@ -446,8 +446,8 @@ const AIToolsPage: React.FC = () => {
                   </p>
                 </div>
                 {/* Paso 4 */}
-                <div className="flex flex-col items-center text-center bg-gray-50 rounded-3xl shadow p-6">
-                  <span className="bg-primary-600 text-white rounded-full px-3 py-0.5 text-sm font-bold mr-2 mb-2">4</span>
+                <div className="flex flex-col items-center text-center bg-[#EFF3F8] rounded-3xl shadow p-6">
+                  <span className="bg-primary-600 text-[#EFF3F8] rounded-full px-3 py-0.5 text-sm font-bold mr-2 mb-2">4</span>
                   <h3 className="text-xl font-semibold mb-2 flex items-center justify-center">
                     Considera el costo
                   </h3>
@@ -463,15 +463,15 @@ const AIToolsPage: React.FC = () => {
       </section>
       
       {/* CTA Section */}
-      <section className="py-10 bg-black">
+      <section className="py-10">
         <div className="container-custom text-center">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#EFF3F8]">
                ¿Quieres aprender a usar estas herramientas?
             </h2>
             <a
               href="/guias"
-              className="btn bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-600 inline-flex items-center transition-transform duration-300 hover:translate-x-2"
+              className="btn bg-primary-600 text-[#EFF3F8] hover:bg-primary-700 focus:ring-primary-600 inline-flex items-center transition-transform duration-300 hover:translate-x-2"
             >
               Explora nuestras guías<ArrowRight size={16} className="ml-2" />
             </a>

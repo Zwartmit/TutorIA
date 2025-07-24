@@ -326,7 +326,7 @@ const AssessmentPage: React.FC = () => {
       customClass: {
         confirmButton: 'btn-red text-sm',
         cancelButton: 'btn-primary text-sm',
-        popup: 'rounded-3xl p-6',
+        popup: 'rounded-3xl p-6 bg-[#EFF3F8]',
       }
     });
 
@@ -376,23 +376,23 @@ const AssessmentPage: React.FC = () => {
   }, []);
     
   return (
-    <div className="pt-2">
+    <div className="pt-2 bg-gradient-to-b from-[#141414] to-[#050505]">
       {/* Hero Section */}
-      <section className="pt-16 md:pt-24 bg-black">
+      <section className="pt-16 md:pt-24">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
             <div className="flex flex-col items-center">
-                <PiExam size={42} className="text-primary-600 mb-2 text-white" />
-                <h1 className="text-3xl md:text-4xl font-bold text-white mb-6">Tests de conocimientos</h1>
+                <PiExam size={42} className="text-primary-600 mb-2" />
+                <h1 className="text-3xl md:text-4xl font-bold text-[#EFF3F8] mb-6">Tests de conocimientos</h1>
               </div>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="text-white"
+                className="text-[#EFF3F8]"
               >
                 Pon a prueba lo que has aprendido sobre la{' '}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-secondary-600 font-bold">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-secondary-600 animated-gradient font-bold">
                     inteligencia artificial
                   </span>
               </motion.p>
@@ -401,7 +401,7 @@ const AssessmentPage: React.FC = () => {
       </section>
 
       {/* Sección de evaluación */}
-      <section className="section bg-black pt-8 pb-14">
+      <section className="section pt-8 pb-14">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto">
             {quizState === QuizState.NOT_STARTED && (
@@ -409,7 +409,7 @@ const AssessmentPage: React.FC = () => {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.3 }}
-                className="bg-white rounded-3xl shadow-md overflow-hidden"
+                className="bg-[#EFF3F8] rounded-3xl shadow-md overflow-hidden"
               >
                 <div className="p-8">
                   <div className="text-center mb-8">
@@ -472,7 +472,7 @@ const AssessmentPage: React.FC = () => {
                     </div>
                   </div>
 
-                  <div className="bg-gray-50 p-6 rounded-3xl mb-8">
+                  <div className="bg-[#EFF3F8] p-6 rounded-3xl mb-8">
                     <h3 className="font-semibold text-lg mb-3">Antes de comenzar:</h3>
                     <ul className="space-y-2 text-gray-700">
                       <li className="flex items-start">
@@ -513,7 +513,7 @@ const AssessmentPage: React.FC = () => {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.3 }}
-                className="bg-white rounded-3xl shadow-md overflow-hidden"
+                className="bg-[#EFF3F8] rounded-3xl shadow-md overflow-hidden"
               >
                 <div className="p-8">
                   {renderProgressBar()}
@@ -537,7 +537,7 @@ const AssessmentPage: React.FC = () => {
                                 ? 'bg-green-100 border-green-500 text-green-800'
                                 : 'bg-red-100 border-red-500 text-red-800'
                               : 'bg-primary-100 border-primary-500 text-primary-800'
-                            : 'border-gray-300 hover:bg-gray-50'
+                            : 'border-gray-300 hover:bg-[#EFF3F8]'
                         }`}
                         disabled={showFeedback}
                       >
@@ -546,9 +546,9 @@ const AssessmentPage: React.FC = () => {
                             selectedAnswers[currentQuestion] === index
                               ? showFeedback
                                 ? isCorrectAnswer
-                                  ? 'bg-green-500 text-white'
-                                  : 'bg-red-500 text-white'
-                                : 'bg-primary-500 text-white'
+                                  ? 'bg-green-500 text-[#EFF3F8]'
+                                  : 'bg-red-500 text-[#EFF3F8]'
+                                : 'bg-primary-500 text-[#EFF3F8]'
                               : 'bg-gray-200 text-gray-600'
                           }`}>
                             {showFeedback && selectedAnswers[currentQuestion] === index ? (
@@ -628,7 +628,7 @@ const AssessmentPage: React.FC = () => {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.3 }}
-                className="bg-white rounded-3xl shadow-md overflow-hidden mb-10"
+                className="bg-[#EFF3F8] rounded-3xl shadow-md overflow-hidden mb-10"
               >
                 <div className="p-8">
                   <div className="text-center mb-8">
@@ -705,8 +705,8 @@ const AssessmentPage: React.FC = () => {
                         <div className="flex items-start">
                           <div className={`w-6 h-6 rounded-full flex items-center justify-center mr-3 mt-0.5 ${
                             selectedAnswers[index] === question.correctAnswer
-                              ? 'bg-green-500 text-white'
-                              : 'bg-red-500 text-white'
+                              ? 'bg-green-500 text-[#EFF3F8]'
+                              : 'bg-red-500 text-[#EFF3F8]'
                           }`}>
                             {selectedAnswers[index] === question.correctAnswer ? (
                               <Check size={14} />
