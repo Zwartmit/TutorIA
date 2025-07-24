@@ -379,14 +379,15 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                   <>
                     <Link
                       to="/sign-in"
-                      className="flex-1 text-center py-2 font-medium rounded-2xl text-[#EFF3F8] hover:bg-[#EFF3F8]/10 transition-colors"
+                      className="flex items-center justify-center text-center font-medium rounded-2xl text-black hover:bg-[#EFF3F8]/10 transition-colors py-2 w-full"
                       onClick={() => setIsMenuOpen(false)}
                     >
+                      <LogIn size={18} className="mr-1" />
                       Iniciar sesión
                     </Link>
                     <Link
                       to="/sign-up"
-                      className="flex-1 text-center py-2 font-medium rounded-2xl btn-primary"
+                      className="flex items-center justify-center text-center font-medium rounded-2xl btn-primary py-2 w-full"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       Registrarse

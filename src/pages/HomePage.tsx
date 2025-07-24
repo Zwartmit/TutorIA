@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import FloatingHelpButton from '../components/common/FloatingHelpButton';
 import SectionCarousel from '../components/home/SectionCarousel';
 
 import sec1 from '../assets/home/sec1.png';
@@ -55,6 +56,7 @@ const HomePage: React.FC = () => {
         </div>
 
       <SectionCarousel />
+      <FloatingHelpButton />
       
         {/* Grid de tarjetas: 3 arriba, 2 centradas abajo */}
         <div className="container-custom relative z-20 hidden lg:block pb-24">

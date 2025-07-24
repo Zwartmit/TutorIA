@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 import Navbar from '../components/navigation/Navbar';
 import ScrollToTop from '../components/common/ScrollToTop';
-import FloatingHelpButton from '../components/common/FloatingHelpButton';
+
 
 import Loader from '../components/Loader';
 
@@ -69,7 +69,7 @@ const MainLayout: React.FC = () => {
           <Outlet />
         </motion.div>
       </main>
-      <FloatingHelpButton />
+
       <ScrollToTop />
     </div>
   );
