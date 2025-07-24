@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import logo from '../assets/Logo.png';
+import logo from '../assets/logo.png';
 
 interface LoaderProps {
   zoomingOut?: boolean;
