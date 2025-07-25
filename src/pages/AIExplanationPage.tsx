@@ -132,7 +132,7 @@ const AIExplanationPage: React.FC = () => {
               <BookOpen size={24} className="text-[#EFF3F8] transition animate-bounce" />
             </span>
           </button>
-          <span className="mt-2 text-sm font-medium text-gray-700 hidden sm:block">Glosario</span>
+          <span className="mt-2 text-sm font-medium text-[#EFF3F8] hidden sm:block">Glosario</span>
         </div>
       </div>
 
