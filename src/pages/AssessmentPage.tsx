@@ -376,7 +376,7 @@ const AssessmentPage: React.FC = () => {
   }, []);
     
   return (
-    <div className="pt-2 bg-gradient-to-b from-[#141414] to-[#050505]">
+    <div className="pt-9 md:pt-2 bg-gradient-to-b from-[#141414] to-[#050505]">
       {/* Hero Section */}
       <section className="pt-16 md:pt-24">
         <div className="container-custom">
